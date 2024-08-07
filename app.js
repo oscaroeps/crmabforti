@@ -57,7 +57,7 @@ app.use('/api', email_routes);
 app.use('/api', kpi_routes);
 
 app.get('*', function(req, res, next){
-    res.sendFile(path.resolve('client/index.html'))
+    res.sendFile(path.resolve('client/panel/index.html'))
 });
 
 module.exports = app;
