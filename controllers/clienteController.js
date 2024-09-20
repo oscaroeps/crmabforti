@@ -29,15 +29,15 @@ const registro_cliente_admin = async function (req, res) {
                 if (err) {
                     res.status(200).send({ data: undefined, message: 'No se pudo generar la contraseña.' });
                 } else {
-                    if (clientes.length >= 1) {
+                    /* if (clientes.length >= 1) {
                         res.status(200).send({ data: undefined, message: 'El correo electrónico ya existe.' });
-                    } else {
+                    } else { Las partes comentadas son para que se pueda repetir el correo del cliente y para que no se mande el correo de verificación al registrar*/
                         data.fullnames = data.nombres + ' ' + data.apellidos;
                         data.password = hash;
                         let cliente = await Cliente.create(data);
-                        enviar_correo_verificacion(cliente.email);
+                        /* enviar_correo_verificacion(cliente.email); */
                         res.status(200).send({ data: cliente });
-                    }
+                    /* } */
                 }
             });
 
