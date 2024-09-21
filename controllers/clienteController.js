@@ -143,15 +143,23 @@ const editar_cliente_admin = async function (req, res) {
 const listar_clientes_modal_admin = async function (req, res) {
     if (req.user) {
         let filtro = req.params['filtro'];
-        let clientes = await Cliente.find({
-            $or: [
-                { nombres: new RegExp(filtro, 'i') },
-                { apellidos: new RegExp(filtro, 'i') },
-                { n_doc: new RegExp(filtro, 'i') },
-                { email: new RegExp(filtro, 'i') },
-                { fullnames: new RegExp(filtro, 'i') }
-            ]
-        }).select('_id fullnames nombres apellidos email verify tipo');
+
+        // Si no hay filtro, obtener todos los clientes
+        let clientes;
+        if (filtro && filtro.trim() !== "") {
+            clientes = await Cliente.find({
+                $or: [
+                    { nombres: new RegExp(filtro, 'i') },
+                    { apellidos: new RegExp(filtro, 'i') },
+                    { n_doc: new RegExp(filtro, 'i') },
+                    { email: new RegExp(filtro, 'i') },
+                    { fullnames: new RegExp(filtro, 'i') }
+                ]
+            }).select('_id fullnames nombres apellidos email verify tipo');
+        } else {
+            // Obtener todos los clientes si no hay filtro
+            clientes = await Cliente.find({}).select('_id fullnames nombres apellidos email verify tipo');
+        }
         res.status(200).send({ data: clientes });
     } else {
         res.status(403).send({ data: undefined, message: 'NoToken' });
