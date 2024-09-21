@@ -44,7 +44,7 @@ const registro_cliente_admin = async function (req, res) {
                         let cliente = await Cliente.create(data);
 
                         // Comentar la función de envío de correo de verificación
-                        enviar_correo_verificacion(cliente.email);
+                        // enviar_correo_verificacion(cliente.email);
                         res.status(200).send({ data: cliente });
                     }
                 }
