@@ -23,21 +23,25 @@ const registro_cliente_admin = async function (req, res) {
 
         try {
 
-            var clientes = await Cliente.find({ email: data.email });
+            // Si no se requiere el email, no validamos si ya existe
+            // var clientes = await Cliente.find({ email: data.email });
 
             bcrypt.hash('123456789', null, null, async function (err, hash) {
                 if (err) {
                     res.status(200).send({ data: undefined, message: 'No se pudo generar la contraseña.' });
                 } else {
-                    /* if (clientes.length >= 1) {
-                        res.status(200).send({ data: undefined, message: 'El correo electrónico ya existe.' });
-                    } else { Las partes comentadas son para que se pueda repetir el correo del cliente y para que no se mande el correo de verificación al registrar*/
+                    // Eliminamos la validación del correo
+                    // if (clientes.length >= 1) {
+                    //     res.status(200).send({ data: undefined, message: 'El correo electrónico ya existe.' });
+                    // } else {
                         data.fullnames = data.nombres + ' ' + data.apellidos;
                         data.password = hash;
                         let cliente = await Cliente.create(data);
-                        /* enviar_correo_verificacion(cliente.email); */
+
+                        // Comentar la función de envío de correo de verificación
+                        // enviar_correo_verificacion(cliente.email);
                         res.status(200).send({ data: cliente });
-                    /* } */
+                    // }
                 }
             });
 
@@ -252,56 +256,57 @@ const obtener_encuesta_cliente_admin = async function (req, res) {
 
 //////////////////////////////////////////////////////////////////
 
-const enviar_correo_verificacion = async function (email) {
-    var readHTMLFile = function (path, callback) {
-        fs.readFile(path, { encoding: 'utf-8' }, function (err, html) {
-            if (err) {
-                throw err;
-                callback(err);
-            }
-            else {
-                callback(null, html);
-            }
-        });
-    };
+// Comentar la función de envío de correo de verificación
+// const enviar_correo_verificacion = async function (email) {
+//    var readHTMLFile = function (path, callback) {
+//        fs.readFile(path, { encoding: 'utf-8' }, function (err, html) {
+//            if (err) {
+//                throw err;
+//                callback(err);
+//            }
+//            else {
+//                callback(null, html);
+//            }
+//        });
+//    };
 
-    var transporter = nodemailer.createTransport(smtpTransport({
-        service: 'gmail',
-        host: 'smtp.gmail.com',
-        auth: {
-            user: 'oscaroeps30@gmail.com',
-            name: 'muestra',
-            pass: 'ydqbvvvvyykojfst'
+//    var transporter = nodemailer.createTransport(smtpTransport({
+//        service: 'gmail',
+//        host: 'smtp.gmail.com',
+//        auth: {
+//            user: 'oscaroeps30@gmail.com',
+//            name: 'muestra',
+//            pass: 'ydqbvvvvyykojfst'
 
-        }
-    }));
+//        }
+//    }));
 
     //OBTENER CLIENTE
-    var cliente = await Cliente.findOne({ email: email });
-    var token = jwt_cliente.createToken(cliente);
+//    var cliente = await Cliente.findOne({ email: email });
+//    var token = jwt_cliente.createToken(cliente);
 
-    readHTMLFile(process.cwd() + '/mails/account_verify.html', (err, html) => {
+//    readHTMLFile(process.cwd() + '/mails/account_verify.html', (err, html) => {
 
         let rest_html = ejs.render(html, { token: token });
+//
+//        var template = handlebars.compile(rest_html);
+//        var htmlToSend = template({ op: true });
 
-        var template = handlebars.compile(rest_html);
-        var htmlToSend = template({ op: true });
+//        var mailOptions = {
+//            from: 'oscaroeps30@gmail.com',
+//            to: email,
+//            subject: 'Verificación de cuenta',
+//            html: htmlToSend
+//        };
 
-        var mailOptions = {
-            from: 'oscaroeps30@gmail.com',
-            to: email,
-            subject: 'Verificación de cuenta',
-            html: htmlToSend
-        };
+//        transporter.sendMail(mailOptions, function (error, info) {
+//            if (!error) {
+//                console.log('Email sent: ' + info.response);
+//            }
+//        });
 
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (!error) {
-                console.log('Email sent: ' + info.response);
-            }
-        });
-
-    });
-}
+//    });
+//}
 
 const generar_actividad_matricula = async function (matricula, actividad) {
     await Comentario_matricula.create({
