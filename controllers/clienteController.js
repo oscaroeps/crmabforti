@@ -86,31 +86,21 @@ const validar_correo_verificacion = async function (req, res) {
 
 const listar_clientes_admin = async function (req, res) {
     if (req.user) {
-        let filtro = req.params['filtro'] || '';  // Obtener filtro o cadena vacía
-        let clientes = [];
-
-        if (filtro) {
-            // Si hay un filtro, aplicar la búsqueda con las expresiones regulares
-            clientes = await Cliente.find({
-                $or: [
-                    { nombres: new RegExp(filtro, 'i') },
-                    { apellidos: new RegExp(filtro, 'i') },
-                    { n_doc: new RegExp(filtro, 'i') },
-                    { email: new RegExp(filtro, 'i') },
-                    { fullnames: new RegExp(filtro, 'i') }
-                ]
-            });
-        } else {
-            // Si no hay filtro, devolver todos los clientes
-            clientes = await Cliente.find();
-        }
-
+        let filtro = req.params['filtro'];
+        let clientes = await Cliente.find({
+            $or: [
+                { nombres: new RegExp(filtro, 'i') },
+                { apellidos: new RegExp(filtro, 'i') },
+                { n_doc: new RegExp(filtro, 'i') },
+                { email: new RegExp(filtro, 'i') },
+                { fullnames: new RegExp(filtro, 'i') }
+            ]
+        });
         res.status(200).send({ data: clientes });
     } else {
         res.status(403).send({ data: undefined, message: 'NoToken' });
     }
 }
-
 
 const obtener_datos_cliente_admin = async function (req, res) {
     if (req.user) {
