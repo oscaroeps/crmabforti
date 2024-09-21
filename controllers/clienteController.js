@@ -86,13 +86,12 @@ const validar_correo_verificacion = async function (req, res) {
 
 const listar_clientes_admin = async function (req, res) {
     if (req.user) {
-        let filtro = req.params['filtro'] || '';
+        let filtro = req.params['filtro'] || '';  // Obtener filtro o cadena vacía
+        let clientes = [];
 
-        // Si no hay filtro, devuelve todos los clientes
-        if (filtro === '') {
-            var clientes = await Cliente.find();  // Devuelve todos los clientes
-        } else {
-            var clientes = await Cliente.find({
+        if (filtro) {
+            // Si hay un filtro, aplicar la búsqueda con las expresiones regulares
+            clientes = await Cliente.find({
                 $or: [
                     { nombres: new RegExp(filtro, 'i') },
                     { apellidos: new RegExp(filtro, 'i') },
@@ -101,6 +100,9 @@ const listar_clientes_admin = async function (req, res) {
                     { fullnames: new RegExp(filtro, 'i') }
                 ]
             });
+        } else {
+            // Si no hay filtro, devolver todos los clientes
+            clientes = await Cliente.find();
         }
 
         res.status(200).send({ data: clientes });
