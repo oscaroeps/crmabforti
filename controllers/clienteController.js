@@ -29,24 +29,24 @@ const registro_cliente_admin = async function (req, res) {
         try {
 
             // Si no se requiere el email, no validamos si ya existe
-            var clientes = await Cliente.find({ email: data.email });
+            //var clientes = await Cliente.find({ email: data.email });
 
             bcrypt.hash('123456789', null, null, async function (err, hash) {
                 if (err) {
                     res.status(200).send({ data: undefined, message: 'No se pudo generar la contraseña.' });
                 } else {
                     // Eliminamos la validación del correo
-                    if (clientes.length >= 1) {
-                        res.status(200).send({ data: undefined, message: 'El correo electrónico ya existe.' });
-                    } else {
-                        data.fullnames = data.nombres + ' ' + data.apellidos;
-                        data.password = hash;
-                        let cliente = await Cliente.create(data);
+                    //if (clientes.length >= 1) {
+                    //    res.status(200).send({ data: undefined, message: 'El correo electrónico ya existe.' });
+                    //} else {
+                    data.fullnames = data.nombres + ' ' + data.apellidos;
+                    data.password = hash;
+                    let cliente = await Cliente.create(data);
 
-                        // Comentar la función de envío de correo de verificación
-                        // enviar_correo_verificacion(cliente.email);
-                        res.status(200).send({ data: cliente });
-                    }
+                    // Comentar la función de envío de correo de verificación
+                    // enviar_correo_verificacion(cliente.email);
+                    res.status(200).send({ data: cliente });
+                    //}
                 }
             });
 
