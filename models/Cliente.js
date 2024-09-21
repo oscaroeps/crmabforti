@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var ClienteSchema = Schema({
     nombres: { type: String, required: true },
     apellidos: { type: String, required: true },
-    email: { type: String, required: false },
+    email: { type: String, required: true },
     fullnames: { type: String, required: true },
     telefono: { type: String, required: true },
     genero: { type: String, required: true },
