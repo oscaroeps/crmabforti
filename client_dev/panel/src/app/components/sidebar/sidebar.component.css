@@ -1,0 +1,21 @@
+/* Ajusta el tamaño del sidebar */
+.aside-fixed {
+    height: 100vh; /* Ocupa todo el alto visible de la pantalla */
+    overflow-y: auto; /* Habilita scroll solo en el eje vertical */
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 992px) {
+    .aside-fixed {
+        position: fixed; /* Fija el sidebar para pantallas pequeñas */
+        width: 250px; /* O el ancho que desees */
+        z-index: 999; /* Asegura que esté sobre otros elementos */
+        top: 0;
+        left: 0;
+    }
+
+    /* Ajusta el espacio del contenido cuando el sidebar está presente */
+    .wrapper {
+        margin-left: 250px; /* Para alinear el contenido principal al lado del sidebar */
+    }
+}

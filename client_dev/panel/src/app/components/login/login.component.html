@@ -1,0 +1,48 @@
+<div class="d-flex flex-column flex-root" style="height: 100vh !important;background: #010010 !important;">
+    <!--begin::Login-->
+    <div class="login login-signin-on login-2 d-flex flex-row-fluid" id="kt_login">
+        <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid">
+            <div class="login-form text-center  p-7 position-relative overflow-hidden"
+                style="min-width: 380px !important;">
+                <!--begin::Login Header-->
+                <div class="d-flex flex-center mb-15">
+                    <a>
+                        <img src="assets/media/logos/ab-forti/abforti2.png" class="max-h-100px" />
+                    </a>
+                </div>
+                <!--end::Login Header-->
+                <!--begin::Login Sign in form-->
+                <div class="login-signin">
+                    <div class="mb-20">
+                        <h3 style="color: white;">Bienvenido</h3>
+                        <p class="opacity-100 font-weight-bold" style="color: white;">Ingresa con tu cuenta de
+                            colaborador:
+                        </p>
+                    </div>
+                    <form class="form">
+                        <div class="form-group">
+                            <input
+                                class="form-control h-auto opacity-100 bg-dark-o-100 rounded-pill border-0 py-4 px-8 mb-5 "
+                                type="email" placeholder="Correo electrónico" name="email" [(ngModel)]="user.email"
+                                autocomplete="on" required style="color: white;" />
+                        </div>
+                        <div class="form-group">
+                            <input
+                                class="form-control h-auto opacity-100 bg-dark-o-100 rounded-pill border-0 py-4 px-8 mb-5"
+                                type="password" placeholder="Contraseña" name="password" [(ngModel)]="user.password"
+                                required style="color: white;" />
+                        </div>
+                        <div class="form-group text-center mt-10">
+                            <button type="submit" (click)="login()" id="kt_login_signin_submit"
+                                class="btn btn-pill btn-primary font-weight-bold opacity-100 px-15 py-3"
+                                style="background: #323576 !important; border: #323576;">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+                <!--end::Login Sign in form-->
+
+            </div>
+        </div>
+    </div>
+    <!--end::Login-->
+</div>

@@ -1,0 +1,347 @@
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        <app-sidebar></app-sidebar>
+
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+            <app-top></app-top>
+            <!--begin::Content-->
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                <!--begin::Subheader-->
+                <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
+                    <div
+                        class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                        <!--begin::Info-->
+                        <div class="d-flex align-items-center flex-wrap mr-2">
+                            <!--begin::Page Title-->
+                            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Clientes</h5>
+                            <!--end::Page Title-->
+                            <!--begin::Actions-->
+                            <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
+                            <ul
+                                class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                <li class="breadcrumb-item text-muted">
+                                    <a [routerLink]="['/cliente']" class="text-muted">Lista de clientes</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <a class="text-muted">Editar cliente</a>
+                                </li>
+                            </ul>
+                            <!--end::Actions-->
+                        </div>
+                        <!--end::Info-->
+
+                    </div>
+                </div>
+                <!--end::Subheader-->
+                <!--begin::Entry-->
+                <div class="d-flex flex-column-fluid">
+                    <!--begin::Container-->
+                    <div class="container">
+
+                        <div *ngIf="load_data" class="card card-custom card-shadowless rounded-top-0 mb-7">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-12 text-center mt-7 mb-7">
+                                        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ng-container *ngIf="!load_data">
+                            <ng-container *ngIf="data">
+                                <div class="card card-custom card-shadowless rounded-top-0">
+                                    <!--begin::Body-->
+                                    <div class="card-header border-0 pt-5">
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label font-weight-bolder text-dark">Editar cliente</span>
+                                            <span class="text-muted mt-3 font-weight-bold font-size-sm">Formulario de
+                                                edición de
+                                                cliente</span>
+                                        </h3>
+                                        <div class="card-toolbar">
+                                            <a class="btn btn-primary" [routerLink]="['/cliente']">Regresar</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
+                                            <div class="col-xl-12 col-xxl-10">
+                                                <!--begin::Wizard Form-->
+                                                <form class="form" id="kt_form" #actualizarForm="ngForm"
+                                                    (ngSubmit)="actualizar(actualizarForm)">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-xl-9">
+                                                            <!--begin::Wizard Step 1-->
+                                                            <div class="my-5 step" data-wizard-type="step-content"
+                                                                data-wizard-state="current">
+                                                                <h5 class="text-dark font-weight-bold mb-10">Datos
+                                                                    personales:
+                                                                </h5>
+
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Nombres
+                                                                        (*)</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <input required
+                                                                            class="form-control form-control-solid form-control-lg"
+                                                                            name="nombres" [(ngModel)]="cliente.nombres"
+                                                                            type="text" placeholder="Nombres" />
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Apellidos
+                                                                        (*)</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <input required
+                                                                            class="form-control form-control-solid form-control-lg"
+                                                                            name="apellidos"
+                                                                            [(ngModel)]="cliente.apellidos" type="text"
+                                                                            placeholder="Apellidos" />
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Género
+                                                                        (*)</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <select required name="genero"
+                                                                            [(ngModel)]="cliente.genero"
+                                                                            class="form-control form-control-solid form-control-lg">
+                                                                            <option value="" selected disabled>
+                                                                                Seleccionar
+                                                                            </option>
+                                                                            <option value="Masculino">Masculino</option>
+                                                                            <option value="Femenino">Femenino</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Correo
+                                                                        electrónico</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <input
+                                                                            class="form-control form-control-solid form-control-lg"
+                                                                            name="email" [(ngModel)]="cliente.email"
+                                                                            type="email"
+                                                                            placeholder="Correo eletrónico" />
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Teléfono
+                                                                        (*)</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <div
+                                                                            class="input-group input-group-solid input-group-lg">
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text">
+                                                                                    <i class="
+                                                                                    fas fa-phone-alt"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <input required type="text"
+                                                                                class="form-control form-control-solid form-control-lg"
+                                                                                name="telefono"
+                                                                                [(ngModel)]="cliente.telefono"
+                                                                                placeholder="Teléfono" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Empresa</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <div
+                                                                            class="input-group input-group-solid input-group-lg">
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text">
+                                                                                    <i class="fas fa-building"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <input type="text"
+                                                                                class="form-control form-control-solid form-control-lg"
+                                                                                name="n_doc" [(ngModel)]="cliente.n_doc"
+                                                                                placeholder="Empresa que representa" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+
+
+
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Estado
+                                                                        de la república</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <select name="pais" [(ngModel)]="cliente.pais"
+                                                                            class="form-control form-control-solid form-control-lg">
+                                                                            <option value="" selected disabled>
+                                                                                Seleccionar
+                                                                                estado donde se encuentra el cliente...
+                                                                            </option>
+                                                                            <option value="Sin entidad federativa">Sin entidad federativa
+                                                                            </option>
+                                                                            <option value="Aguascalientes">
+                                                                                Aguascalientes</option>
+                                                                            <option value="Baja California">Baja
+                                                                                California</option>
+                                                                            <option value="Baja California Sur">Baja
+                                                                                California Sur</option>
+                                                                            <option value="Campeche">Campeche</option>
+                                                                            <option value="Chiapas">Chiapas</option>
+                                                                            <option value="Chihuahua">Chihuahua</option>
+                                                                            <option value="Ciudad de México">Ciudad de
+                                                                                México</option>
+                                                                            <option value="Coahuila">Coahuila</option>
+                                                                            <option value="Colima">Colima</option>
+                                                                            <option value="Durango">Durango</option>
+                                                                            <option value="Estado de México">Estado de
+                                                                                México</option>
+                                                                            <option value="Guanajuato">Guanajuato
+                                                                            </option>
+                                                                            <option value="Guerrero">Guerrero</option>
+                                                                            <option value="Hidalgo">Hidalgo</option>
+                                                                            <option value="Jalisco">Jalisco</option>
+                                                                            <option value="Michoacán">Michoacán</option>
+                                                                            <option value="Morelos">Morelos</option>
+                                                                            <option value="Nayarit">Nayarit</option>
+                                                                            <option value="Nuevo León">Nuevo León
+                                                                            </option>
+                                                                            <option value="Oaxaca">Oaxaca</option>
+                                                                            <option value="Puebla">Puebla</option>
+                                                                            <option value="Querétaro">Querétaro</option>
+                                                                            <option value="Quintana Roo">Quintana Roo
+                                                                            </option>
+                                                                            <option value="San Luis Potosí">San Luis
+                                                                                Potosí</option>
+                                                                            <option value="Sinaloa">Sinaloa</option>
+                                                                            <option value="Sonora">Sonora</option>
+                                                                            <option value="Tabasco">Tabasco</option>
+                                                                            <option value="Tamaulipas">Tamaulipas
+                                                                            </option>
+                                                                            <option value="Tlaxcala">Tlaxcala</option>
+                                                                            <option value="Veracruz">Veracruz</option>
+                                                                            <option value="Yucatán">Yucatán</option>
+                                                                            <option value="Zacatecas">Zacatecas</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Dirección</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <div
+                                                                            class="input-group input-group-solid input-group-lg">
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text">
+                                                                                    <i class="fas fa-city"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <input type="text"
+                                                                                class="form-control form-control-solid form-control-lg"
+                                                                                name="ciudad"
+                                                                                [(ngModel)]="cliente.ciudad"
+                                                                                placeholder="Dirección completa" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+
+                                                                <!--begin::Group-->
+                                                                <div class="form-group row">
+                                                                    <label
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Fecha de
+                                                                        primer contacto</label>
+                                                                    <div class="col-lg-9 col-xl-9">
+                                                                        <div
+                                                                            class="input-group input-group-solid input-group-lg">
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text">
+                                                                                    <i class="far fa-handshake"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <input type="date"
+                                                                                class="form-control form-control-solid form-control-lg"
+                                                                                name="nacimiento"
+                                                                                [(ngModel)]="cliente.nacimiento" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Group-->
+                                                            </div>
+                                                            <!--end::Wizard Step 1-->
+
+                                                            <!--begin::Wizard Actions-->
+                                                            <div
+                                                                class="d-flex justify-content-between border-top pt-10 mt-15">
+                                                                <div class="mr-2">
+                                                                    <a [routerLink]="['/cliente']"
+                                                                        class="btn btn-light-primary font-weight-bolder px-9 py-4">Regresar</a>
+                                                                </div>
+                                                                <div>
+                                                                    <button *ngIf="!btn_actualizar" type="submit"
+                                                                        class="btn btn-success font-weight-bolder px-9 py-4">Actualizar</button>
+                                                                    <button *ngIf="btn_actualizar"
+                                                                        class="btn btn-success font-weight-bolder px-9 py-4"
+                                                                        type="button" disabled>
+                                                                        <span class="spinner-border spinner-border-sm"
+                                                                            role="status" aria-hidden="true"></span>
+                                                                        Actualizando...
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Wizard Actions-->
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <!--end::Wizard Form-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="!data">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <app-notfound></app-notfound>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Entry-->
+            </div>
+            <!--end::Content-->
+
+        </div>
+    </div>
+</div>
