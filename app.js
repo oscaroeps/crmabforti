@@ -43,7 +43,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', express.static('client/panel', {redirect: false}));
+app.use('/', express.static('client_dev/dist/panel', {redirect: false}));
 app.use('/api', test_routes);
 app.use('/api', colaborador_routes);
 app.use('/api', cliente_routes);
@@ -58,7 +58,7 @@ app.use('/api', email_routes);
 app.use('/api', kpi_routes);
 
 app.get('*', function(req, res, next){
-    res.sendFile(path.resolve('client/panel/index.html'))
+    res.sendFile(path.resolve('client_dev/dist/panel/index.html'))
 });
 
 module.exports = app;
