@@ -11,8 +11,6 @@ declare var $: any;
 export class EditClienteComponent implements OnInit {
 
   public cliente: any = {
-    nombres: '',  // Inicializar como cadena vacía
-    apellidos: '',  // Inicializar como cadena vacía
     genero: '',
     rol: '',
     pais: ''
@@ -30,32 +28,31 @@ export class EditClienteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._route.params.subscribe(params => {
-      this.id = params['id'];
-      this.load_data = true;
-      this._clienteService.obtener_datos_cliente_admin(this.id, this.token).subscribe(
-        response => {
-          if (response.data != undefined) {
-            this.cliente = response.data;
-            this.data = true;
-            this.load_data = false;
-          } else {
-            this.data = false;
-            this.load_data = false;
+    this._route.params.subscribe(
+      params => {
+
+        this.id = params['id'];
+        this.load_data = true;
+        this._clienteService.obtener_datos_cliente_admin(this.id, this.token).subscribe(
+          response => {
+            if (response.data != undefined) {
+              this.cliente = response.data;
+              this.data = true;
+              this.load_data = false;
+            } else {
+              this.data = false;
+              this.load_data = false;
+
+            }
           }
-        }
-      );
-    });
+        );
+      }
+    );
   }
 
   actualizar(actualizarForm: any) {
     if (actualizarForm.valid) {
       this.btn_actualizar = true;
-
-      // Asegurar que los campos nombres y apellidos tengan algún valor, aunque sea vacío
-      this.cliente.nombres = this.cliente.nombres || '';
-      this.cliente.apellidos = this.cliente.apellidos || '';
-
       this._clienteService.editar_cliente_admin(this.id, this.cliente, this.token).subscribe(
         response => {
           if (response.data == undefined) {
@@ -92,6 +89,7 @@ export class EditClienteComponent implements OnInit {
             });
             this._router.navigate(['/cliente']);
           }
+
         }
       );
     } else {
