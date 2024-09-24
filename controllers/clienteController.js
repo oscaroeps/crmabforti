@@ -21,11 +21,6 @@ const registro_cliente_admin = async function (req, res) {
     if (req.user) {
         let data = req.body;
 
-        // Si el campo email está vacío, generamos uno por defecto
-        if (!data.email) {
-            data.email = `${data.nombres.toLowerCase()}.${data.apellidos.toLowerCase()}@nodomain.com`;
-        }
-
         try {
 
             // Si no se requiere el email, no validamos si ya existe
