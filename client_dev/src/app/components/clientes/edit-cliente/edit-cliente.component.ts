@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClienteService } from 'src/app/services/cliente.service';
-declare var $: any;
+declare var $:any;
 
 @Component({
   selector: 'app-edit-cliente',
@@ -11,8 +11,6 @@ declare var $: any;
 export class EditClienteComponent implements OnInit {
 
   public cliente: any = {
-    nombres: '',
-    apellidos: '',
     genero: '',
     rol: '',
     pais: ''
@@ -35,7 +33,6 @@ export class EditClienteComponent implements OnInit {
 
         this.id = params['id'];
         this.load_data = true;
-
         this._clienteService.obtener_datos_cliente_admin(this.id, this.token).subscribe(
           response => {
             if (response.data != undefined) {
@@ -56,11 +53,6 @@ export class EditClienteComponent implements OnInit {
   actualizar(actualizarForm: any) {
     if (actualizarForm.valid) {
       this.btn_actualizar = true;
-
-      // Asegurar que los campos de nombres y apellidos siempre tengan valores, aunque sean vacíos
-      this.cliente.nombres = this.cliente.nombres || '';
-      this.cliente.apellidos = this.cliente.apellidos || '';
-
       this._clienteService.editar_cliente_admin(this.id, this.cliente, this.token).subscribe(
         response => {
           if (response.data == undefined) {
