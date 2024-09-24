@@ -26,6 +26,10 @@ const registro_cliente_admin = async function (req, res) {
             // Si no se requiere el email, no validamos si ya existe
             //var clientes = await Cliente.find({ email: data.email });
 
+            // Verifica si los campos nombres o apellidos no vienen en el request y los define como vacíos
+            data.nombres = data.nombres || ''; // Si no existe, será una cadena vacía
+            data.apellidos = data.apellidos || ''; // Si no existe, será una cadena vacía
+
             bcrypt.hash('123456789', null, null, async function (err, hash) {
                 if (err) {
                     res.status(200).send({ data: undefined, message: 'No se pudo generar la contraseña.' });
@@ -281,8 +285,8 @@ const enviar_correo_verificacion = async function (email) {
     };
 
     var transporter = nodemailer.createTransport(smtpTransport({
-       service: 'gmail',
-       host: 'smtp.gmail.com',
+        service: 'gmail',
+        host: 'smtp.gmail.com',
         auth: {
             user: 'oscaroeps30@gmail.com',
             name: 'muestra',

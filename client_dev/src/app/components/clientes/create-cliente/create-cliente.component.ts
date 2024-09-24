@@ -11,6 +11,8 @@ declare var $: any;
 export class CreateClienteComponent implements OnInit {
 
   public cliente: any = {
+    nombres: '',
+    apellidos: '',
     genero: '',
     rol: '',
     pais: ''
@@ -105,6 +107,11 @@ export class CreateClienteComponent implements OnInit {
       });
     } else {
       this.btn_registrar = true;
+
+      // Asegurar que los campos de nombres y apellidos siempre tengan valores, aunque sean vacíos
+      this.cliente.nombres = this.cliente.nombres || '';
+      this.cliente.apellidos = this.cliente.apellidos || '';
+
       this.cliente.asesor = localStorage.getItem('_id');
       this._clienteService.registro_cliente_admin(this.cliente, this.token).subscribe(
         response => {
