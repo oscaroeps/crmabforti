@@ -21,7 +21,7 @@ var configuracion_routes = require('./routes/configuracion');
 var email_routes = require('./routes/email');
 var kpi_routes = require('./routes/kpi');
 
-mongoose.connect('mongodb://127.0.0.1:27017/negocio', { useUnifiedTopology: true, useNewUrlParser: true }, (err, res) => {
+mongoose.connect(process.env.MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true }, (err, res) => {
     if (err) {
         console.log(err);
     } else {
