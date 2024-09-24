@@ -132,7 +132,7 @@ const editar_cliente_admin = async function (req, res) {
         let cliente = await Cliente.findByIdAndUpdate({ _id: id }, {
             nombres: data.nombres,
             apellidos: data.apellidos,
-            fullnames: data.nombres + '' + data.apellidos,
+            fullnames: data.nombres + ' ' + data.apellidos,
             genero: data.genero,
             email: data.email,
             telefono: data.telefono,
