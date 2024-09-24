@@ -14,7 +14,7 @@ export class IndexClienteComponent implements OnInit {
   public clientes: Array<any> = [];
   public clientes_const: Array<any> = [];
 
-  public filtro = '';
+  public filtro = '';  // Variable para almacenar el criterio de filtro
   public page = 1;
   public pageSize = 25;
 
@@ -28,26 +28,37 @@ export class IndexClienteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.load_data = true;
+
+    // Verificamos si hay un filtro en los queryParams
     this._route.queryParams.subscribe(
       (params: Params) => {
-        this.filtro = params.filter;
-        if (this.filtro) {
-          this.filtrar();
-        } else {
-          this.clientes = [];
-        }
+        this.filtro = params['filter'] || '';  // Asignar el filtro si está presente en la URL
+        this.init_data();
       }
     );
   }
 
+  // Método que decide si filtrar o cargar todos los clientes
   init_data() {
     if (this.filtro) {
-      this._router.navigate(['/cliente'], { queryParams: { filter: this.filtro } });
+      this.filtrar();  // Si hay filtro, filtrar los datos
     } else {
-      this._router.navigate(['/cliente']);
+      this.load_data = true;
+      this._clienteService.listar_clientes_admin(null, this.token).subscribe(
+        response => {
+          this.clientes = response.data;
+          this.load_data = false;
+        },
+        error => {
+          this.load_data = false;
+          console.error('Error cargando clientes', error);
+        }
+      );
     }
   }
 
+  // Filtrar clientes basados en el criterio de búsqueda
   filtrar() {
     if (this.filtro) {
       this.load_data = true;
@@ -55,13 +66,39 @@ export class IndexClienteComponent implements OnInit {
         response => {
           this.clientes = response.data;
           this.load_data = false;
+        },
+        error => {
+          this.load_data = false;
+          console.error('Error filtrando clientes', error);
         }
       );
     } else {
-      this.clientes = [];
+      this.init_data();  // Si no hay filtro, cargar todos los clientes
     }
   }
 
+  // Método para manejar la actualización de la URL cuando el filtro cambia
+  actualizarFiltro() {
+    if (this.filtro) {
+      // Actualizar la URL con el nuevo filtro
+      this._router.navigate([], {
+        relativeTo: this._route,
+        queryParams: { filter: this.filtro },
+        queryParamsHandling: 'merge'  // Mantener otros parámetros en la URL
+      });
+      this.filtrar();
+    } else {
+      // Si no hay filtro, eliminarlo de la URL y cargar todos los clientes
+      this._router.navigate([], {
+        relativeTo: this._route,
+        queryParams: { filter: null },
+        queryParamsHandling: 'merge'
+      });
+      this.init_data();  // Cargar todos los clientes
+    }
+  }
+
+  // Cambiar el estado de un cliente
   set_state(id: any, estado: any) {
     this.load_estado = true;
     this._clienteService.cambiar_estado_cliente_admin(id, { estado: estado }, this.token).subscribe(
@@ -69,9 +106,11 @@ export class IndexClienteComponent implements OnInit {
         this.load_estado = false;
         $('#delete-' + id).modal('hide');
         this.filtrar();
+      },
+      error => {
+        this.load_estado = false;
+        console.error('Error cambiando estado', error);
       }
     );
-
   }
-
 }
