@@ -36,10 +36,6 @@ export class EditClienteComponent implements OnInit {
         this.id = params['id'];
         this.load_data = true;
 
-        // Asegurar que los campos de nombres y apellidos siempre tengan valores, aunque sean vacíos
-        this.cliente.nombres = this.cliente.nombres || '';
-        this.cliente.apellidos = this.cliente.apellidos || '';
-
         this._clienteService.obtener_datos_cliente_admin(this.id, this.token).subscribe(
           response => {
             if (response.data != undefined) {
@@ -60,6 +56,11 @@ export class EditClienteComponent implements OnInit {
   actualizar(actualizarForm: any) {
     if (actualizarForm.valid) {
       this.btn_actualizar = true;
+
+      // Asegurar que los campos de nombres y apellidos siempre tengan valores, aunque sean vacíos
+      this.cliente.nombres = this.cliente.nombres || '';
+      this.cliente.apellidos = this.cliente.apellidos || '';
+
       this._clienteService.editar_cliente_admin(this.id, this.cliente, this.token).subscribe(
         response => {
           if (response.data == undefined) {
