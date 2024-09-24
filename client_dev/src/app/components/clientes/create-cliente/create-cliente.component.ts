@@ -28,7 +28,7 @@ export class CreateClienteComponent implements OnInit {
 
   registrar(registroForm: any) {
 
-    if (!registroForm.value.nombres) {
+    /* if (!registroForm.value.nombres) {
       $.notify('Complete los nombres del cliente.', {
         type: 'danger',
         spacing: 10,
@@ -58,7 +58,7 @@ export class CreateClienteComponent implements OnInit {
           exit: 'animated' + 'bounce'
         }
       });
-    } /* else if (!registroForm.value.email) {
+    } else if (!registroForm.value.email) {
       $.notify('Complete el email del cliente.', {
         type: 'danger',
         spacing: 10,
@@ -73,7 +73,7 @@ export class CreateClienteComponent implements OnInit {
           exit: 'animated' + 'bounce'
         }
       });
-    } */ else if (!registroForm.value.genero) {
+    } else if (!registroForm.value.genero) {
       $.notify('Seleccione el género del cliente.', {
         type: 'danger',
         spacing: 10,
@@ -88,7 +88,7 @@ export class CreateClienteComponent implements OnInit {
           exit: 'animated' + 'bounce'
         }
       });
-    } else if (!registroForm.value.telefono) {
+    } else */if (!registroForm.value.telefono) {
       $.notify('Ingrese el teléfono del cliente.', {
         type: 'danger',
         spacing: 10,

@@ -2,12 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ClienteSchema = Schema({
-    nombres: { type: String, required: true },
-    apellidos: { type: String, required: true },
+    nombres: { type: String, required: false },
+    apellidos: { type: String, required: false },
     email: { type: String, required: false },
-    fullnames: { type: String, required: true },
+    fullnames: { type: String, required: false },
     telefono: { type: String, required: true },
-    genero: { type: String, required: true },
+    genero: { type: String, required: false },
     verify: { type: Boolean, default: false, required: true },
     estado: { type: Boolean, default: true, required: true },
     tipo: { type: String, default: 'Prospecto', required: true },
