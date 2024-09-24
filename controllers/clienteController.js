@@ -133,26 +133,36 @@ const editar_cliente_admin = async function (req, res) {
         let id = req.params['id'];
         let data = req.body;
 
-        let cliente = await Cliente.findByIdAndUpdate({ _id: id }, {
-            nombres: data.nombres,
-            apellidos: data.apellidos,
-            fullnames: data.nombres + ' ' + data.apellidos,
-            genero: data.genero,
-            email: data.email,
-            telefono: data.telefono,
-            n_doc: data.n_doc,
-            pais: data.pais,
-            ciudad: data.ciudad,
-            nacimiento: data.nacimiento
-        });
+        // Asegurar que nombres y apellidos tengan un valor, aunque sea vacío
+        data.nombres = data.nombres || '';
+        data.apellidos = data.apellidos || '';
+
+        // Actualizamos el cliente
+        let cliente = await Cliente.findByIdAndUpdate(
+            { _id: id },
+            {
+                nombres: data.nombres,
+                apellidos: data.apellidos,
+                fullnames: data.nombres + ' ' + data.apellidos,
+                genero: data.genero,
+                email: data.email,
+                telefono: data.telefono,
+                n_doc: data.n_doc,
+                pais: data.pais,
+                ciudad: data.ciudad,
+                nacimiento: data.nacimiento
+            },
+            { new: true } // Retorna el documento actualizado
+        );
 
         res.status(200).send({ data: cliente });
 
     } else {
         res.status(403).send({ data: undefined, message: 'NoToken' });
     }
-
 }
+
+
 
 const listar_clientes_modal_admin = async function (req, res) {
     if (req.user) {
