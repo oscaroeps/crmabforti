@@ -28,23 +28,29 @@ export class IndexClienteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.load_data = true;
     this._route.queryParams.subscribe(
       (params: Params) => {
-        this.filtro = params.filter;
-        if (this.filtro) {
-          this.filtrar();
-        } else {
-          this.clientes = [];
-        }
+        this.filtro = params.filter || ''; // Si no hay filtro, carga todos los clientes
+        this.init_data();
       }
     );
   }
 
   init_data() {
     if (this.filtro) {
-      this._router.navigate(['/cliente'], { queryParams: { filter: this.filtro } });
+      this.filtrar(); // Si hay un filtro, filtrar los datos
     } else {
-      this._router.navigate(['/cliente']);
+      this.load_data = true;
+      this._clienteService.listar_clientes_admin(null, this.token).subscribe(
+        response => {
+          this.clientes = response.data;
+          this.load_data = false;
+        },
+        error => {
+          this.load_data = false;
+        }
+      );
     }
   }
 
@@ -58,7 +64,7 @@ export class IndexClienteComponent implements OnInit {
         }
       );
     } else {
-      this.clientes = [];
+      this.init_data(); // Si el filtro es vacío, carga todos los datos
     }
   }
 
@@ -71,7 +77,5 @@ export class IndexClienteComponent implements OnInit {
         this.filtrar();
       }
     );
-
   }
-
 }
