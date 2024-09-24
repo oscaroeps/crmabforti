@@ -133,10 +133,11 @@ const editar_cliente_admin = async function (req, res) {
         let id = req.params['id'];
         let data = req.body;
 
+        // Usamos operador condicional para permitir nombres y apellidos vacíos
         let cliente = await Cliente.findByIdAndUpdate({ _id: id }, {
-            nombres: data.nombres,
-            apellidos: data.apellidos,
-            fullnames: data.nombres + ' ' + data.apellidos,
+            nombres: data.nombres || '',  // Si no hay nombres, establecer como vacío
+            apellidos: data.apellidos || '',  // Si no hay apellidos, establecer como vacío
+            fullnames: (data.nombres || '') + ' ' + (data.apellidos || ''),
             genero: data.genero,
             email: data.email,
             telefono: data.telefono,
@@ -144,7 +145,7 @@ const editar_cliente_admin = async function (req, res) {
             pais: data.pais,
             ciudad: data.ciudad,
             nacimiento: data.nacimiento
-        });
+        }, { new: true });  // 'new: true' devuelve el documento actualizado
 
         res.status(200).send({ data: cliente });
 
