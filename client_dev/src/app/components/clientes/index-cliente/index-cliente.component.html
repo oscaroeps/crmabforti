@@ -117,13 +117,17 @@
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="symbol symbol-40 flex-shrink-0 mr-3"
                                                                         [ngClass]="{
+                                                                            'symbol-dark': !item.nombres || item.nombres.trim() === '',
                                                                             'symbol-success': item.nombres.charAt(0).toUpperCase() >= 'A' && item.nombres.charAt(0).toUpperCase() <= 'H',
                                                                             'symbol-info': item.nombres.charAt(0).toUpperCase() >= 'I' && item.nombres.charAt(0).toUpperCase() <= 'O',
                                                                             'symbol-warning': item.nombres.charAt(0).toUpperCase() >= 'P' && item.nombres.charAt(0).toUpperCase() <= 'U',
                                                                             'symbol-primary': item.nombres.charAt(0).toUpperCase() >= 'V' && item.nombres.charAt(0).toUpperCase() <= 'Z'
                                                                         }">
-                                                                        <div class="symbol-label">
-                                                                            {{item.nombres.charAt(0)}}
+                                                                        <div class="symbol-label" *ngIf="item.nombres || item.nombres != ''">
+                                                                            {{item.nombres.charAt(0)}}{{item.apellidos.charAt(0)}}
+                                                                        </div>
+                                                                        <div class="symbol-label" *ngIf="!item.nombres || item.nombres === ''">
+                                                                            NA
                                                                         </div>
                                                                     </div>
                                                                     <div>
