@@ -63,8 +63,8 @@ export class EditCursosComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this.banner = undefined;
@@ -80,8 +80,8 @@ export class EditCursosComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
         this.banner = undefined;
@@ -101,8 +101,8 @@ export class EditCursosComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.curso.descripcion) {
@@ -116,8 +116,8 @@ export class EditCursosComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -135,8 +135,8 @@ export class EditCursosComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this._router.navigate(['/cursos']);

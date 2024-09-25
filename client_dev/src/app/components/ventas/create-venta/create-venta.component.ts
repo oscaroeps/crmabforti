@@ -125,8 +125,8 @@ export class CreateVentaComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
       }
@@ -141,8 +141,8 @@ export class CreateVentaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     }
@@ -186,8 +186,8 @@ export class CreateVentaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.venta.canal) {
@@ -201,8 +201,8 @@ export class CreateVentaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (this.venta.detalles == 0) {
@@ -216,8 +216,8 @@ export class CreateVentaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -237,8 +237,8 @@ export class CreateVentaComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this._router.navigate(['/ventas']);

@@ -74,8 +74,8 @@ export class ContratoMatriculaComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           window.location.reload();

@@ -43,8 +43,8 @@ export class CreateColaboradorComponent implements OnInit {
               },
               delay: 1000,
               animate: {
-                enter: 'animated' + 'bounce',
-                exit: 'animated' + 'bounce'
+                enter: 'animated bounce',
+                exit: 'animated bounce'
               }
             });
             this.btn_registrar = false;
@@ -60,8 +60,8 @@ export class CreateColaboradorComponent implements OnInit {
               },
               delay: 1000,
               animate: {
-                enter: 'animated' + 'bounce',
-                exit: 'animated' + 'bounce'
+                enter: 'animated bounce',
+                exit: 'animated bounce'
               }
             });
             this._router.navigate(['/colaborador']);
@@ -80,8 +80,8 @@ export class CreateColaboradorComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     }

@@ -70,8 +70,8 @@ export class EmailCampaignsComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
         this.init_data();
@@ -95,8 +95,8 @@ export class EmailCampaignsComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
         this.load_send = false;

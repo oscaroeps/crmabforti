@@ -169,8 +169,8 @@ export class CreateMatriculaComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
       }
@@ -193,8 +193,8 @@ export class CreateMatriculaComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
       }
@@ -222,8 +222,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.detalle.ciclo_curso) {
@@ -237,8 +237,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.detalle.ciclo_salon) {
@@ -252,8 +252,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (this.detalle.precio == 0) {
@@ -267,8 +267,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -318,8 +318,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.matricula.canal) {
@@ -333,8 +333,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.matricula.matricula) {
@@ -348,8 +348,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (this.matricula.matricula < 0) {
@@ -363,8 +363,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (this.detalles.length == 0) {
@@ -378,8 +378,8 @@ export class CreateMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -397,8 +397,8 @@ export class CreateMatriculaComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this.btn_load = false;

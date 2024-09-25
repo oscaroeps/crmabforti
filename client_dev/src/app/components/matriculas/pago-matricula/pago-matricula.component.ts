@@ -99,8 +99,8 @@ export class PagoMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.pago.metodo) {
@@ -114,8 +114,8 @@ export class PagoMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.pago.fecha) {
@@ -129,8 +129,8 @@ export class PagoMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.pago.transaccion) {
@@ -144,8 +144,8 @@ export class PagoMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.pago.monto) {
@@ -159,8 +159,8 @@ export class PagoMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -182,8 +182,8 @@ export class PagoMatriculaComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this.init_pagos();

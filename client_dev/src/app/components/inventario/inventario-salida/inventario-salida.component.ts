@@ -94,8 +94,8 @@ export class InventarioSalidaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     }

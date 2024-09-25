@@ -86,8 +86,8 @@ export class ConfiguracionesComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this.logo = undefined;
@@ -103,8 +103,8 @@ export class ConfiguracionesComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
         this.logo = undefined;
@@ -126,8 +126,8 @@ export class ConfiguracionesComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.config.slogan) {
@@ -141,8 +141,8 @@ export class ConfiguracionesComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.config.background) {
@@ -156,8 +156,8 @@ export class ConfiguracionesComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.config.categorias) {
@@ -171,8 +171,8 @@ export class ConfiguracionesComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.config.canales) {
@@ -186,8 +186,8 @@ export class ConfiguracionesComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -203,8 +203,8 @@ export class ConfiguracionesComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this.init_data();
@@ -229,8 +229,8 @@ export class ConfiguracionesComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -246,8 +246,8 @@ export class ConfiguracionesComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this.init_data_finanza();

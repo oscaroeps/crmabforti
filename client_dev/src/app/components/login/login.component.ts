@@ -40,8 +40,8 @@ this._router.navigate(['/dashboard']);
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.user.password) {
@@ -55,8 +55,8 @@ this._router.navigate(['/dashboard']);
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -73,8 +73,8 @@ this._router.navigate(['/dashboard']);
               },
               delay: 1000,
               animate: {
-                enter: 'animated' + 'bounce',
-                exit: 'animated' + 'bounce'
+                enter: 'animated bounce',
+                exit: 'animated bounce'
               }
             });
           } else {

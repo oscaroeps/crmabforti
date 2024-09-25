@@ -89,8 +89,8 @@ export class IndexVentaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     } else if (!this.hasta) {
@@ -104,8 +104,8 @@ export class IndexVentaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     } else if (!this.asesor) {
@@ -119,8 +119,8 @@ export class IndexVentaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     } else {

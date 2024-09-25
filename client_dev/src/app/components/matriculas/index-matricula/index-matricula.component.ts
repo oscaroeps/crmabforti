@@ -130,8 +130,8 @@ export class IndexMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     } else if (!this.hasta) {
@@ -145,8 +145,8 @@ export class IndexMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     } else if (!this.asesor) {
@@ -160,8 +160,8 @@ export class IndexMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     } else {
@@ -200,8 +200,8 @@ export class IndexMatriculaComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce',
+            enter: 'animated bounce',
+            exit: 'animated bounce',
           },
         });
         $('#resendmail-' + id).modal('hide');
@@ -224,8 +224,8 @@ export class IndexMatriculaComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce',
+              enter: 'animated bounce',
+              exit: 'animated bounce',
             },
           });
           this.load_cancel = false;
@@ -248,8 +248,8 @@ export class IndexMatriculaComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce',
+              enter: 'animated bounce',
+              exit: 'animated bounce',
             },
           });
           this.load_cancel = false;
@@ -297,8 +297,8 @@ export class IndexMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     }
@@ -398,8 +398,8 @@ export class IndexMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     }
@@ -422,8 +422,8 @@ export class IndexMatriculaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce',
+          enter: 'animated bounce',
+          exit: 'animated bounce',
         },
       });
     }

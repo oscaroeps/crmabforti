@@ -59,8 +59,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.answer_two) {
@@ -74,8 +74,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.answer_three) {
@@ -89,8 +89,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.answer_four) {
@@ -104,8 +104,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.answer_five) {
@@ -119,8 +119,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.answer_six) {
@@ -134,8 +134,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -163,8 +163,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
               },
               delay: 1000,
               animate: {
-                enter: 'animated' + 'bounce',
-                exit: 'animated' + 'bounce'
+                enter: 'animated bounce',
+                exit: 'animated bounce'
               }
             });
             this.send = true;
@@ -179,8 +179,8 @@ export class SatisfaccionEncuestaComponent implements OnInit {
               },
               delay: 1000,
               animate: {
-                enter: 'animated' + 'bounce',
-                exit: 'animated' + 'bounce'
+                enter: 'animated bounce',
+                exit: 'animated bounce'
               }
             });
           }

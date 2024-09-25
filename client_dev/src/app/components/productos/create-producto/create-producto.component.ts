@@ -62,8 +62,8 @@ export class CreateProductoComponent implements OnInit {
             },
             delay: 1000,
             animate: {
-              enter: 'animated' + 'bounce',
-              exit: 'animated' + 'bounce'
+              enter: 'animated bounce',
+              exit: 'animated bounce'
             }
           });
           this.portada = undefined;
@@ -79,8 +79,8 @@ export class CreateProductoComponent implements OnInit {
           },
           delay: 1000,
           animate: {
-            enter: 'animated' + 'bounce',
-            exit: 'animated' + 'bounce'
+            enter: 'animated bounce',
+            exit: 'animated bounce'
           }
         });
         this.portada = undefined;
@@ -111,8 +111,8 @@ export class CreateProductoComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.producto.titulo) {
@@ -126,8 +126,8 @@ export class CreateProductoComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.producto.tipo) {
@@ -141,8 +141,8 @@ export class CreateProductoComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.producto.tipo_variedad) {
@@ -156,8 +156,8 @@ export class CreateProductoComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (!this.producto.descripcion) {
@@ -171,8 +171,8 @@ export class CreateProductoComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else if (this.portada == undefined) {
@@ -186,8 +186,8 @@ export class CreateProductoComponent implements OnInit {
         },
         delay: 1000,
         animate: {
-          enter: 'animated' + 'bounce',
-          exit: 'animated' + 'bounce'
+          enter: 'animated bounce',
+          exit: 'animated bounce'
         }
       });
     } else {
@@ -205,8 +205,8 @@ export class CreateProductoComponent implements OnInit {
               },
               delay: 1000,
               animate: {
-                enter: 'animated' + 'bounce',
-                exit: 'animated' + 'bounce'
+                enter: 'animated bounce',
+                exit: 'animated bounce'
               }
             });
             this._router.navigate(['/productos']);
@@ -221,8 +221,8 @@ export class CreateProductoComponent implements OnInit {
               },
               delay: 1000,
               animate: {
-                enter: 'animated' + 'bounce',
-                exit: 'animated' + 'bounce'
+                enter: 'animated bounce',
+                exit: 'animated bounce'
               }
             });
           }
