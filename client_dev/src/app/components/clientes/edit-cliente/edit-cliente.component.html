@@ -84,7 +84,7 @@
                                                                 <div class="form-group row">
                                                                     <label
                                                                         class="col-xl-3 col-lg-3 col-form-label">Nombres
-                                                                        </label>
+                                                                    </label>
                                                                     <div class="col-lg-9 col-xl-9">
                                                                         <input
                                                                             class="form-control form-control-solid form-control-lg"
@@ -97,7 +97,7 @@
                                                                 <div class="form-group row">
                                                                     <label
                                                                         class="col-xl-3 col-lg-3 col-form-label">Apellidos
-                                                                        </label>
+                                                                    </label>
                                                                     <div class="col-lg-9 col-xl-9">
                                                                         <input
                                                                             class="form-control form-control-solid form-control-lg"
@@ -150,17 +150,17 @@
                                                                             class="input-group input-group-solid input-group-lg">
                                                                             <div class="input-group-prepend">
                                                                                 <span class="input-group-text">
-                                                                                    <i class="
-                                                                                    fas fa-phone-alt"></i>
+                                                                                    <i class="fas fa-phone-alt"></i>
                                                                                 </span>
                                                                             </div>
                                                                             <input required type="text"
                                                                                 class="form-control form-control-solid form-control-lg"
                                                                                 name="telefono"
                                                                                 [(ngModel)]="cliente.telefono"
-                                                                                placeholder="Teléfono" />
+                                                                                (input)="onPhoneInput($event)"
+                                                                                placeholder="00-0000-0000"
+                                                                                maxlength="27" />
                                                                         </div>
-
                                                                     </div>
                                                                 </div>
                                                                 <!--end::Group-->
@@ -200,7 +200,8 @@
                                                                                 Seleccionar
                                                                                 estado donde se encuentra el cliente...
                                                                             </option>
-                                                                            <option value="Sin entidad federativa">Sin entidad federativa
+                                                                            <option value="Sin entidad federativa">Sin
+                                                                                entidad federativa
                                                                             </option>
                                                                             <option value="Aguascalientes">
                                                                                 Aguascalientes</option>
@@ -275,7 +276,8 @@
                                                                 <!--begin::Group-->
                                                                 <div class="form-group row">
                                                                     <label
-                                                                        class="col-xl-3 col-lg-3 col-form-label">Fecha de
+                                                                        class="col-xl-3 col-lg-3 col-form-label">Fecha
+                                                                        de
                                                                         primer contacto</label>
                                                                     <div class="col-lg-9 col-xl-9">
                                                                         <div
