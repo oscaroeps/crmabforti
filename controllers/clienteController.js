@@ -96,6 +96,7 @@ const listar_clientes_admin = async function (req, res) {
                     { apellidos: new RegExp(filtro, 'i') },
                     { n_doc: new RegExp(filtro, 'i') },
                     { email: new RegExp(filtro, 'i') },
+                    { telefono: new RegExp(filtro, 'i') },
                     { fullnames: new RegExp(filtro, 'i') }
                 ]
             });
