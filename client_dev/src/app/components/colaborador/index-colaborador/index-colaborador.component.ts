@@ -18,31 +18,37 @@ export class IndexColaboradorComponent implements OnInit {
   public pageSize = 25;
 
   public load_estado = false;
+  public load_data = false;
 
   constructor(
     private _colaboradorService: ColaboradorService
   ) { }
 
   ngOnInit(): void {
+    this.load_data = true;
     this.init_data();
   }
 
   init_data() {
+    this.load_data = true;
     this._colaboradorService.listar_colaboradores_admin(this.token).subscribe(
       response => {
         this.colaboradores = response.data;
         this.colaboradores_const = this.colaboradores;
-
+        this.load_data = false;
       }
     );
   }
 
   filtrar() {
+    this.load_data = true;
     if (this.filtro) {
       var term = new RegExp(this.filtro, 'i');
       this.colaboradores = this.colaboradores_const.filter(item => term.test(item.nombres) || term.test(item.apellidos) || term.test(item.email) || term.test(item.dni));
+      this.load_data = false;
     } else {
       this.colaboradores = this.colaboradores_const;
+      this.load_data = false;
     }
   }
 
