@@ -39,6 +39,11 @@ export class IndexClienteComponent implements OnInit {
     );
   }
 
+  formatPhoneNumber(phone: string): string {
+    return phone.split(';').join('<br>');
+  }
+  
+
   // Método que decide si filtrar o cargar todos los clientes
   init_data() {
     if (this.filtro) {

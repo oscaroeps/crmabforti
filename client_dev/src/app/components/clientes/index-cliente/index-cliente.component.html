@@ -94,7 +94,6 @@
                                                         <th style="min-width: 100px">Verificación</th>
                                                         <th style="min-width: 100px">Tipo</th>
                                                         <th style="min-width: 100px">Activación</th>
-
                                                         <th style="min-width: 80px">Acción</th>
                                                     </tr>
                                                 </thead>
@@ -157,12 +156,11 @@
                                                                     class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.email}}</span>
                                                                 <span class="text-muted font-weight-bold">Correo</span>
                                                             </td>
-                                                            <td>
-                                                                <span
-                                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.telefono}}</span>
-                                                                <span
-                                                                    class="text-muted font-weight-bold">Teléfono</span>
+                                                            <td style="white-space: nowrap; width: auto;">
+                                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg" [innerHTML]="formatPhoneNumber(item.telefono)"></span>
+                                                                <span class="text-muted font-weight-bold">Teléfono</span>
                                                             </td>
+                                                            
                                                             <td>
                                                                 <span class="badge badge-success"
                                                                     *ngIf="item.verify">Verificado</span>
