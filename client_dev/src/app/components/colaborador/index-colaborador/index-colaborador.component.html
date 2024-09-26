@@ -58,16 +58,19 @@
                                         <div class="col-lg-9 col-xl-8">
                                             <div class="row align-items-center">
                                                 <div class="col-md-6 my-2 my-md-0">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Buscador general" name="filtro"
-                                                            [(ngModel)]="filtro">
-                                                        <div class="input-group-append">
-                                                            <button class="btn btn-primary" type="button"
-                                                                (click)="filtrar()"><i
-                                                                    class="flaticon-search"></i></button>
+                                                    <form (ngSubmit)="filtrar()">
+                                                        <!-- Formulario que captura el Enter -->
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Buscador general" name="filtro"
+                                                                [(ngModel)]="filtro">
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-primary" type="submit">
+                                                                    <i class="flaticon-search"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
 
                                             </div>
