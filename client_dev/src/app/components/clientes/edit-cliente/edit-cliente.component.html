@@ -158,11 +158,14 @@
                                                                                 name="telefono"
                                                                                 [(ngModel)]="cliente.telefono"
                                                                                 (input)="onPhoneInput($event)"
+                                                                                (keypress)="validateNumberInput($event)"
+                                                                                inputmode="numeric"
                                                                                 placeholder="00-0000-0000"
                                                                                 maxlength="27" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
                                                                 <!--end::Group-->
                                                                 <!--begin::Group-->
                                                                 <div class="form-group row">
