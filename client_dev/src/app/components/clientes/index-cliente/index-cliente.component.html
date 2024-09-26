@@ -116,7 +116,9 @@
                                                             *ngFor="let item of clientes | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                                                             <td class="pl-0 py-5">
                                                                 <div class="d-flex align-items-center">
-                                                                    <div class="symbol symbol-40 flex-shrink-0 mr-3"
+                                                                    <a class="symbol symbol-40 flex-shrink-0 mr-3"
+                                                                        target="_blank"
+                                                                        [routerLink]="['/cliente/buyer/'+item._id+'/dashboard']"
                                                                         [ngClass]="{
                                                                             'symbol-dark': !item.nombres || item.nombres.trim() === '',
                                                                             'symbol-success': item.nombres.charAt(0).toUpperCase() >= 'A' && item.nombres.charAt(0).toUpperCase() <= 'H',
@@ -126,21 +128,22 @@
                                                                         }">
                                                                         <div class="symbol-label"
                                                                             *ngIf="item.nombres || item.nombres != ''">
-                                                                            {{item.nombres.charAt(0)}}{{item.apellidos.charAt(0)}}
+                                                                            {{item.nombres.charAt(0).toUpperCase()}}{{item.apellidos.charAt(0).toUpperCase()}}
                                                                         </div>
                                                                         <div class="symbol-label"
                                                                             *ngIf="!item.nombres || item.nombres === ''">
-                                                                            NA
+                                                                            SN
                                                                         </div>
-                                                                    </div>
+                                                                    </a>
                                                                     <div>
                                                                         <a target="_blank"
                                                                             [routerLink]="['/cliente/buyer/'+item._id+'/dashboard']"
                                                                             class="text-primary font-weight-bolder text-hover-primary mb-1 font-size-lg">
                                                                             {{item.nombres}} {{item.apellidos}}
                                                                         </a>
-                                                                        <span
-                                                                            class="text-muted font-weight-bold d-block">#{{item._id}}</span>
+                                                                        <a target="_blank"
+                                                                            [routerLink]="['/cliente/buyer/'+item._id+'/dashboard']"
+                                                                            class="text-muted font-weight-bold d-block">#{{item._id}}</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
