@@ -58,23 +58,24 @@
                                         <div class="col-lg-9 col-xl-8">
                                             <div class="row align-items-center">
                                                 <div class="col-md-6 my-2 my-md-0">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Buscador general" name="filtro"
-                                                            [(ngModel)]="filtro">
-                                                        <div class="input-group-append">
-                                                            <button class="btn btn-primary" type="submit"
-                                                                (click)="init_data()"><i
-                                                                    class="flaticon-search"></i></button>
+                                                    <form (ngSubmit)="init_data()"> <!-- Envolvemos en el formulario -->
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Buscador general" name="filtro"
+                                                                [(ngModel)]="filtro">
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-primary" type="submit">
+                                                                    <i class="flaticon-search"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
-
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col-12">
 
@@ -123,10 +124,12 @@
                                                                             'symbol-warning': item.nombres.charAt(0).toUpperCase() >= 'P' && item.nombres.charAt(0).toUpperCase() <= 'U',
                                                                             'symbol-primary': item.nombres.charAt(0).toUpperCase() >= 'V' && item.nombres.charAt(0).toUpperCase() <= 'Z'
                                                                         }">
-                                                                        <div class="symbol-label" *ngIf="item.nombres || item.nombres != ''">
+                                                                        <div class="symbol-label"
+                                                                            *ngIf="item.nombres || item.nombres != ''">
                                                                             {{item.nombres.charAt(0)}}{{item.apellidos.charAt(0)}}
                                                                         </div>
-                                                                        <div class="symbol-label" *ngIf="!item.nombres || item.nombres === ''">
+                                                                        <div class="symbol-label"
+                                                                            *ngIf="!item.nombres || item.nombres === ''">
                                                                             NA
                                                                         </div>
                                                                     </div>
