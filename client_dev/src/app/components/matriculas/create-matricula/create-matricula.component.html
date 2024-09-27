@@ -275,13 +275,13 @@
                                     <div class="card-body">
                                         <div class="row form-group">
                                             <label class="col-lg-3 col-form-label text-lg-end">
-                                                <b>Curso base:</b>
+                                                <b>Servicio logístico base:</b>
                                             </label>
                                             <div class="col-lg-9 col-xl-9">
                                                 <select class="form-control selectpicker" id="select_curso"
                                                     data-size="7" data-live-search="true"
                                                     (change)="seleccionar_curso($event)">
-                                                    <option value="" selected disabled>Seleccionar curso</option>
+                                                    <option value="" selected disabled>Seleccionar servicio logístico</option>
                                                     <option value="{{item._id}}_{{item.titulo}}"
                                                         *ngFor="let item of cursos">
                                                         {{item.titulo}}</option>
@@ -296,7 +296,7 @@
                                             <div class="col-lg-9 col-xl-9">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control form-control-solid"
-                                                        placeholder="Seleccionar curso" readonly id="inp_ciclo">
+                                                        placeholder="Seleccionar servicio logístico" readonly id="inp_ciclo">
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary" type="button"
                                                             data-toggle="modal" [attr.data-target]="'#modalCiclo'"><i

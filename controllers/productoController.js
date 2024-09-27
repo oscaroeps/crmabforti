@@ -156,7 +156,7 @@ const actualizar_producto_admin = async function (req, res) {
             }
         } catch (error) {
             console.log(error);
-            res.status(200).send({ data: undefined, message: 'Ocurrió un problema al registrar el curso.' });
+            res.status(200).send({ data: undefined, message: 'Ocurrió un problema al registrar el servicio logístico.' });
         }
 
     } else {

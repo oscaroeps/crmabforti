@@ -89,7 +89,7 @@ export class PagoMatriculaComponent implements OnInit {
     this.pago.destino_pago = this.destino_pago;
 
     if (!this.destino_pago) {
-      $.notify('Seleccione el curso por favor.', {
+      $.notify('Seleccione el servicio logístico por favor.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,

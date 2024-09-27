@@ -91,7 +91,7 @@ export class EditCursosComponent implements OnInit {
 
   actualizar() {
     if (!this.curso.titulo) {
-      $.notify('Ingrese el título del curso.', {
+      $.notify('Ingrese el título del servicio logístico.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -106,7 +106,7 @@ export class EditCursosComponent implements OnInit {
         }
       });
     } else if (!this.curso.descripcion) {
-      $.notify('Ingrese la descripción del curso.', {
+      $.notify('Ingrese la descripción del servicio logístico.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -125,7 +125,7 @@ export class EditCursosComponent implements OnInit {
       this._cursoService.actualizar_cursobase_admin(this.id, this.curso, this.token).subscribe(
         response => {
           this.btn_load = false;
-          $.notify('Se actualizó el curso corréctamente.', {
+          $.notify('Se actualizó el servicio logístico corréctamente.', {
             type: 'success',
             spacing: 10,
             timer: 2000,

@@ -14,7 +14,7 @@ const registro_cursobase_admin = async function (req, res) {
             let cursos = await Curso.find({ titulo: data.titulo });
 
             if (cursos.length >= 1) {
-                res.status(200).send({ data: undefined, message: 'Ya existe un curso con ese título.' });
+                res.status(200).send({ data: undefined, message: 'Ya existe un servicio logístico con ese título.' });
             } else {
                 //
                 var img_path = req.files.banner.path;
@@ -27,7 +27,7 @@ const registro_cursobase_admin = async function (req, res) {
                 res.status(200).send({ data: reg });
             }
         } catch (error) {
-            res.status(200).send({ data: undefined, message: 'Ocurrió un problema al registrar el curso.' });
+            res.status(200).send({ data: undefined, message: 'Ocurrió un problema al registrar el servicio logístico.' });
         }
 
     } else {
@@ -134,7 +134,7 @@ const actualizar_cursobase_admin = async function (req, res) {
                         res.status(200).send({ data: reg });
                     }
                 } else {
-                    res.status(200).send({ data: undefined, message: 'Ya existe un curso con ese título.' });
+                    res.status(200).send({ data: undefined, message: 'Ya existe un servicio logístico con ese título.' });
                 }
 
             } else {
@@ -168,7 +168,7 @@ const actualizar_cursobase_admin = async function (req, res) {
 
             }
         } catch (error) {
-            res.status(200).send({ data: undefined, message: 'Ocurrió un problema al registrar el curso.' });
+            res.status(200).send({ data: undefined, message: 'Ocurrió un problema al registrar el servicio logístico.' });
         }
 
     } else {

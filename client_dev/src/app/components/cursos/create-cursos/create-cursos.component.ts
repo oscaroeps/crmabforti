@@ -25,7 +25,7 @@ export class CreateCursosComponent implements OnInit {
 
   registro() {
     if (!this.curso.titulo) {
-      $.notify('Ingrese el título del curso.', {
+      $.notify('Ingrese el título del servicio logístico.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -40,7 +40,7 @@ export class CreateCursosComponent implements OnInit {
         }
       });
     } else if (!this.curso.descripcion) {
-      $.notify('Ingrese la descripción del curso.', {
+      $.notify('Ingrese la descripción del servicio logístico.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -55,7 +55,7 @@ export class CreateCursosComponent implements OnInit {
         }
       });
     } else if (this.banner == undefined) {
-      $.notify('Ingrese la portada del curso.', {
+      $.notify('Ingrese la portada del servicio logístico.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -74,7 +74,7 @@ export class CreateCursosComponent implements OnInit {
       this._cursoService.registro_cursobase_admin(this.curso, this.token).subscribe(
         response => {
           this.btn_load = false;
-          $.notify('Se registró el curso corréctamente.', {
+          $.notify('Se registró el servicio logístico corréctamente.', {
             type: 'success',
             spacing: 10,
             timer: 2000,

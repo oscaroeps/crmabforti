@@ -13,14 +13,14 @@
                         <!--begin::Info-->
                         <div class="d-flex align-items-center flex-wrap mr-2">
                             <!--begin::Page Title-->
-                            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Cursos</h5>
+                            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Servicios logísticos</h5>
                             <!--end::Page Title-->
                             <!--begin::Actions-->
                             <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
                             <ul
                                 class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Lista de cursos</a>
+                                    <a class="text-muted">Lista de servicios logísticos</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -38,13 +38,13 @@
                             <!--begin::Header-->
                             <div class="card-header border-0 py-5">
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label font-weight-bolder text-dark">Cursos base</span>
+                                    <span class="card-label font-weight-bolder text-dark">servicios logísticos base</span>
                                     <span class="text-muted mt-3 font-weight-bold font-size-sm">Lista de todos los
-                                        cursos base</span>
+                                        servicios logísticos base</span>
                                 </h3>
                                 <div class="card-toolbar">
                                     <a [routerLink]="['/cursos/create']"
-                                        class="btn btn-success font-weight-bolder font-size-sm">Nuevo curso</a>
+                                        class="btn btn-success font-weight-bolder font-size-sm">Nuevo servicio logístico</a>
                                 </div>
                             </div>
                             <!--end::Header-->
@@ -57,7 +57,7 @@
                                         <thead>
                                             <tr class="text-uppercase">
                                                 <th style="min-width: 250px" class="pl-7">
-                                                    <span class="text-dark-75">Curso</span>
+                                                    <span class="text-dark-75">Servicio logístico</span>
                                                 </th>
                                                 <th style="min-width: 100px">Vigentes</th>
                                                 <th style="min-width: 100px">Historial</th>
@@ -147,9 +147,9 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <p *ngIf="item.estado">¿Está seguro que quiere
-                                                                        desactivar este curso?</p>
+                                                                        desactivar este servicio logístico?</p>
                                                                     <p *ngIf="!item.estado">¿Está seguro que quiere
-                                                                        activar este curso?</p>
+                                                                        activar este servicio logístico?</p>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button"

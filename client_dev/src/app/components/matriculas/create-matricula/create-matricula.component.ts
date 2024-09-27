@@ -212,7 +212,7 @@ export class CreateMatriculaComponent implements OnInit {
     this.detalle.precio = this.detalle_total;
 
     if (!this.detalle.curso) {
-      $.notify('Seleccione el curso base.', {
+      $.notify('Seleccione el servicio logístico base.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,

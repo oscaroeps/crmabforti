@@ -138,12 +138,12 @@ export class KpiMensualComponent implements OnInit {
         const apexChart = "#chart_3";
         var options = {
           series: [{
-            name: 'Cursos',
+            name: 'Servicios logísticos',
             data: response.montos
           }],
           annotations: {
             points: [{
-              x: 'Cursos',
+              x: 'Servicios logísticos',
               seriesIndex: 0,
               label: {
                 borderColor: '#775DD0',
@@ -285,12 +285,12 @@ export class KpiMensualComponent implements OnInit {
     const apexChart = "#chart_3";
     var options = {
       series: [{
-        name: 'Cursos',
+        name: 'Servicios logísticos',
         data: []
       }],
       annotations: {
         points: [{
-          x: 'Cursos',
+          x: 'Servicios logísticos',
           seriesIndex: 0,
           label: {
             borderColor: '#775DD0',
