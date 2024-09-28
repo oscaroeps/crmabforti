@@ -455,7 +455,7 @@ export class EditCicloComponent implements OnInit {
     this.load_delete_ds = true;
     this._cursoService.eliminar_docente_salon_admin(id, this.token).subscribe(
       response => {
-        $.notify('Se eliminó el docente del almacén.', {
+        $.notify('Se eliminó el operador del almacén.', {
           type: 'success',
           spacing: 10,
           timer: 2000,

@@ -82,7 +82,7 @@ const listar_asesores_admin = async function (req, res) {
 
 const listar_docentes_admin = async function (req, res) {
     if (req.user) {
-        let colaboradores = await Colaborador.find({ rol: 'Docente', estado: true }).select('_id fullnames nombres apellidos email');
+        let colaboradores = await Colaborador.find({ rol: 'Operador', estado: true }).select('_id fullnames nombres apellidos email');
         res.status(200).send({ data: colaboradores });
     } else {
         res.status(403).send({ data: undefined, message: 'NoToken' });
