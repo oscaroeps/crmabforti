@@ -227,7 +227,7 @@ export class CreateMatriculaComponent implements OnInit {
         }
       });
     } else if (!this.detalle.ciclo_curso) {
-      $.notify('Seleccione el ciclo.', {
+      $.notify('Seleccione el ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -257,7 +257,7 @@ export class CreateMatriculaComponent implements OnInit {
         }
       });
     } else if (this.detalle.precio == 0) {
-      $.notify('El precio del ciclo no puede ser 0.', {
+      $.notify('El precio del ciclo de servicio no puede ser 0.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -368,7 +368,7 @@ export class CreateMatriculaComponent implements OnInit {
         }
       });
     } else if (this.detalles.length == 0) {
-      $.notify('Debe ingresar al menos un ciclo.', {
+      $.notify('Debe ingresar al menos un ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,

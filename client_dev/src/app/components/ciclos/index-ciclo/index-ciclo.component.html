@@ -23,7 +23,7 @@
                                     <a [routerLink]="['/cursos']" class="text-muted">Lista de servicios logísticos</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Ciclos vigentes</a>
+                                    <a class="text-muted">Ciclos de servicio vigentes</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -52,7 +52,8 @@
                                     <!--begin::Header-->
                                     <div class="card-header border-0 mt-5">
                                         <h3 class="card-title align-items-start flex-column text-dark">
-                                            <span class="font-weight-bolder text-dark">Ciclos vigentes</span>
+                                            <span class="font-weight-bolder text-dark">Ciclos de servicio
+                                                vigentes</span>
                                             <span class="text-muted mt-3 font-weight-bold font-size-sm">Solo se muestran
                                                 servicios logísticos
                                                 con clases vigentes</span>
@@ -64,7 +65,7 @@
 
                                             <a [routerLink]="['/cursos/' + id + '/ciclo/create']"
                                                 class="btn btn-primary btn-sm font-weight-bold font-size-sm mr-3">Nuevo
-                                                ciclo</a>
+                                                ciclo de servicio</a>
                                         </div>
                                     </div>
                                     <!--end::Header-->
@@ -127,7 +128,8 @@
                                                             <div>
                                                                 <p style="margin-bottom: 0px;"><b
                                                                         class="badge badge-dark">Código
-                                                                        ciclo:</b> &nbsp; #{{item.ciclo._id}}</p>
+                                                                        ciclo de servicio:</b> &nbsp;
+                                                                    #{{item.ciclo._id}}</p>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -192,7 +194,7 @@
                                                                 </ng-container>
                                                             </span>
                                                             <span class="text-muted font-weight-bold d-block">
-                                                                Ciclos
+                                                                Ciclos de servicio
                                                             </span>
                                                         </td>
                                                         <td>
@@ -227,7 +229,7 @@
                                                                         <i
                                                                             class="icon-1x text-dark-50 flaticon-edit"></i>
                                                                         &nbsp;
-                                                                        Editar ciclo
+                                                                        Editar ciclo de servicio
                                                                     </a>
                                                                     <a style="cursor: pointer;" class="dropdown-item"
                                                                         *ngIf="item.ciclo.estado" data-toggle="modal"
@@ -264,10 +266,12 @@
                                                                         <div class="modal-body">
                                                                             <p class="text-left"
                                                                                 *ngIf="item.ciclo.estado">¿Está seguro
-                                                                                que quiere ocultar este ciclo?</p>
+                                                                                que quiere ocultar este ciclo de
+                                                                                servicio?</p>
                                                                             <p class="text-left"
                                                                                 *ngIf="!item.ciclo.estado">¿Está seguro
-                                                                                que quiere publicar este ciclo?</p>
+                                                                                que quiere publicar este ciclo de
+                                                                                servicio?</p>
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <button type="button"

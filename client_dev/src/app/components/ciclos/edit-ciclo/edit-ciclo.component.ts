@@ -239,7 +239,7 @@ export class EditCicloComponent implements OnInit {
     this.load_delete = true;
     this._cursoService.eliminar_salon_ciclo_admin(idx, this.token).subscribe(
       response => {
-        $.notify('Se eliminó el salón del ciclo.', {
+        $.notify('Se eliminó el salón del ciclo de servicio.', {
           type: 'success',
           spacing: 10,
           timer: 2000,
@@ -262,7 +262,7 @@ export class EditCicloComponent implements OnInit {
 
   actualizar() {
     if (!this.ciclo.nivel) {
-      $.notify('Seleccione el nivel del ciclo.', {
+      $.notify('Seleccione el nivel del ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -277,7 +277,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.ciclo.sede) {
-      $.notify('Seleccione la sede del ciclo.', {
+      $.notify('Seleccione la sede del ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -322,7 +322,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.ciclo.precio) {
-      $.notify('Ingrese el precio del ciclo.', {
+      $.notify('Ingrese el precio del ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -354,7 +354,7 @@ export class EditCicloComponent implements OnInit {
     } else {
       this._cursoService.editar_ciclo_admin(this.idciclo, this.ciclo, this.token).subscribe(
         response => {
-          $.notify('Se actualizó el ciclo.', {
+          $.notify('Se actualizó el ciclo de servicio.', {
             type: 'success',
             spacing: 10,
             timer: 2000,

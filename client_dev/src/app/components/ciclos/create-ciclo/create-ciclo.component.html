@@ -23,11 +23,11 @@
                                     <a [routerLink]="['/cursos']" class="text-muted">Lista de servicios logísticos</a>
                                 </li>
                                 <li class="breadcrumb-item text-muted">
-                                    <a [routerLink]="['/cursos/' + id + '/ciclo']" class="text-muted">Ciclos
+                                    <a [routerLink]="['/cursos/' + id + '/ciclo']" class="text-muted">Ciclos de servicio
                                         vigentes</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Nuevo ciclo</a>
+                                    <a class="text-muted">Nuevo ciclo de servicio</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -55,7 +55,7 @@
                                 <div class="card card-custom gutter-b example example-compact form-group">
                                     <div class="card-header">
                                         <h3 class="card-title">
-                                            <span class="font-weight-bolder text-dark">Crear ciclo</span>
+                                            <span class="font-weight-bolder text-dark">Crear ciclo de servicio</span>
                                         </h3>
 
                                     </div>
@@ -65,7 +65,8 @@
                                                 <div class="row mb-3">
 
                                                     <div class="col-12">
-                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo:
+                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo de
+                                                            servicio:
                                                         </h6>
                                                     </div>
                                                     <div class="col-12 col-md-6">
@@ -339,7 +340,7 @@
 
                                 <button *ngIf="!btn_load" (click)="registrar()" type="button"
                                     style="margin-bottom: 0px !important;" class="btn btn-primary">Crear
-                                    ciclo</button>
+                                    ciclo de servicio</button>
 
                                 <button *ngIf="btn_load" class="btn btn-primary" type="button" disabled>
                                     <span class="spinner-border spinner-border-sm" role="status"

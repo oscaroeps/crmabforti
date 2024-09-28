@@ -23,7 +23,7 @@
                                     <a [routerLink]="['/cursos']" class="text-muted">Lista de servicios logísticos</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Ciclos vencidos</a>
+                                    <a class="text-muted">Ciclos de servicio vencidos</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -52,7 +52,8 @@
                                     <!--begin::Header-->
                                     <div class="card-header border-0 mt-5">
                                         <h3 class="card-title align-items-start flex-column text-dark">
-                                            <span class="font-weight-bolder text-dark">Ciclos vencidos</span>
+                                            <span class="font-weight-bolder text-dark">Ciclos de servicio
+                                                vencidos</span>
                                             <span class="text-muted mt-3 font-weight-bold font-size-sm">Solo se muestran
                                                 servicios logísticos
                                                 con clases vencidas</span>
@@ -63,7 +64,7 @@
                                                 vigentes</a>
                                             <!-- <a [routerLink]="['/cursos/' + id + '/ciclo/create']" 
                                                 class="btn btn-primary btn-sm font-weight-bold font-size-sm mr-3">Nuevo
-                                                ciclo</a> -->
+                                                ciclo de servicio</a> -->
                                         </div>
                                     </div>
                                     <!--end::Header-->
@@ -126,7 +127,8 @@
                                                             <div>
                                                                 <p style="margin-bottom: 0px;"><b
                                                                         class="badge badge-dark">Código
-                                                                        ciclo:</b> &nbsp; #{{item.ciclo._id}}</p>
+                                                                        ciclo de servicio:</b> &nbsp;
+                                                                    #{{item.ciclo._id}}</p>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -191,7 +193,7 @@
                                                                 </ng-container>
                                                             </span>
                                                             <span class="text-muted font-weight-bold d-block">
-                                                                Ciclos
+                                                                Ciclos de servicio
                                                             </span>
                                                         </td>
                                                         <td>

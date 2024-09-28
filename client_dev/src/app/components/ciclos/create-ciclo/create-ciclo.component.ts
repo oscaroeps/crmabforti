@@ -62,7 +62,7 @@ export class CreateCicloComponent implements OnInit {
     this.ciclo.curso = this.id;
     this.ciclo.salones = this.salones;
     if (!this.ciclo.nivel) {
-      $.notify('Seleccione el nivel del ciclo.', {
+      $.notify('Seleccione el nivel del ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -77,7 +77,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (!this.ciclo.sede) {
-      $.notify('Seleccione la sede del ciclo.', {
+      $.notify('Seleccione la sede del ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -122,7 +122,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (!this.ciclo.precio) {
-      $.notify('Ingrese el precio del ciclo.', {
+      $.notify('Ingrese el precio del ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -169,7 +169,7 @@ export class CreateCicloComponent implements OnInit {
     } else {
       this._cursoService.crear_ciclo_admin(this.ciclo, this.token).subscribe(
         response => {
-          $.notify('Se registró el nuevo ciclo.', {
+          $.notify('Se registró el nuevo ciclo de servicio.', {
             type: 'success',
             spacing: 10,
             timer: 2000,

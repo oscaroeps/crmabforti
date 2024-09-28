@@ -23,11 +23,11 @@
                                     <a [routerLink]="['/cursos']" class="text-muted">Lista de servicios logísticos</a>
                                 </li>
                                 <li class="breadcrumb-item text-muted">
-                                    <a [routerLink]="['/cursos/' + id + '/ciclo']" class="text-muted">Ciclos
+                                    <a [routerLink]="['/cursos/' + id + '/ciclo']" class="text-muted">Ciclos de servicio
                                         vigentes</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Editar ciclo</a>
+                                    <a class="text-muted">Editar ciclo de servicio</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -65,7 +65,8 @@
                                                 <div class="row mb-3">
 
                                                     <div class="col-12">
-                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo:
+                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo de
+                                                            servicio:
                                                         </h6>
                                                     </div>
                                                     <div class="col-12 col-md-6">
@@ -164,7 +165,7 @@
                                                         <button *ngIf="!btn_load" (click)="actualizar()" type="button"
                                                             style="margin-bottom: 0px !important;"
                                                             class="btn btn-primary">Actualizar
-                                                            ciclo</button>
+                                                            ciclo de servicio</button>
 
                                                         <button *ngIf="btn_load" class="btn btn-primary" type="button"
                                                             disabled>
