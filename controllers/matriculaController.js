@@ -129,7 +129,7 @@ const firmar_matricula_admin = async function (req, res) {
             date_firma: Date.now()
         })
 
-        generar_actividad_matricula(id, 'El cliente firmó el contrato de la matrícula.');
+        generar_actividad_matricula(id, 'El cliente firmó el contrato del servicio.');
         res.status(200).send({ data: true });
 
     } else {
@@ -161,7 +161,7 @@ const cancelar_matricula_admin = async function (req, res) {
                 estado: 'Cancelado'
             });
 
-            generar_actividad_matricula(id, 'El cliente canceló la matrícula.');
+            generar_actividad_matricula(id, 'El cliente canceló el contrato de servicio.');
             res.status(200).send({ data: matricula });
         } else {
             res.status(200).send({ data: undefined, message: 'No tienes permisos para esto.' });

@@ -15,7 +15,7 @@
                         <div class="d-flex align-items-center flex-wrap mr-2">
                             <!--begin::Page Title-->
                             <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
-                                Matrícula
+                                Contrato de servicio
                             </h5>
                             <!--end::Page Title-->
                             <!--begin::Actions-->
@@ -23,7 +23,7 @@
                             <ul
                                 class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Lista de matrículas</a>
+                                    <a class="text-muted">Lista de contratos de servicios</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -40,9 +40,9 @@
                             <div class="card-header flex-wrap border-0 pt-6 pb-0">
                                 <div class="card-title">
                                     <h3 class="card-label">
-                                        Matrícula de apertura
+                                        Contrato de servicio de apertura
                                         <span class="text-muted pt-2 font-size-sm d-block">Selección del rango de fechas
-                                            en que se creó una matrícula.</span>
+                                            en que se creó un contrato de servicio.</span>
                                     </h3>
                                 </div>
                                 <div class="card-toolbar">
@@ -63,7 +63,7 @@
                                     <a [routerLink]="['/matriculas/create']"
                                         class="btn btn-light-info btn-sm font-weight-bold font-size-sm">
                                         <i class="flaticon-add-circular-button"></i>
-                                        Nueva matrícula
+                                        Nuevo contrato de servicio
                                     </a>
                                 </div>
                             </div>
@@ -125,8 +125,9 @@
                             <!--begin::Header-->
                             <div class="card-header border-0 py-5">
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label font-weight-bolder text-dark">Matrícula</span>
-                                    <span class="text-muted mt-3 font-weight-bold font-size-sm">Matrículas de apertura
+                                    <span class="card-label font-weight-bolder text-dark">Contrato de servicio</span>
+                                    <span class="text-muted mt-3 font-weight-bold font-size-sm">Contratos de servicio de
+                                        apertura
                                         de los servicios logísticos.</span>
                                 </h3>
                                 <div class="card-toolbar">
@@ -180,10 +181,10 @@
                                         <div class="col-12 text-center">
                                             <img src="assets/images/search.png" alt="" style="width: 80px" />
                                             <h1 class="font-weight-bolder text-dark mt-5">
-                                                Resultado de matrículas
+                                                Resultado de contratos de servicio
                                             </h1>
                                             <div class="font-size-h4 mb-8">
-                                                No se encontraron matrículas qué mostrar
+                                                No se encontraron contratos de servicio qué mostrar
                                             </div>
                                         </div>
                                     </ng-container>
@@ -197,7 +198,7 @@
                                                             <i class="flaticon2-mail text-primary"></i>
                                                         </span>
                                                         <h3 class="card-label">
-                                                            Matrícula
+                                                            Contrato de servicio
                                                             <small>#{{ item._id }} &nbsp;</small>
 
                                                             <span class="badge badge-info mr-3"
@@ -317,7 +318,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <p>
-                                                                            ¿Desea cancelar la matrícula y sus pagos?
+                                                                            ¿Desea cancelar el contrato de servicio y sus pagos?
                                                                         </p>
                                                                     </div>
                                                                     <div class="modal-footer">
@@ -405,7 +406,7 @@
                                                             </span>
                                                             <div class="d-flex flex-column text-dark-75">
                                                                 <span
-                                                                    class="font-weight-bolder font-size-sm">Matrícula</span>
+                                                                    class="font-weight-bolder font-size-sm">Contratos de servicios</span>
                                                                 <span class="font-weight-bolder font-size-h5">
                                                                     {{ item.matricula | currency : "USD" }}
                                                                 </span>
@@ -611,7 +612,7 @@
                                 <select name="tipo_filtro" [(ngModel)]="tipo_filtro"
                                     class="form-control form-control-solid" (change)="obtener_tipo_filtro()">
                                     <option value="" disabled selected>Seleccionar</option>
-                                    <option value="codigo">Código de matrícula</option>
+                                    <option value="codigo">Código de contrato de servicio</option>
                                     <option value="nombres">Cliente</option>
                                     <option value="canal">Canal</option>
                                 </select>

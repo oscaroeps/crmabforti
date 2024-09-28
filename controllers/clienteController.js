@@ -245,7 +245,7 @@ const enviar_encuesta_admin = async function (req, res) {
         matricula = await Matricula.findById({ _id: data.matricula });
         data.asesor = matricula.asesor;
     } catch (error) {
-        res.status(200).send({ data: undefined, message: 'El código de la matrícula no existe' });
+        res.status(200).send({ data: undefined, message: 'El código del contrato de servicio no existe' });
     }
 
     let encuestas = await Encuesta_satisfaccion.find({ cliente: cliente._id, matricula: matricula._id });

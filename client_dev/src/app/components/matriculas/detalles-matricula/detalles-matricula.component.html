@@ -14,7 +14,7 @@
                         <div class="d-flex align-items-center flex-wrap mr-2">
                             <!--begin::Page Title-->
                             <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
-                                Matrícula
+                                Contrato de servicio
                             </h5>
                             <!--end::Page Title-->
                             <!--begin::Actions-->
@@ -22,10 +22,10 @@
                             <ul
                                 class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                 <li class="breadcrumb-item text-muted">
-                                    <a [routerLink]="['/matriculas']" class="text-muted">Lista de matrículas</a>
+                                    <a [routerLink]="['/matriculas']" class="text-muted">Lista de contratos de servicio</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Detalles de matrícula</a>
+                                    <a class="text-muted">Detalles del contrato de servicio</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -119,7 +119,7 @@
                                                     </div>
                                                     <!--end::Contact-->
                                                     <!--begin::Contact-->
-                                                    <div class="pb-6">Se muestran los detalles de la matrícula.</div>
+                                                    <div class="pb-6">Se muestran los detalles del contrato de servicio.</div>
                                                     <!--end::Contact-->
                                                     <a [routerLink]="['/matriculas/contrato', matricula._id]"
                                                         class="btn btn-light-success font-weight-bold py-3 px-6 mb-2 text-center btn-block">Contrato</a>
@@ -129,7 +129,7 @@
                                             <!--begin::List Widget 21-->
                                             <div class="card card-custom gutter-b">
                                                 <div class="card-header border-0 pt-5">
-                                                    <h3 class="card-title font-weight-bolder">Resumen de matrícula</h3>
+                                                    <h3 class="card-title font-weight-bolder">Resumen de contrato de servicio</h3>
 
                                                 </div>
                                                 <div class="card-body pt-4">
@@ -161,7 +161,7 @@
                                                         </div>
                                                         <div
                                                             class="d-flex align-items-center justify-content-between mb-2">
-                                                            <span class="font-weight-bold mr-2">Matrícula:</span>
+                                                            <span class="font-weight-bold mr-2">Contrato de servicio:</span>
                                                             <span
                                                                 class="text-muted">{{matricula.matricula|currency:'USD'}}</span>
                                                         </div>
@@ -215,7 +215,7 @@
                                                             <div
                                                                 class="d-flex justify-content-between pb-10 pb-md-20 flex-column flex-md-row">
                                                                 <h1 class="display-4 font-weight-boldest mb-10">ORDEN DE
-                                                                    MATRÍCULA</h1>
+                                                                    CONTRATO DE SERVICIO</h1>
                                                                 <div class="d-flex flex-column align-items-md-end px-0">
                                                                     <!--begin::Logo-->
 

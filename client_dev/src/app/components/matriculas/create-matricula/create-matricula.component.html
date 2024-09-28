@@ -14,7 +14,7 @@
                         <div class="d-flex align-items-center flex-wrap mr-2">
                             <!--begin::Page Title-->
                             <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
-                                Matrícula
+                                Contrato de servicio
                             </h5>
                             <!--end::Page Title-->
                             <!--begin::Actions-->
@@ -22,10 +22,11 @@
                             <ul
                                 class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                 <li class="breadcrumb-item text-muted">
-                                    <a [routerLink]="['/matriculas']" class="text-muted">Lista de matrículas</a>
+                                    <a [routerLink]="['/matriculas']" class="text-muted">Lista de contratos de
+                                        servicio</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">Nueva matrícula</a>
+                                    <a class="text-muted">Nuevo contrato de servicio</a>
                                 </li>
                             </ul>
                             <!--end::Actions-->
@@ -44,7 +45,7 @@
                                 <div class="card card-custom card-stretch gutter-b">
                                     <div class="card-header border-0 pt-5">
                                         <h3 class="card-title">
-                                            <span class="font-weight-bolder text-dark">Nueva matrícula</span>
+                                            <span class="font-weight-bolder text-dark">Nuevo contrato de servicio</span>
                                         </h3>
 
                                     </div>
@@ -187,7 +188,7 @@
                                         </div>
                                         <div class="row">
                                             <label class="col-lg-3 col-form-label text-lg-end">
-                                                <b>Matrícula:</b>
+                                                <b>Contrato de servicio:</b>
                                             </label>
                                             <div class="col-lg-9 col-xl-9">
                                                 <input type="number" class="form-control form-control-solid"
@@ -205,7 +206,7 @@
                                         <div class="row form-group">
                                             <div class="col-12">
                                                 <div class="d-flex flex-column mb-10 mb-md-0">
-                                                    <!-- <div class="font-weight-bolder font-size-lg mb-3">MATRÍCULA</div>
+                                                    <!-- <div class="font-weight-bolder font-size-lg mb-3">CONTRATO DE SERVICIO</div>
                                                     <div class="d-flex justify-content-between mb-3">
                                                         <span class="mr-15 font-weight-bold">Asesor comercial:</span>
                                                         <span class="text-right">John Doe</span>
@@ -281,7 +282,8 @@
                                                 <select class="form-control selectpicker" id="select_curso"
                                                     data-size="7" data-live-search="true"
                                                     (change)="seleccionar_curso($event)">
-                                                    <option value="" selected disabled>Seleccionar servicio logístico</option>
+                                                    <option value="" selected disabled>Seleccionar servicio logístico
+                                                    </option>
                                                     <option value="{{item._id}}_{{item.titulo}}"
                                                         *ngFor="let item of cursos">
                                                         {{item.titulo}}</option>
@@ -296,7 +298,8 @@
                                             <div class="col-lg-9 col-xl-9">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control form-control-solid"
-                                                        placeholder="Seleccionar servicio logístico" readonly id="inp_ciclo">
+                                                        placeholder="Seleccionar servicio logístico" readonly
+                                                        id="inp_ciclo">
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary" type="button"
                                                             data-toggle="modal" [attr.data-target]="'#modalCiclo'"><i
@@ -722,7 +725,7 @@
                                                 <tr>
                                                     <td class="text-center">
                                                         <span class="text-muted">
-                                                            La matrícula no tiene ciclos agregados
+                                                            El contrato de servicio no tiene ciclos agregados
                                                         </span>
                                                     </td>
                                                 </tr>
@@ -758,11 +761,11 @@
                                         <button type="button" class="btn btn-danger mr-3" [routerLink]="['/matriculas']"
                                             data-dismiss="modal">Cancelar</button>
                                         <button *ngIf="!btn_load" type="button" class="btn btn-primary"
-                                            (click)="matricular()">Matrícula</button>
+                                            (click)="matricular()">Contrato de servicio</button>
                                         <button *ngIf="btn_load" class="btn btn-primary" type="button" disabled>
                                             <span class="spinner-border spinner-border-sm" role="status"
                                                 aria-hidden="true"></span>
-                                            Matrículando...
+                                            Contratando...
                                         </button>
                                     </div>
 
