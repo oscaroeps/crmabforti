@@ -255,10 +255,10 @@ const enviar_encuesta_admin = async function (req, res) {
         await Matricula.findByIdAndUpdate({ _id: matricula._id }, {
             encuesta: true
         });
-        generar_actividad_matricula(matricula._id, 'el cliente completó la encuesta.');
+        generar_actividad_matricula(matricula._id, 'El cliente completó la encuesta.');
         res.status(200).send({ data: encuesta });
     } else {
-        res.status(200).send({ data: undefined, message: 'Ya se envió la encuesta de la matricula.' });
+        res.status(200).send({ data: undefined, message: 'Ya se envió la encuesta del contrato de servicio.' });
     }
 
 }

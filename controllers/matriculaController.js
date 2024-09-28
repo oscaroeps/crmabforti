@@ -37,7 +37,7 @@ const generar_matricula_admin = async function (req, res) {
             disminuir_aforo_admin(item.ciclo_salon);
         }
 
-        generar_actividad_matricula(matricula._id, 'Se hizo la matricula del cliente.');
+        generar_actividad_matricula(matricula._id, 'Se hizo el contrato de servicio del cliente.');
 
         enviar_orden_matricula(matricula._id);
         res.status(200).send({ data: matricula });
@@ -240,7 +240,7 @@ const enviar_orden_matricula = async function (id) {
         }
     }));
 
-    //OBTENER MATRICULA
+    //OBTENER CONTRATO DE SERVICIO
     let matricula = await Matricula.findById({ _id: id }).populate('cliente').populate('asesor');
     let detalles = await Matricula_detalle.find({ matricula: id }).populate('ciclo_curso').populate('ciclo_salon').populate('curso');
     let createdAt = moment(matricula.createdAt).format('DD/MM/YYYY');

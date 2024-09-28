@@ -338,7 +338,7 @@ export class CreateMatriculaComponent implements OnInit {
         }
       });
     } else if (!this.matricula.matricula) {
-      $.notify('Ingrese el monto de la matricula.', {
+      $.notify('Ingrese el monto del contrato de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -353,7 +353,7 @@ export class CreateMatriculaComponent implements OnInit {
         }
       });
     } else if (this.matricula.matricula < 0) {
-      $.notify('Seleccione el monto válido en la matricula.', {
+      $.notify('Seleccione el monto válido en el contrato de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -387,7 +387,7 @@ export class CreateMatriculaComponent implements OnInit {
       this.btn_load = true;
       this._matriculaService.generar_matricula_admin(this.matricula, this.token).subscribe(
         response => {
-          $.notify('La matricula fue completada.', {
+          $.notify('El contrato de servicio fue completado.', {
             type: 'success',
             spacing: 10,
             timer: 2000,

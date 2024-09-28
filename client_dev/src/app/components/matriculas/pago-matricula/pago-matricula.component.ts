@@ -84,7 +84,7 @@ export class PagoMatriculaComponent implements OnInit {
   generar_pago() {
     this.pago.cliente = this.matricula.cliente._id;
     this.pago.matricula = this.id;
-    this.pago.tipo = 'Matricula';
+    this.pago.tipo = 'Contrato de servicio';
     this.pago.origen = 'Interno';
     this.pago.destino_pago = this.destino_pago;
 

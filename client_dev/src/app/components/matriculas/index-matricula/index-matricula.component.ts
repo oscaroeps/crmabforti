@@ -214,7 +214,7 @@ export class IndexMatriculaComponent implements OnInit {
       .cancelar_matricula_admin(id, this.token)
       .subscribe((response) => {
         if (response.data != undefined) {
-          $.notify('Se canceló la matricula correctamente', {
+          $.notify('Se canceló el contrato de servicio correctamente', {
             type: 'success',
             spacing: 10,
             timer: 2000,
@@ -349,7 +349,7 @@ export class IndexMatriculaComponent implements OnInit {
       this.preparar_data();
 
       let workbook = new Workbook();
-      let worksheet = workbook.addWorksheet('Matriculas');
+      let worksheet = workbook.addWorksheet('Contratos de servicio');
 
       worksheet.addRow(undefined);
       for (let x1 of this.arr_json) {
@@ -369,7 +369,7 @@ export class IndexMatriculaComponent implements OnInit {
         };
       }
 
-      let fname = 'Matriculas';
+      let fname = 'Contratos de servicio';
 
       worksheet.columns = [
         { header: 'Cliente', key: 'col1', width: 30 },
@@ -377,7 +377,7 @@ export class IndexMatriculaComponent implements OnInit {
         { header: 'Canal', key: 'col3', width: 20 },
         { header: 'Asesor', key: 'col4', width: 30 },
         { header: 'Monto', key: 'col5', width: 15 },
-        { header: 'Matricula', key: 'col6', width: 15 },
+        { header: 'Contrato de servicio', key: 'col6', width: 15 },
         { header: 'Fecha', key: 'col7', width: 20 },
       ] as any;
 
@@ -388,7 +388,7 @@ export class IndexMatriculaComponent implements OnInit {
         fs.saveAs(blob, fname + '.xlsx');
       });
     } else {
-      $.notify('No hay ninguna matricula que exportar.', {
+      $.notify('No hay ningún contrato de servicio que exportar.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -412,7 +412,7 @@ export class IndexMatriculaComponent implements OnInit {
 
       csvExporter.generateCsv(this.arr_json);
     } else {
-      $.notify('No hay ninguna matricula que exportar.', {
+      $.notify('No hay ningún contrato de servicio que exportar.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,

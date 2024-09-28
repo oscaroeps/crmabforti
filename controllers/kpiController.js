@@ -74,7 +74,7 @@ const kpi_pagos_tipo = async function (req, res) {
                 $gte: new Date(inicio + 'T00:00:00'),
                 $lt: new Date(hasta)
             },
-            tipo: 'Matricula'
+            tipo: 'Contrato de servicio'
         });
 
         let pagos_productos = await Pago.find({
@@ -190,7 +190,7 @@ const kpi_curso_ganancia = async function (req, res) {
             createAt: {
                 $gte: new Date(inicio + 'T00:00:00'),
                 $lt: new Date(hasta)
-            }, tipo: 'Matricula'
+            }, tipo: 'Contrato de servicio'
         }).populate({
             path: 'matricula_detalle',
             populate: {
