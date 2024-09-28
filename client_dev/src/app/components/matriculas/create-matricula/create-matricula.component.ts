@@ -242,7 +242,7 @@ export class CreateMatriculaComponent implements OnInit {
         }
       });
     } else if (!this.detalle.ciclo_salon) {
-      $.notify('Seleccione el salón.', {
+      $.notify('Seleccione el almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,

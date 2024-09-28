@@ -152,7 +152,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (this.ciclo.salones <= 0) {
-      $.notify('Ingrese al menos un salón.', {
+      $.notify('Ingrese al menos un almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -200,7 +200,7 @@ export class CreateCicloComponent implements OnInit {
     this.salon.f_dias = this.dias;
 
     if (!this.salon.salon) {
-      $.notify('Seleccione el salón a agregar.', {
+      $.notify('Seleccione el almacén a agregar.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -215,7 +215,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (!this.salon.aforo_total) {
-      $.notify('Ingrese el aforo del salón.', {
+      $.notify('Ingrese el aforo del almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -245,7 +245,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (!this.salon.h_inicio) {
-      $.notify('Ingrese la hora de inicio del salón.', {
+      $.notify('Ingrese la hora de inicio del almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -260,7 +260,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (!this.salon.h_fin) {
-      $.notify('Ingrese la hora de fin del salón.', {
+      $.notify('Ingrese la hora de fin del almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,

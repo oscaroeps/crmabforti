@@ -107,7 +107,7 @@ export class EditCicloComponent implements OnInit {
     this.salon.f_dias = this.dias;
 
     if (!this.salon.salon) {
-      $.notify('Seleccione el salón a agregar.', {
+      $.notify('Seleccione el almacén a agregar.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -122,7 +122,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.salon.aforo_total) {
-      $.notify('Ingrese el aforo del salón.', {
+      $.notify('Ingrese el aforo del almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -152,7 +152,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.salon.h_inicio) {
-      $.notify('Ingrese la hora de inicio del salón.', {
+      $.notify('Ingrese la hora de inicio del almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -167,7 +167,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.salon.h_fin) {
-      $.notify('Ingrese la hora de fin del salón.', {
+      $.notify('Ingrese la hora de fin del almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -239,7 +239,7 @@ export class EditCicloComponent implements OnInit {
     this.load_delete = true;
     this._cursoService.eliminar_salon_ciclo_admin(idx, this.token).subscribe(
       response => {
-        $.notify('Se eliminó el salón del ciclo de servicio.', {
+        $.notify('Se eliminó el almacén del ciclo de servicio.', {
           type: 'success',
           spacing: 10,
           timer: 2000,
@@ -408,7 +408,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.docente_salon.ciclo_salon) {
-      $.notify('Seleccione el salón.', {
+      $.notify('Seleccione el almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -455,7 +455,7 @@ export class EditCicloComponent implements OnInit {
     this.load_delete_ds = true;
     this._cursoService.eliminar_docente_salon_admin(id, this.token).subscribe(
       response => {
-        $.notify('Se eliminó el docente del salón.', {
+        $.notify('Se eliminó el docente del almacén.', {
           type: 'success',
           spacing: 10,
           timer: 2000,
