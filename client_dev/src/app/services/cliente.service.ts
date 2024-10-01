@@ -91,6 +91,11 @@ export class ClienteService {
     return this._http.put(this.url + 'cambiar_estado_cliente_admin/' + id, data, { headers: headers });
   }
 
+  cambiar_tipo_cliente_admin(id: any, data: any, token: any): Observable<any> {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': token });
+    return this._http.put(this.url + 'cambiar_tipo_cliente_admin/' + id, data, { headers: headers });
+  }
+
   generar_token_encuesta_admin(matricula: any, cliente: any, token: any): Observable<any> {
     let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': token });
     return this._http.get(this.url + 'generar_token_encuesta_admin/' + matricula + '/' + cliente, { headers: headers });

@@ -157,10 +157,13 @@
                                                                 <span class="text-muted font-weight-bold">Correo</span>
                                                             </td>
                                                             <td style="white-space: nowrap; width: auto;">
-                                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg" [innerHTML]="formatPhoneNumber(item.telefono)"></span>
-                                                                <span class="text-muted font-weight-bold">Teléfono</span>
+                                                                <span
+                                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg"
+                                                                    [innerHTML]="formatPhoneNumber(item.telefono)"></span>
+                                                                <span
+                                                                    class="text-muted font-weight-bold">Teléfono</span>
                                                             </td>
-                                                            
+
                                                             <td>
                                                                 <span class="badge badge-success"
                                                                     *ngIf="item.verify">Verificado</span>
@@ -222,6 +225,15 @@
                                                                             <i
                                                                                 class="icon-1x text-dark-50 flaticon-edit"></i>
                                                                             &nbsp; Editar
+                                                                        </a>
+                                                                        <a style="cursor: pointer;"
+                                                                            class="dropdown-item"
+                                                                            *ngIf="item.tipo === 'Prospecto'"
+                                                                            data-toggle="modal"
+                                                                            [attr.data-target]="'#delete-'+item._id">
+                                                                            <i class="icon-1x text-dark-50 
+                                                                                flaticon-medal"></i>
+                                                                            &nbsp; Asociar
                                                                         </a>
                                                                     </div>
                                                                 </div>

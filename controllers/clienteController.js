@@ -208,6 +208,30 @@ const cambiar_estado_cliente_admin = async function (req, res) {
     }
 }
 
+const cambiar_tipo_cliente_admin = async function (req, res) {
+    if (req.user) {
+        let id = req.params['id'];
+        let data = req.body;
+
+        let nuevo_tipo;
+
+        if (data.tipo === 'Prospecto') {
+            nuevo_tipo = 'Socio';
+        } else if (data.tipo === 'Socio') {
+            nuevo_tipo = 'Prospecto';
+        }
+
+        let cliente = await Cliente.findByIdAndUpdate({ _id: id }, {
+            tipo: nuevo_tipo
+        });
+
+        res.status(200).send({ data: cliente });
+
+    } else {
+        res.status(403).send({ data: undefined, message: 'NoToken' });
+    }
+}
+
 const generar_token_encuesta_admin = async function (req, res) {
     if (req.user) {
 
