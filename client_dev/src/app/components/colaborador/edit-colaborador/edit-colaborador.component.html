@@ -155,11 +155,15 @@
                                                                                     fas fa-phone-alt"></i>
                                                                                 </span>
                                                                             </div>
-                                                                            <input type="text"
+                                                                            <input required type="text"
                                                                                 class="form-control form-control-solid form-control-lg"
-                                                                                name="colaborador.telefono"
+                                                                                name="telefono"
                                                                                 [(ngModel)]="colaborador.telefono"
-                                                                                placeholder="Telefono" />
+                                                                                (input)="onPhoneInput($event)"
+                                                                                (keypress)="validateNumberInput($event)"
+                                                                                inputmode="numeric"
+                                                                                placeholder="00-0000-0000"
+                                                                                maxlength="27" />
                                                                         </div>
 
                                                                     </div>

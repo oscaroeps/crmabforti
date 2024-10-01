@@ -142,9 +142,9 @@
                                                                     class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.email}}</span>
                                                                 <span class="text-muted font-weight-bold">Correo</span>
                                                             </td>
-                                                            <td>
+                                                            <td style="white-space: nowrap; width: auto;">
                                                                 <span
-                                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.telefono}}</span>
+                                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg" [innerHTML]="formatPhoneNumber(item.telefono)"></span>
                                                                 <span
                                                                     class="text-muted font-weight-bold">Teléfono</span>
                                                             </td>

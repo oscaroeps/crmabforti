@@ -49,7 +49,7 @@ export class EditClienteComponent implements OnInit {
     });
   }
 
-  onPhoneInput(event: any): void {
+onPhoneInput(event: any): void {
     let input = event.target.value.replace(/[^0-9]/g, ''); // Solo permitir números
     let formattedInput = '';
 

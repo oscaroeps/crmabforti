@@ -29,6 +29,10 @@ export class IndexColaboradorComponent implements OnInit {
     this.init_data();
   }
 
+  formatPhoneNumber(phone: string): string {
+    return phone.split(';').join('<br>');
+  }
+
   init_data() {
     this.load_data = true;
     this._colaboradorService.listar_colaboradores_admin(this.token).subscribe(

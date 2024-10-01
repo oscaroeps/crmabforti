@@ -55,17 +55,17 @@ export class CreateClienteComponent implements OnInit {
 
     // Asignamos el valor formateado al modelo
     this.cliente.telefono = formattedInput;
-}
+  }
 
-// Validar solo números en tiempo real
-validateNumberInput(event: KeyboardEvent): void {
+  // Validar solo números en tiempo real
+  validateNumberInput(event: KeyboardEvent): void {
     const charCode = event.which ? event.which : event.keyCode;
 
     // Si el carácter no es un número (charCode entre 48 y 57 corresponde a '0'-'9'), evitar la entrada
     if (charCode < 48 || charCode > 57) {
-        event.preventDefault();
+      event.preventDefault();
     }
-}
+  }
 
 
   registrar(registroForm: any) {

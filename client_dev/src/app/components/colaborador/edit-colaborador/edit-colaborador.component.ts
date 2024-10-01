@@ -14,7 +14,8 @@ export class EditColaboradorComponent implements OnInit {
   public colaborador: any = {
     genero: '',
     rol: '',
-    pais: ''
+    pais: '',
+    telefono: ''
   };
   public btn_actualizar = false;
   public token: any = localStorage.getItem('token');
@@ -49,6 +50,44 @@ export class EditColaboradorComponent implements OnInit {
       }
     );
   }
+
+  onPhoneInput(event: any): void {
+    let input = event.target.value.replace(/[^0-9]/g, ''); // Solo permitir números
+    let formattedInput = '';
+
+    // Iteramos sobre los números y agregamos los separadores en las posiciones adecuadas
+    for (let i = 0; i < input.length; i++) {
+      formattedInput += input[i];
+
+      // Agregar guiones después de cada segundo y sexto dígito
+      if (i === 1 || i === 5 || i === 11 || i === 15) {
+        formattedInput += '-';
+      }
+
+      // Agregar punto y coma después de cada décimo dígito (nuevo número)
+      if (i === 9 && input.length > 10) {
+        formattedInput += ' ; ';
+      }
+    }
+
+    // Limitar la longitud del campo a 33 caracteres (tres números)
+    if (formattedInput.length > 27) {
+      formattedInput = formattedInput.substring(0, 27);
+    }
+
+    // Asignamos el valor formateado al modelo
+    this.colaborador.telefono = formattedInput;
+}
+
+// Validar solo números en tiempo real
+validateNumberInput(event: KeyboardEvent): void {
+    const charCode = event.which ? event.which : event.keyCode;
+
+    // Si el carácter no es un número (charCode entre 48 y 57 corresponde a '0'-'9'), evitar la entrada
+    if (charCode < 48 || charCode > 57) {
+        event.preventDefault();
+    }
+}
 
   actualizar(actualizarForm: any) {
     if (actualizarForm.valid) {
