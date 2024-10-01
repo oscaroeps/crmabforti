@@ -292,7 +292,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.ciclo.f_inicio) {
-      $.notify('Ingrese la fecha de inicio de clases.', {
+      $.notify('Ingrese la fecha de inicio de servicios.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -307,7 +307,7 @@ export class EditCicloComponent implements OnInit {
         }
       });
     } else if (!this.ciclo.f_fin) {
-      $.notify('Ingrese la fecha de fin de clases.', {
+      $.notify('Ingrese la fecha de fin de servicios.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,

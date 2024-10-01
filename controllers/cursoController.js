@@ -235,7 +235,7 @@ const crear_ciclo_admin = async function (req, res) {
 
         data.v_inicio = data_inicio.getFullYear() + '-' + month_v + '-' + day_v;
 
-        //OBTENER MESES ENTRE RANGO DE FECHA DE CLASES
+        //OBTENER MESES ENTRE RANGO DE FECHA DE SERVICIOS
         if (mes_inicio != mes_fin) {
             if (mes_inicio >= mes_fin) {
                 for (let i = 1; i <= 12; i++) {
