@@ -44,6 +44,7 @@ import { InventarioSalidaComponent } from "./components/inventario/inventario-sa
 import { ListasContactosComponent } from "./components/marketing/emails/listas-contactos/listas-contactos.component";
 import { EmailCampaignsComponent } from "./components/marketing/emails/email-campaigns/email-campaigns.component";
 import { KpiMensualComponent } from "./components/rendimiento/kpi-mensual/kpi-mensual.component";
+import { IndexProspectoComponent } from "./components/prospectos/index-prospecto/index-prospecto.component";
 
 const appRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
@@ -61,6 +62,8 @@ const appRoutes: Routes = [
     { path: 'cliente/buyer/:id/prospeccion/correos', component: CorreosClienteComponent, canActivate: [AuthGuard] },
     { path: 'cliente/buyer/:id/prospeccion/llamadas', component: LlamadasClienteComponent, canActivate: [AuthGuard] },
     { path: 'cliente/buyer/:id/prospeccion/tareas', component: TareasClienteComponent, canActivate: [AuthGuard] },
+
+    { path: 'prospecto', component: IndexProspectoComponent, canActivate: [AuthGuard] },
 
     { path: 'cursos', component: IndexCursosComponent, canActivate: [AuthGuard] },
     { path: 'cursos/create', component: CreateCursosComponent, canActivate: [AuthGuard] },

@@ -58,6 +58,7 @@ import { InventarioSalidaComponent } from './components/inventario/inventario-sa
 import { ListasContactosComponent } from './components/marketing/emails/listas-contactos/listas-contactos.component';
 import { EmailCampaignsComponent } from './components/marketing/emails/email-campaigns/email-campaigns.component';
 import { KpiMensualComponent } from './components/rendimiento/kpi-mensual/kpi-mensual.component';
+import { IndexProspectoComponent } from './components/prospectos/index-prospecto/index-prospecto.component';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { KpiMensualComponent } from './components/rendimiento/kpi-mensual/kpi-me
     InventarioSalidaComponent,
     ListasContactosComponent,
     EmailCampaignsComponent,
-    KpiMensualComponent
+    KpiMensualComponent,
+    IndexProspectoComponent
   ],
   imports: [
     BrowserModule,
