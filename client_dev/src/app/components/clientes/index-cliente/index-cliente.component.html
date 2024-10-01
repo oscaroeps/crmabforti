@@ -335,11 +335,10 @@
                                                                                     data-dismiss="modal">Cerrar</button>
                                                                                 <button type="button"
                                                                                     class="btn btn-danger font-weight-bold"
-                                                                                    (click)="set_tipo(item._id,item.estado)">Desasociar</button>
+                                                                                    (click)="set_tipo(item._id,item.tipo)">Desasociar</button>
 
 
-                                                                                <button
-                                                                                    *ngIf="load_estado && item.estado"
+                                                                                <button *ngIf="load_estado"
                                                                                     class="btn btn-danger" type="button"
                                                                                     disabled>
                                                                                     <span

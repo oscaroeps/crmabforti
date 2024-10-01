@@ -230,9 +230,9 @@
                                                                             class="dropdown-item"
                                                                             *ngIf="item.tipo === 'Prospecto'"
                                                                             data-toggle="modal"
-                                                                            [attr.data-target]="'#delete-'+item._id">
-                                                                            <i class="icon-1x text-dark-50 
-                                                                                flaticon-medal"></i>
+                                                                            [attr.data-target]="'#tipo-'+item._id">
+                                                                            <i
+                                                                                class="icon-1x text-dark-50 flaticon-medal"></i>
                                                                             &nbsp; Asociar
                                                                         </a>
                                                                     </div>
@@ -307,6 +307,53 @@
                                                                     </div>
                                                                 </div>
 
+                                                                <div class="modal fade" id="tipo-{{item._id}}"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title"
+                                                                                    id="exampleModalLabel">Confirmación
+                                                                                    de asociación
+
+                                                                                </h5>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="ki ki-close"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p class="text-left">¿Está seguro
+                                                                                    que
+                                                                                    quiere asociar a este cliente?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-warning font-weight-bold"
+                                                                                    data-dismiss="modal">Cerrar</button>
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger font-weight-bold"
+                                                                                    (click)="set_tipo(item._id,item.tipo)">Asociar</button>
+
+
+                                                                                <button *ngIf="load_estado"
+                                                                                    class="btn btn-danger" type="button"
+                                                                                    disabled>
+                                                                                    <span
+                                                                                        class="spinner-border spinner-border-sm"
+                                                                                        role="status"
+                                                                                        aria-hidden="true"></span>
+                                                                                    Asociando...
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     </tbody>

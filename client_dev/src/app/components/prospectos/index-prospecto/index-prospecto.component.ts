@@ -42,7 +42,7 @@ export class IndexProspectoComponent implements OnInit {
   formatPhoneNumber(phone: string): string {
     return phone.split(';').join('<br>');
   }
-  
+
 
   // Método que decide si filtrar o cargar todos los prospectos
   init_data() {
@@ -115,6 +115,22 @@ export class IndexProspectoComponent implements OnInit {
       error => {
         this.load_estado = false;
         console.error('Error cambiando estado', error);
+      }
+    );
+  }
+
+  // Cambiar el tipo de un cliente
+  set_tipo(id: any, tipo: any) {
+    this.load_estado = true;
+    this._clienteService.cambiar_tipo_cliente_admin(id, { tipo: tipo }, this.token).subscribe(
+      response => {
+        this.load_estado = false;
+        $('#tipo-' + id).modal('hide');
+        this.filtrar();
+      },
+      error => {
+        this.load_estado = false;
+        console.error('Error cambiando tipo', error);
       }
     );
   }

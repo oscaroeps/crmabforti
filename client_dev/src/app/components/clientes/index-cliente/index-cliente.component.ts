@@ -42,7 +42,7 @@ export class IndexClienteComponent implements OnInit {
   formatPhoneNumber(phone: string): string {
     return phone.split(';').join('<br>');
   }
-  
+
 
   // Método que decide si filtrar o cargar todos los clientes
   init_data() {
@@ -120,9 +120,9 @@ export class IndexClienteComponent implements OnInit {
   }
 
   // Cambiar el tipo de un cliente
-  set_tipo(id: any, estado: any) {
+  set_tipo(id: any, tipo: any) {
     this.load_estado = true;
-    this._clienteService.cambiar_tipo_cliente_admin(id, { estado: estado }, this.token).subscribe(
+    this._clienteService.cambiar_tipo_cliente_admin(id, { tipo: tipo }, this.token).subscribe(
       response => {
         this.load_estado = false;
         $('#tipo-' + id).modal('hide');
