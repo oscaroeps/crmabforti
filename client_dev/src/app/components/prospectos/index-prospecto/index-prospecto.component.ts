@@ -52,7 +52,7 @@ export class IndexProspectoComponent implements OnInit {
       this.load_data = true;
       this._clienteService.listar_clientes_admin(null, this.token).subscribe(
         response => {
-          this.clientes = response.data;
+          this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto');
           this.load_data = false;
         },
         error => {
@@ -69,7 +69,7 @@ export class IndexProspectoComponent implements OnInit {
       this.load_data = true;
       this._clienteService.listar_clientes_admin(this.filtro, this.token).subscribe(
         response => {
-          this.clientes = response.data;
+          this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto');
           this.load_data = false;
         },
         error => {
