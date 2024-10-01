@@ -59,6 +59,15 @@ import { ListasContactosComponent } from './components/marketing/emails/listas-c
 import { EmailCampaignsComponent } from './components/marketing/emails/email-campaigns/email-campaigns.component';
 import { KpiMensualComponent } from './components/rendimiento/kpi-mensual/kpi-mensual.component';
 import { IndexProspectoComponent } from './components/prospectos/index-prospecto/index-prospecto.component';
+import { CreateProspectoComponent } from './components/prospectos/create-prospecto/create-prospecto.component';
+import { EditProspectoComponent } from './components/prospectos/edit-prospecto/edit-prospecto.component';
+import { AsideProspectoComponent } from './components/prospectos/buyer/aside-prospecto/aside-prospecto.component';
+import { DashboardProspectoComponent } from './components/prospectos/buyer/dashboard-prospecto/dashboard-prospecto.component';
+import { ProspeccionProspectoComponent } from './components/prospectos/buyer/prospeccion-prospecto/prospeccion-prospecto.component';
+import { CorreosProspectoComponent } from './components/prospectos/buyer/prospeccion/correos-prospecto/correos-prospecto.component';
+import { InteresesProspectoComponent } from './components/prospectos/buyer/prospeccion/intereses-prospecto/intereses-prospecto.component';
+import { LlamadasProspectoComponent } from './components/prospectos/buyer/prospeccion/llamadas-prospecto/llamadas-prospecto.component';
+import { TareasProspectoComponent } from './components/prospectos/buyer/prospeccion/tareas-prospecto/tareas-prospecto.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +120,16 @@ import { IndexProspectoComponent } from './components/prospectos/index-prospecto
     ListasContactosComponent,
     EmailCampaignsComponent,
     KpiMensualComponent,
-    IndexProspectoComponent
+    IndexProspectoComponent,
+    CreateProspectoComponent,
+    EditProspectoComponent,
+    AsideProspectoComponent,
+    DashboardProspectoComponent,
+    ProspeccionProspectoComponent,
+    CorreosProspectoComponent,
+    InteresesProspectoComponent,
+    LlamadasProspectoComponent,
+    TareasProspectoComponent,
   ],
   imports: [
     BrowserModule,

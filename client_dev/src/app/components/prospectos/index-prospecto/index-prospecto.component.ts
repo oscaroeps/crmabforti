@@ -44,7 +44,7 @@ export class IndexProspectoComponent implements OnInit {
   }
   
 
-  // Método que decide si filtrar o cargar todos los clientes
+  // Método que decide si filtrar o cargar todos los prospectos
   init_data() {
     if (this.filtro) {
       this.filtrar();  // Si hay filtro, filtrar los datos
@@ -57,13 +57,13 @@ export class IndexProspectoComponent implements OnInit {
         },
         error => {
           this.load_data = false;
-          console.error('Error cargando clientes', error);
+          console.error('Error cargando prospectos', error);
         }
       );
     }
   }
 
-  // Filtrar clientes basados en el criterio de búsqueda
+  // Filtrar prospectos basados en el criterio de búsqueda
   filtrar() {
     if (this.filtro) {
       this.load_data = true;
@@ -74,11 +74,11 @@ export class IndexProspectoComponent implements OnInit {
         },
         error => {
           this.load_data = false;
-          console.error('Error filtrando clientes', error);
+          console.error('Error filtrando prospectos', error);
         }
       );
     } else {
-      this.init_data();  // Si no hay filtro, cargar todos los clientes
+      this.init_data();  // Si no hay filtro, cargar todos los prospectos
     }
   }
 
@@ -93,17 +93,17 @@ export class IndexProspectoComponent implements OnInit {
       });
       this.filtrar();
     } else {
-      // Si no hay filtro, eliminarlo de la URL y cargar todos los clientes
+      // Si no hay filtro, eliminarlo de la URL y cargar todos los prospectos
       this._router.navigate([], {
         relativeTo: this._route,
         queryParams: { filter: null },
         queryParamsHandling: 'merge'
       });
-      this.init_data();  // Cargar todos los clientes
+      this.init_data();  // Cargar todos los prospectos
     }
   }
 
-  // Cambiar el estado de un cliente
+  // Cambiar el estado de un prospecto
   set_state(id: any, estado: any) {
     this.load_estado = true;
     this._clienteService.cambiar_estado_cliente_admin(id, { estado: estado }, this.token).subscribe(

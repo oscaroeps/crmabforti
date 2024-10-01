@@ -45,6 +45,14 @@ import { ListasContactosComponent } from "./components/marketing/emails/listas-c
 import { EmailCampaignsComponent } from "./components/marketing/emails/email-campaigns/email-campaigns.component";
 import { KpiMensualComponent } from "./components/rendimiento/kpi-mensual/kpi-mensual.component";
 import { IndexProspectoComponent } from "./components/prospectos/index-prospecto/index-prospecto.component";
+import { CreateProspectoComponent } from "./components/prospectos/create-prospecto/create-prospecto.component";
+import { EditProspectoComponent } from "./components/prospectos/edit-prospecto/edit-prospecto.component";
+import { DashboardProspectoComponent } from "./components/prospectos/buyer/dashboard-prospecto/dashboard-prospecto.component";
+import { ProspeccionProspectoComponent } from "./components/prospectos/buyer/prospeccion-prospecto/prospeccion-prospecto.component";
+import { InteresesProspectoComponent } from "./components/prospectos/buyer/prospeccion/intereses-prospecto/intereses-prospecto.component";
+import { CorreosProspectoComponent } from "./components/prospectos/buyer/prospeccion/correos-prospecto/correos-prospecto.component";
+import { LlamadasProspectoComponent } from "./components/prospectos/buyer/prospeccion/llamadas-prospecto/llamadas-prospecto.component";
+import { TareasProspectoComponent } from "./components/prospectos/buyer/prospeccion/tareas-prospecto/tareas-prospecto.component";
 
 const appRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
@@ -64,6 +72,14 @@ const appRoutes: Routes = [
     { path: 'cliente/buyer/:id/prospeccion/tareas', component: TareasClienteComponent, canActivate: [AuthGuard] },
 
     { path: 'prospecto', component: IndexProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/create', component: CreateProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/:id', component: EditProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/buyer/:id/dashboard', component: DashboardProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/buyer/:id/prospeccion', component: ProspeccionProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/buyer/:id/prospeccion/intereses', component: InteresesProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/buyer/:id/prospeccion/correos', component: CorreosProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/buyer/:id/prospeccion/llamadas', component: LlamadasProspectoComponent, canActivate: [AuthGuard] },
+    { path: 'prospecto/buyer/:id/prospeccion/tareas', component: TareasProspectoComponent, canActivate: [AuthGuard] },
 
     { path: 'cursos', component: IndexCursosComponent, canActivate: [AuthGuard] },
     { path: 'cursos/create', component: CreateCursosComponent, canActivate: [AuthGuard] },
