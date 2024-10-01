@@ -215,9 +215,9 @@ const cambiar_tipo_cliente_admin = async function (req, res) {
 
         let nuevo_tipo;
 
-        if (data.tipo === 'Prospecto') {
+        if (data.tipo == 'Prospecto') {
             nuevo_tipo = 'Socio';
-        } else if (data.tipo === 'Socio') {
+        } else if (data.tipo == 'Socio') {
             nuevo_tipo = 'Prospecto';
         }
 
