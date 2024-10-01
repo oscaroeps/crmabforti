@@ -130,7 +130,7 @@ export class IndexClienteComponent implements OnInit {
       },
       error => {
         this.load_estado = false;
-        console.error('Error cambiando estado', error);
+        console.error('Error cambiando tipo', error);
       }
     );
   }

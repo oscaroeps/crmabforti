@@ -12,6 +12,7 @@ app.put('/editar_cliente_admin/:id', auth.auth, clienteController.editar_cliente
 
 app.get('/listar_clientes_modal_admin/:filtro', auth.auth, clienteController.listar_clientes_modal_admin);
 app.put('/cambiar_estado_cliente_admin/:id', auth.auth, clienteController.cambiar_estado_cliente_admin);
+app.put('/cambiar_tipo_cliente_admin/:id', auth.auth, clienteController.cambiar_tipo_cliente_admin);
 app.get('/generar_token_encuesta_admin/:matricula/:cliente', auth.auth, clienteController.generar_token_encuesta_admin);
 app.post('/enviar_encuesta_admin', clienteController.enviar_encuesta_admin);
 
