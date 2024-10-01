@@ -153,7 +153,7 @@ export class CreateProspectoComponent implements OnInit {
       this.cliente.apellidos = this.cliente.apellidos || '';
 
       this.cliente.asesor = localStorage.getItem('_id');
-      this._clienteService.registro_cliente_admin(this.cliente, this.token).subscribe(
+      this._clienteService.registro_prospecto_admin(this.cliente, this.token).subscribe(
         response => {
           if (response.data == undefined) {
             $.notify(response.message, {
