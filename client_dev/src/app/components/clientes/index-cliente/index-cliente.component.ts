@@ -122,7 +122,7 @@ export class IndexClienteComponent implements OnInit {
   // Cambiar el tipo de un cliente
   set_tipo(id: any, estado: any) {
     this.load_estado = true;
-    this._clienteService.cambiar_estado_cliente_admin(id, { estado: estado }, this.token).subscribe(
+    this._clienteService.cambiar_tipo_cliente_admin(id, { estado: estado }, this.token).subscribe(
       response => {
         this.load_estado = false;
         $('#tipo-' + id).modal('hide');

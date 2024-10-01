@@ -373,6 +373,7 @@ module.exports = {
     editar_cliente_admin,
     listar_clientes_modal_admin,
     cambiar_estado_cliente_admin,
+    cambiar_tipo_cliente_admin,
     generar_token_encuesta_admin,
     enviar_encuesta_admin,
     obtener_encuesta_cliente_admin
