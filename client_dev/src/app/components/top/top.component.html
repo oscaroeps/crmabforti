@@ -6,7 +6,13 @@
         <div class="topbar">
             <!--begin::Header Menu-->
             <div class="topbar-item">
-
+                <div class="topbar-item">
+                    <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2"
+                        id="kt_quick_user_toggle" style="background-color: #282f48;" (click)="toggleLogout()">
+                        <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Panel de
+                            {{user.rol}}</span>
+                    </div>
+                </div>
             </div>
             <!--end::Header Menu-->
         </div>
