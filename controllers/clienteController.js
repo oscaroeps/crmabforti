@@ -152,7 +152,7 @@ const listar_clientes_admin = async function (req, res) {
             });
         } else {
             // Si no hay filtro, devuelve todos los clientes
-            clientes = await Cliente.find();
+            clientes = await Cliente.find().populate('asesor');
         }
 
         res.status(200).send({ data: clientes });
