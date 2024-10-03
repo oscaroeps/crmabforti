@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class IndexClienteComponent implements OnInit {
 
+  public user: any = {};
   public token = localStorage.getItem('token');
   public clientes: Array<any> = [];
   public clientes_const: Array<any> = [];
@@ -25,7 +26,10 @@ export class IndexClienteComponent implements OnInit {
     private _clienteService: ClienteService,
     private _router: Router,
     private _route: ActivatedRoute
-  ) { }
+  ) {
+    let str_user: any = localStorage.getItem('user');
+    this.user = JSON.parse(str_user);
+  }
 
   ngOnInit(): void {
     this.load_data = true;
@@ -52,8 +56,13 @@ export class IndexClienteComponent implements OnInit {
       this.load_data = true;
       this._clienteService.listar_clientes_admin(null, this.token).subscribe(
         response => {
-          this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
-          this.load_data = false;
+          if (this.user.rol === 'Administrador') {
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
+            this.load_data = false;
+          } else {
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor === this.user._id);
+            this.load_data = false;
+          }
         },
         error => {
           this.load_data = false;
@@ -69,8 +78,13 @@ export class IndexClienteComponent implements OnInit {
       this.load_data = true;
       this._clienteService.listar_clientes_admin(this.filtro, this.token).subscribe(
         response => {
-          this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
-          this.load_data = false;
+          if (this.user.rol === 'Administrador') {
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
+            this.load_data = false;
+          } else {
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor === this.user._id);
+            this.load_data = false;
+          }
         },
         error => {
           this.load_data = false;
