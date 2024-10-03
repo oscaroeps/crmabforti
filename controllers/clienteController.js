@@ -149,7 +149,7 @@ const listar_clientes_admin = async function (req, res) {
                     { fullnames: new RegExp(filtro, 'i') },
                     { tipo: new RegExp(filtro, 'i') }
                 ]
-            });
+            }).populate('asesor');
         } else {
             // Si no hay filtro, devuelve todos los clientes
             clientes = await Cliente.find().populate('asesor');
