@@ -60,7 +60,7 @@ export class IndexProspectoComponent implements OnInit {
             this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto');
             this.load_data = false;
           } else {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto' && cliente.asesor === this.user._id);
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto' && cliente.asesor._id === this.user._id);
             this.load_data = false;
           }
         },
@@ -82,7 +82,9 @@ export class IndexProspectoComponent implements OnInit {
             this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto');
             this.load_data = false;
           } else {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto' && cliente.asesor === this.user._id);
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto' && cliente.asesor._id === this.user._id);
+            console.log("Asesor");
+            
             this.load_data = false;
           }
         },

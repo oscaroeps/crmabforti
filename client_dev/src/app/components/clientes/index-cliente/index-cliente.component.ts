@@ -60,7 +60,7 @@ export class IndexClienteComponent implements OnInit {
             this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
             this.load_data = false;
           } else {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor === this.user._id);
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor._id === this.user._id);
             this.load_data = false;
           }
         },
@@ -82,7 +82,7 @@ export class IndexClienteComponent implements OnInit {
             this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
             this.load_data = false;
           } else {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor === this.user._id);
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor._id === this.user._id);
             this.load_data = false;
           }
         },
