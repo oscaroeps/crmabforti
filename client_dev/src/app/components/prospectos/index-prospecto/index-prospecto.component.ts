@@ -57,10 +57,10 @@ export class IndexProspectoComponent implements OnInit {
       this._clienteService.listar_clientes_admin(null, this.token).subscribe(
         response => {
           if (this.user.rol === 'Administrador') {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto');
             this.load_data = false;
           } else {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor === this.user._id);
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto' && cliente.asesor === this.user._id);
             this.load_data = false;
           }
         },
@@ -79,10 +79,10 @@ export class IndexProspectoComponent implements OnInit {
       this._clienteService.listar_clientes_admin(this.filtro, this.token).subscribe(
         response => {
           if (this.user.rol === 'Administrador') {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio');
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto');
             this.load_data = false;
           } else {
-            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Socio' && cliente.asesor === this.user._id);
+            this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto' && cliente.asesor === this.user._id);
             this.load_data = false;
           }
         },
