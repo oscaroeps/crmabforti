@@ -88,11 +88,11 @@
                                                         <th style="min-width: 100px">Empresa</th>
                                                         <th style="min-width: 100px">Correo</th>
                                                         <th style="min-width: 100px">Teléfono</th>
-                                                        <th style="min-width: 100px">Creado por</th>
+                                                        <th style="min-width: 80px">Acción</th>
                                                         <th style="min-width: 100px">Verificación</th>
                                                         <th style="min-width: 100px">Tipo</th>
                                                         <th style="min-width: 100px">Activación</th>
-                                                        <th style="min-width: 80px">Acción</th>
+                                                        <th style="min-width: 100px">Creado por</th>
                                                     </tr>
                                                 </thead>
                                                 <ng-container *ngIf="load_data">
@@ -161,43 +161,7 @@
                                                                 <span
                                                                     class="text-muted font-weight-bold">Teléfono</span>
                                                             </td>
-                                                            <td>
-                                                                <span
-                                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.asesor.nombres}} {{item.asesor.apellidos}}</span>
-                                                                <span class="text-muted font-weight-bold">Creado por</span>
-                                                            </td>
-                                                            <td>
-                                                                <span class="badge badge-success"
-                                                                    *ngIf="item.verify">Verificado</span>
-                                                                <span class="badge badge-danger "
-                                                                    *ngIf="!item.verify">No
-                                                                    verificado</span>
-                                                                <br>
-                                                                <span class="text-muted font-weight-bold">Estado</span>
-                                                            </td>
-                                                            <td>
-                                                                <span class="badge badge-warning"
-                                                                    *ngIf="item.tipo == 'Prospecto'">Prospecto</span>
-                                                                <span class="badge badge-primary "
-                                                                    *ngIf="item.tipo == 'Socio'">Socio</span>
-                                                                <br>
-                                                                <span class="text-muted font-weight-bold">Tipo
-                                                                    usuario</span>
-                                                            </td>
-
-                                                            <td>
-                                                                <span class="badge badge-success"
-                                                                    *ngIf="item.estado">Activado</span>
-                                                                <span class="badge badge-info "
-                                                                    *ngIf="!item.estado">Desactivado</span>
-                                                                <br>
-                                                                <span class="text-muted font-weight-bold"
-                                                                    *ngIf="item.estado">Cliente está activo</span>
-                                                                <span class="text-muted font-weight-bold"
-                                                                    *ngIf="!item.estado">Cliente no está activo</span>
-                                                            </td>
-
-                                                            <td class="pr-0 text-right">
+                                                            <td class="pr-0 text-center">
                                                                 <div class="dropdown dropleft">
                                                                     <button type="button"
                                                                         class="btn btn-light-primary btn-icon btn-sm"
@@ -357,6 +321,43 @@
                                                                     </div>
                                                                 </div>
 
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-success"
+                                                                    *ngIf="item.verify">Verificado</span>
+                                                                <span class="badge badge-danger "
+                                                                    *ngIf="!item.verify">No
+                                                                    verificado</span>
+                                                                <br>
+                                                                <span class="text-muted font-weight-bold">Estado</span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-warning"
+                                                                    *ngIf="item.tipo == 'Prospecto'">Prospecto</span>
+                                                                <span class="badge badge-primary "
+                                                                    *ngIf="item.tipo == 'Socio'">Socio</span>
+                                                                <br>
+                                                                <span class="text-muted font-weight-bold">Tipo
+                                                                    usuario</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <span class="badge badge-success"
+                                                                    *ngIf="item.estado">Activado</span>
+                                                                <span class="badge badge-info "
+                                                                    *ngIf="!item.estado">Desactivado</span>
+                                                                <br>
+                                                                <span class="text-muted font-weight-bold"
+                                                                    *ngIf="item.estado">Cliente está activo</span>
+                                                                <span class="text-muted font-weight-bold"
+                                                                    *ngIf="!item.estado">Cliente no está activo</span>
+                                                            </td>
+
+                                                            
+                                                            <td style="white-space: nowrap; width: auto;">
+                                                                <span
+                                                                    class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.asesor.nombres}} {{item.asesor.apellidos}}</span>
+                                                                <span class="text-muted font-weight-bold">Creado por</span>
                                                             </td>
                                                         </tr>
                                                     </tbody>
