@@ -70,7 +70,7 @@ const appRoutes: Routes = [
     { path: 'cliente/buyer/:id/prospeccion/correos', component: CorreosClienteComponent, canActivate: [AuthGuard] },
     { path: 'cliente/buyer/:id/prospeccion/llamadas', component: LlamadasClienteComponent, canActivate: [AuthGuard] },
     { path: 'cliente/buyer/:id/prospeccion/tareas', component: TareasClienteComponent, canActivate: [AuthGuard] },
-
+    
     { path: 'prospecto', component: IndexProspectoComponent, canActivate: [AuthGuard] },
     { path: 'prospecto/create', component: CreateProspectoComponent, canActivate: [AuthGuard] },
     { path: 'prospecto/:id', component: EditProspectoComponent, canActivate: [AuthGuard] },
