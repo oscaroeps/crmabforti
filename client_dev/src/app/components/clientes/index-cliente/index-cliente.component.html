@@ -201,6 +201,15 @@
                                                                                 flaticon-circle"></i>
                                                                             &nbsp; Desasociar
                                                                         </a>
+                                                                        <a style="cursor: pointer;"
+                                                                            class="btn btn-danger dropdown-item"
+                                                                            *ngIf="item.tipo === 'Socio'"
+                                                                            data-toggle="modal"
+                                                                            [attr.data-target]="'#delete-'+item._id">
+                                                                            <i class="icon-1x text-white flaticon-delete"></i>
+                                                                            &nbsp; Eliminar
+                                                                        </a>
+                                                                        
                                                                     </div>
                                                                 </div>
 
@@ -272,6 +281,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                
 
                                                                 <div class="modal fade" id="tipo-{{item._id}}"
                                                                     tabindex="-1" role="dialog"
