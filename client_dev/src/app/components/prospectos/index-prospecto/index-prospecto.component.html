@@ -207,9 +207,8 @@
                                                                         </a>
                                                                         <a style="cursor: pointer;"
                                                                             class="btn btn-danger dropdown-item"
-                                                                            *ngIf="item.tipo === 'Prospecto'"
                                                                             data-toggle="modal"
-                                                                            [attr.data-target]="'#tipo-'+item._id">
+                                                                            [attr.data-target]="'#borrar-'+item._id">
                                                                             <i
                                                                                 class="icon-1x text-white flaticon-delete"></i>
                                                                             &nbsp; Eliminar
@@ -328,6 +327,54 @@
                                                                                         role="status"
                                                                                         aria-hidden="true"></span>
                                                                                     Asociando...
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="modal fade" id="borrar-{{item._id}}"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title"
+                                                                                    id="exampleModalLabel">Confirmación
+                                                                                    de eliminación total
+
+                                                                                </h5>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="ki ki-close"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p class="text-left">¿Está seguro
+                                                                                    que
+                                                                                    quiere eliminar a este cliente de la
+                                                                                    base de datos?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-warning font-weight-bold"
+                                                                                    data-dismiss="modal">Cerrar</button>
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger font-weight-bold">Eliminar</button>
+
+
+                                                                                <button *ngIf="load_estado"
+                                                                                    class="btn btn-danger" type="button"
+                                                                                    disabled>
+                                                                                    <span
+                                                                                        class="spinner-border spinner-border-sm"
+                                                                                        role="status"
+                                                                                        aria-hidden="true"></span>
+                                                                                    Eliminando...
                                                                                 </button>
                                                                             </div>
                                                                         </div>
