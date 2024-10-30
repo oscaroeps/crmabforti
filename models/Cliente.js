@@ -10,6 +10,7 @@ var ClienteSchema = Schema({
     genero: { type: String, required: false },
     verify: { type: Boolean, default: false, required: true },
     estado: { type: Boolean, default: true, required: true },
+    isDeleted: { type: Boolean, default: false, required: true },
     tipo: { type: String, default: 'Prospecto', required: true },
     password: { type: String, required: true },
 

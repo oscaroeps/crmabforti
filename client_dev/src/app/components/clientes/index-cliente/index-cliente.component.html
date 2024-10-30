@@ -8,9 +8,7 @@
       <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Subheader-->
         <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
-          <div
-            class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap"
-          >
+          <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
               <!--begin::Page Title-->
@@ -19,12 +17,8 @@
               </h5>
               <!--end::Page Title-->
               <!--begin::Actions-->
-              <div
-                class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"
-              ></div>
-              <ul
-                class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm"
-              >
+              <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
+              <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                 <li class="breadcrumb-item active">
                   <a class="text-muted">Lista de clientes</a>
                 </li>
@@ -44,15 +38,11 @@
                 <div class="card-title">
                   <h3 class="card-label">
                     Clientes
-                    <span class="text-muted pt-2 font-size-sm d-block"
-                      >Listado completo de todos los socios</span
-                    >
+                    <span class="text-muted pt-2 font-size-sm d-block">Listado completo de todos los socios</span>
                   </h3>
                 </div>
                 <div class="card-toolbar">
-                  <a [routerLink]="['/cliente/create']" class="btn btn-info"
-                    >Nuevo socio</a
-                  >
+                  <a [routerLink]="['/cliente/create']" class="btn btn-info">Nuevo socio</a>
                 </div>
               </div>
               <div class="card-body">
@@ -66,13 +56,8 @@
                           <form (ngSubmit)="init_data()">
                             <!-- Envolvemos en el formulario -->
                             <div class="input-group">
-                              <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Buscador general"
-                                name="filtro"
-                                [(ngModel)]="filtro"
-                              />
+                              <input type="text" class="form-control" placeholder="Buscador general" name="filtro"
+                                [(ngModel)]="filtro" />
                               <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
                                   <i class="flaticon-search"></i>
@@ -89,10 +74,8 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="table-responsive">
-                      <table
-                        class="table table-head-custom table-head-bg table-borderless table-vertical-center"
-                        style="margin-bottom: 0px"
-                      >
+                      <table class="table table-head-custom table-head-bg table-borderless table-vertical-center"
+                        style="margin-bottom: 0px">
                         <thead>
                           <tr class="text-left text-uppercase">
                             <th style="min-width: 250px" class="pl-7">
@@ -112,11 +95,7 @@
                           <tbody>
                             <tr>
                               <td class="text-center" colspan="9">
-                                <div
-                                  class="spinner-border"
-                                  style="width: 3rem; height: 3rem"
-                                  role="status"
-                                >
+                                <div class="spinner-border" style="width: 3rem; height: 3rem" role="status">
                                   <span class="sr-only">Cargando...</span>
                                 </div>
                               </td>
@@ -125,25 +104,19 @@
                         </ng-container>
                         <ng-container *ngIf="!load_data">
                           <tbody *ngIf="clientes.length >= 1">
-                            <tr
-                              *ngFor="
+                            <tr *ngFor="
                                 let item of clientes
                                   | slice
                                     : (page - 1) * pageSize
                                     : (page - 1) * pageSize + pageSize
-                              "
-                            >
+                              ">
                               <td class="pl-0 py-5">
                                 <div class="d-flex align-items-center">
-                                  <a
-                                    class="symbol symbol-40 flex-shrink-0 mr-3"
-                                    target="_blank"
-                                    [routerLink]="[
+                                  <a class="symbol symbol-40 flex-shrink-0 mr-3" target="_blank" [routerLink]="[
                                       '/cliente/buyer/' +
                                         item._id +
                                         '/dashboard'
-                                    ]"
-                                    [ngClass]="{
+                                    ]" [ngClass]="{
                                       'symbol-dark':
                                         !item.nombres ||
                                         item.nombres.trim() === '',
@@ -167,246 +140,133 @@
                                           'V' &&
                                         item.nombres.charAt(0).toUpperCase() <=
                                           'Z'
-                                    }"
-                                  >
-                                    <div
-                                      class="symbol-label"
-                                      *ngIf="item.nombres || item.nombres != ''"
-                                    >
+                                    }">
+                                    <div class="symbol-label" *ngIf="item.nombres || item.nombres != ''">
                                       {{ item.nombres.charAt(0).toUpperCase()
                                       }}{{
-                                        item.apellidos.charAt(0).toUpperCase()
+                                      item.apellidos.charAt(0).toUpperCase()
                                       }}
                                     </div>
-                                    <div
-                                      class="symbol-label"
-                                      *ngIf="
+                                    <div class="symbol-label" *ngIf="
                                         !item.nombres || item.nombres === ''
-                                      "
-                                    >
+                                      ">
                                       SN
                                     </div>
                                   </a>
                                   <div>
-                                    <a
-                                      target="_blank"
-                                      [routerLink]="[
+                                    <a target="_blank" [routerLink]="[
                                         '/cliente/buyer/' +
                                           item._id +
                                           '/dashboard'
-                                      ]"
-                                      class="text-primary font-weight-bolder text-hover-primary mb-1 font-size-lg"
-                                    >
+                                      ]" class="text-primary font-weight-bolder text-hover-primary mb-1 font-size-lg">
                                       {{ item.nombres }} {{ item.apellidos }}
                                     </a>
-                                    <a
-                                      target="_blank"
-                                      [routerLink]="[
+                                    <a target="_blank" [routerLink]="[
                                         '/cliente/buyer/' +
                                           item._id +
                                           '/dashboard'
-                                      ]"
-                                      class="text-muted font-weight-bold d-block"
-                                      >#{{ item._id }}</a
-                                    >
+                                      ]" class="text-muted font-weight-bold d-block">#{{ item._id }}</a>
                                   </div>
                                 </div>
                               </td>
                               <td>
-                                <span
-                                  class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                                  >{{ item.n_doc }}</span
-                                >
-                                <span class="text-muted font-weight-bold"
-                                  >Empresa</span
-                                >
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{ item.n_doc
+                                  }}</span>
+                                <span class="text-muted font-weight-bold">Empresa</span>
                               </td>
                               <td>
-                                <span
-                                  class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                                  >{{ item.email }}</span
-                                >
-                                <span class="text-muted font-weight-bold"
-                                  >Correo</span
-                                >
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{ item.email
+                                  }}</span>
+                                <span class="text-muted font-weight-bold">Correo</span>
                               </td>
                               <td style="white-space: nowrap; width: auto">
-                                <span
-                                  class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                                  [innerHTML]="formatPhoneNumber(item.telefono)"
-                                ></span>
-                                <span class="text-muted font-weight-bold"
-                                  >Teléfono</span
-                                >
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg"
+                                  [innerHTML]="formatPhoneNumber(item.telefono)"></span>
+                                <span class="text-muted font-weight-bold">Teléfono</span>
                               </td>
                               <td class="pr-0 text-center">
                                 <div class="dropdown dropleft">
-                                  <button
-                                    type="button"
-                                    class="btn btn-light-primary btn-icon btn-sm"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                  >
+                                  <button type="button" class="btn btn-light-primary btn-icon btn-sm"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="ki ki-bold-more-ver"></i>
                                   </button>
                                   <div class="dropdown-menu">
-                                    <a
-                                      style="cursor: pointer"
-                                      class="dropdown-item"
-                                      *ngIf="item.estado"
-                                      data-toggle="modal"
-                                      [attr.data-target]="'#delete-' + item._id"
-                                    >
-                                      <i
-                                        class="icon-1x text-dark-50 flaticon2-cross"
-                                      ></i>
+                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="item.estado"
+                                      data-toggle="modal" [attr.data-target]="'#delete-' + item._id">
+                                      <i class="icon-1x text-dark-50 flaticon2-cross"></i>
                                       &nbsp; Desactivar
                                     </a>
-                                    <a
-                                      style="cursor: pointer"
-                                      class="dropdown-item"
-                                      *ngIf="!item.estado"
-                                      data-toggle="modal"
-                                      [attr.data-target]="'#delete-' + item._id"
-                                    >
-                                      <i
-                                        class="icon-1x text-dark-50 flaticon2-check-mark"
-                                      ></i>
+                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="!item.estado"
+                                      data-toggle="modal" [attr.data-target]="'#delete-' + item._id">
+                                      <i class="icon-1x text-dark-50 flaticon2-check-mark"></i>
                                       &nbsp; Activar
                                     </a>
-                                    <a
-                                      class="dropdown-item"
-                                      [routerLink]="['/cliente', item._id]"
-                                    >
-                                      <i
-                                        class="icon-1x text-dark-50 flaticon-edit"
-                                      ></i>
+                                    <a class="dropdown-item" [routerLink]="['/cliente', item._id]">
+                                      <i class="icon-1x text-dark-50 flaticon-edit"></i>
                                       &nbsp; Editar
                                     </a>
-                                    <a
-                                      style="cursor: pointer"
-                                      class="dropdown-item"
-                                      *ngIf="item.tipo === 'Socio'"
-                                      data-toggle="modal"
-                                      [attr.data-target]="'#tipo-' + item._id"
-                                    >
-                                      <i
-                                        class="icon-1x text-dark-50 flaticon-circle"
-                                      ></i>
+                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="item.tipo === 'Socio'"
+                                      data-toggle="modal" [attr.data-target]="'#tipo-' + item._id">
+                                      <i class="icon-1x text-dark-50 flaticon-circle"></i>
                                       &nbsp; Desasociar
                                     </a>
-                                    <a
-                                      style="cursor: pointer"
-                                      class="btn btn-danger dropdown-item"
-                                      data-toggle="modal"
-                                      [attr.data-target]="'#borrar-' + item._id"
-                                    >
-                                      <i
-                                        class="icon-1x text-white flaticon-delete"
-                                      ></i>
+                                    <a style="cursor: pointer" class="btn btn-danger dropdown-item" data-toggle="modal"
+                                      [attr.data-target]="'#borrar-' + item._id">
+                                      <i class="icon-1x text-white flaticon-delete"></i>
                                       &nbsp; Eliminar
                                     </a>
                                   </div>
                                 </div>
 
-                                <div
-                                  class="modal fade"
-                                  id="delete-{{ item._id }}"
-                                  tabindex="-1"
-                                  role="dialog"
-                                  aria-labelledby="exampleModalLabel"
-                                  aria-hidden="true"
-                                >
+                                <div class="modal fade" id="delete-{{ item._id }}" tabindex="-1" role="dialog"
+                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
                                   <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                       <div class="modal-header">
-                                        <h5
-                                          class="modal-title"
-                                          id="exampleModalLabel"
-                                        >
+                                        <h5 class="modal-title" id="exampleModalLabel">
                                           Confirmación
                                         </h5>
-                                        <button
-                                          type="button"
-                                          class="close"
-                                          data-dismiss="modal"
-                                          aria-label="Close"
-                                        >
-                                          <i
-                                            aria-hidden="true"
-                                            class="ki ki-close"
-                                          ></i>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <i aria-hidden="true" class="ki ki-close"></i>
                                         </button>
                                       </div>
                                       <div class="modal-body">
-                                        <p
-                                          class="text-left"
-                                          *ngIf="!item.estado"
-                                        >
+                                        <p class="text-left" *ngIf="!item.estado">
                                           ¿Está seguro que quiere activar a este
                                           cliente?
                                         </p>
-                                        <p
-                                          class="text-left"
-                                          *ngIf="item.estado"
-                                        >
+                                        <p class="text-left" *ngIf="item.estado">
                                           ¿Está seguro que quiere desactivar a
                                           este cliente?
                                         </p>
                                       </div>
                                       <div class="modal-footer">
-                                        <button
-                                          type="button"
-                                          class="btn btn-warning font-weight-bold"
-                                          data-dismiss="modal"
-                                        >
+                                        <button type="button" class="btn btn-warning font-weight-bold"
+                                          data-dismiss="modal">
                                           Cerrar
                                         </button>
-                                        <button
-                                          *ngIf="!load_estado && !item.estado"
-                                          type="button"
-                                          class="btn btn-danger font-weight-bold"
-                                          (click)="
+                                        <button *ngIf="!load_estado && !item.estado" type="button"
+                                          class="btn btn-danger font-weight-bold" (click)="
                                             set_state(item._id, item.estado)
-                                          "
-                                        >
+                                          ">
                                           Activar
                                         </button>
-                                        <button
-                                          *ngIf="!load_estado && item.estado"
-                                          type="button"
-                                          class="btn btn-danger font-weight-bold"
-                                          (click)="
+                                        <button *ngIf="!load_estado && item.estado" type="button"
+                                          class="btn btn-danger font-weight-bold" (click)="
                                             set_state(item._id, item.estado)
-                                          "
-                                        >
+                                          ">
                                           Desactivar
                                         </button>
-                                        <button
-                                          *ngIf="load_estado && !item.estado"
-                                          class="btn btn-danger"
-                                          type="button"
-                                          disabled
-                                        >
-                                          <span
-                                            class="spinner-border spinner-border-sm"
-                                            role="status"
-                                            aria-hidden="true"
-                                          ></span>
+                                        <button *ngIf="load_estado && !item.estado" class="btn btn-danger" type="button"
+                                          disabled>
+                                          <span class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
                                           Activando...
                                         </button>
-                                        <button
-                                          *ngIf="load_estado && item.estado"
-                                          class="btn btn-danger"
-                                          type="button"
-                                          disabled
-                                        >
-                                          <span
-                                            class="spinner-border spinner-border-sm"
-                                            role="status"
-                                            aria-hidden="true"
-                                          ></span>
+                                        <button *ngIf="load_estado && item.estado" class="btn btn-danger" type="button"
+                                          disabled>
+                                          <span class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
                                           Desactivando...
                                         </button>
                                       </div>
@@ -414,33 +274,16 @@
                                   </div>
                                 </div>
 
-                                <div
-                                  class="modal fade"
-                                  id="tipo-{{ item._id }}"
-                                  tabindex="-1"
-                                  role="dialog"
-                                  aria-labelledby="exampleModalLabel"
-                                  aria-hidden="true"
-                                >
+                                <div class="modal fade" id="tipo-{{ item._id }}" tabindex="-1" role="dialog"
+                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
                                   <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                       <div class="modal-header">
-                                        <h5
-                                          class="modal-title"
-                                          id="exampleModalLabel"
-                                        >
+                                        <h5 class="modal-title" id="exampleModalLabel">
                                           Confirmación de desasociación
                                         </h5>
-                                        <button
-                                          type="button"
-                                          class="close"
-                                          data-dismiss="modal"
-                                          aria-label="Close"
-                                        >
-                                          <i
-                                            aria-hidden="true"
-                                            class="ki ki-close"
-                                          ></i>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <i aria-hidden="true" class="ki ki-close"></i>
                                         </button>
                                       </div>
                                       <div class="modal-body">
@@ -450,34 +293,19 @@
                                         </p>
                                       </div>
                                       <div class="modal-footer">
-                                        <button
-                                          type="button"
-                                          class="btn btn-warning font-weight-bold"
-                                          data-dismiss="modal"
-                                        >
+                                        <button type="button" class="btn btn-warning font-weight-bold"
+                                          data-dismiss="modal">
                                           Cerrar
                                         </button>
-                                        <button
-                                          type="button"
-                                          class="btn btn-danger font-weight-bold"
-                                          (click)="
+                                        <button type="button" class="btn btn-danger font-weight-bold" (click)="
                                             set_tipo(item._id, item.tipo)
-                                          "
-                                        >
+                                          ">
                                           Desasociar
                                         </button>
 
-                                        <button
-                                          *ngIf="load_estado"
-                                          class="btn btn-danger"
-                                          type="button"
-                                          disabled
-                                        >
-                                          <span
-                                            class="spinner-border spinner-border-sm"
-                                            role="status"
-                                            aria-hidden="true"
-                                          ></span>
+                                        <button *ngIf="load_estado" class="btn btn-danger" type="button" disabled>
+                                          <span class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
                                           Desasociando...
                                         </button>
                                       </div>
@@ -486,82 +314,39 @@
                                 </div>
                               </td>
                               <td>
-                                <span
-                                  class="badge badge-success"
-                                  *ngIf="item.verify"
-                                  >Verificado</span
-                                >
-                                <span
-                                  class="badge badge-danger"
-                                  *ngIf="!item.verify"
-                                  >No verificado</span
-                                >
+                                <span class="badge badge-success" *ngIf="item.verify">Verificado</span>
+                                <span class="badge badge-danger" *ngIf="!item.verify">No verificado</span>
                                 <br />
-                                <span class="text-muted font-weight-bold"
-                                  >Estado</span
-                                >
+                                <span class="text-muted font-weight-bold">Estado</span>
                               </td>
                               <td>
-                                <span
-                                  class="badge badge-warning"
-                                  *ngIf="item.tipo == 'Prospecto'"
-                                  >Prospecto</span
-                                >
-                                <span
-                                  class="badge badge-primary"
-                                  *ngIf="item.tipo == 'Socio'"
-                                  >Socio</span
-                                >
+                                <span class="badge badge-warning" *ngIf="item.tipo == 'Prospecto'">Prospecto</span>
+                                <span class="badge badge-primary" *ngIf="item.tipo == 'Socio'">Socio</span>
                                 <br />
-                                <span class="text-muted font-weight-bold"
-                                  >Tipo usuario</span
-                                >
+                                <span class="text-muted font-weight-bold">Tipo usuario</span>
                               </td>
 
                               <td>
-                                <span
-                                  class="badge badge-success"
-                                  *ngIf="item.estado"
-                                  >Activado</span
-                                >
-                                <span
-                                  class="badge badge-info"
-                                  *ngIf="!item.estado"
-                                  >Desactivado</span
-                                >
+                                <span class="badge badge-success" *ngIf="item.estado">Activado</span>
+                                <span class="badge badge-info" *ngIf="!item.estado">Desactivado</span>
                                 <br />
-                                <span
-                                  class="text-muted font-weight-bold"
-                                  *ngIf="item.estado"
-                                  >Cliente está activo</span
-                                >
-                                <span
-                                  class="text-muted font-weight-bold"
-                                  *ngIf="!item.estado"
-                                  >Cliente no está activo</span
-                                >
+                                <span class="text-muted font-weight-bold" *ngIf="item.estado">Cliente está activo</span>
+                                <span class="text-muted font-weight-bold" *ngIf="!item.estado">Cliente no está
+                                  activo</span>
                               </td>
 
                               <td style="white-space: nowrap; width: auto">
-                                <span
-                                  class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                                  >{{ item.asesor.nombres }}
-                                  {{ item.asesor.apellidos }}</span
-                                >
-                                <span class="text-muted font-weight-bold"
-                                  >Creado por</span
-                                >
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{
+                                  item.asesor.nombres }}
+                                  {{ item.asesor.apellidos }}</span>
+                                <span class="text-muted font-weight-bold">Creado por</span>
                               </td>
                             </tr>
                           </tbody>
                           <tbody *ngIf="load_data">
                             <tr>
                               <td class="text-center" colspan="8">
-                                <div
-                                  class="spinner-border"
-                                  style="width: 3rem; height: 3rem"
-                                  role="status"
-                                >
+                                <div class="spinner-border" style="width: 3rem; height: 3rem" role="status">
                                   <span class="sr-only">Cargando...</span>
                                 </div>
                               </td>
@@ -570,9 +355,7 @@
                           <tbody *ngIf="clientes.length == 0">
                             <tr>
                               <td class="text-center" colspan="8">
-                                <p
-                                  class="font-size-h3 text-muted font-weight-normal mt-5"
-                                >
+                                <p class="font-size-h3 text-muted font-weight-normal mt-5">
                                   No hay ningún registro que mostrar.
                                 </p>
                               </td>
@@ -586,14 +369,8 @@
               </div>
             </div>
 
-            <ngb-pagination
-              [collectionSize]="clientes.length"
-              [pageSize]="pageSize"
-              [(page)]="page"
-              [maxSize]="10"
-              [rotate]="true"
-              [boundaryLinks]="true"
-            ></ngb-pagination>
+            <ngb-pagination [collectionSize]="clientes.length" [pageSize]="pageSize" [(page)]="page" [maxSize]="10"
+              [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
           </div>
           <!--end::Container-->
         </div>

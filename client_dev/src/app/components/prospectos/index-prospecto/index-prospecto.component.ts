@@ -151,4 +151,20 @@ export class IndexProspectoComponent implements OnInit {
     );
   }
 
+  // Simular el borrado de la base de datos del cliente
+  eliminar(id: any, isDeleted: any) {
+    this.load_estado = true;
+    this._clienteService.cambiar_isDeleted_cliente_admin(id, { isDeleted: isDeleted }, this.token).subscribe(
+      response => {
+        this.load_estado = false;
+        $('#borrar-' + id).modal('hide');
+        this.filtrar();
+      },
+      error => {
+        this.load_estado = false;
+        console.error('Error cambiando isDeleted', error);
+      }
+    );
+  }
+
 }
