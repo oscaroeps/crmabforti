@@ -27,8 +27,8 @@ export class IndexClienteComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute
   ) {
-    let str_user: any = localStorage.getItem('user');
-    this.user = JSON.parse(str_user);
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
   }
 
   ngOnInit(): void {

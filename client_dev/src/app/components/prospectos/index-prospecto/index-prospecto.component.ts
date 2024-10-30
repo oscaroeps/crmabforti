@@ -27,8 +27,8 @@ export class IndexProspectoComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute
   ) {
-    let str_user: any = localStorage.getItem('user');
-    this.user = JSON.parse(str_user);
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
   }
 
   ngOnInit(): void {
@@ -84,7 +84,7 @@ export class IndexProspectoComponent implements OnInit {
           } else {
             this.clientes = response.data.filter((cliente: any) => cliente.tipo === 'Prospecto' && cliente.asesor._id === this.user._id);
             console.log("Asesor");
-            
+
             this.load_data = false;
           }
         },

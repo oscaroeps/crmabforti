@@ -19,8 +19,8 @@ export class TopComponent implements OnInit {
   constructor(
     private _testService: TestService
   ) {
-    let str_user: any = localStorage.getItem('user');
-    this.user = JSON.parse(str_user);
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
     this.init_config();
   }
 

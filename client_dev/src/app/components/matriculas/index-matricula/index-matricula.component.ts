@@ -66,9 +66,8 @@ export class IndexMatriculaComponent implements OnInit {
     private _route: ActivatedRoute,
     private _clienteService: ClienteService
   ) {
-    let user_lc: any = localStorage.getItem('user');
-
-    this.user = JSON.parse(user_lc);
+    let user_lc = localStorage.getItem('user');
+    this.user = user_lc ? JSON.parse(user_lc) : null;
   }
 
   ngOnInit(): void {
