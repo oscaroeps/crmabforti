@@ -159,6 +159,20 @@ export class IndexProspectoComponent implements OnInit {
         this.load_estado = false;
         $('#borrar-' + id).modal('hide');
         this.filtrar();
+        $.notify('Cliente ${response.nombre} eliminado con éxito', {
+          type: 'success',
+          spacing: 10,
+          timer: 2000,
+          placement: {
+            from: 'top',
+            align: 'right'
+          },
+          delay: 1000,
+          animate: {
+            enter: 'animated bounce',
+            exit: 'animated bounce'
+          }
+        });
       },
       error => {
         this.load_estado = false;

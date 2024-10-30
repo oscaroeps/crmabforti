@@ -271,7 +271,7 @@ const cambiar_isDeleted_cliente_admin = async function (req, res) {
             { new: true } // Esta opción devuelve el documento actualizado
         );
 
-        res.status(200).send({ data: cliente });
+        res.status(200).send({ data: cliente, nombre: cliente.nombres });
     } else {
         res.status(403).send({ data: undefined, message: 'NoToken' });
     }
