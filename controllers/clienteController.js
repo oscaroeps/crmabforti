@@ -261,20 +261,17 @@ const cambiar_isDeleted_cliente_admin = async function (req, res) {
         let id = req.params['id'];
         let data = req.body;
 
-        let nuevo_isDeleted;
+        // Establece un valor predeterminado en caso de que isDeleted no esté en el cliente
+        let nuevo_isDeleted = (data.isDeleted === undefined) ? true : !data.isDeleted;
 
-        if (data.isDeleted) {
-            nuevo_isDeleted = false;
-        } else if (!data.isDeleted) {
-            nuevo_isDeleted = true;
-        }
-
-        let cliente = await Cliente.findByIdAndUpdate({ _id: id }, {
-            isDeleted: nuevo_isDeleted
-        });
+        // Actualiza el cliente
+        let cliente = await Cliente.findByIdAndUpdate(
+            { _id: id },
+            { isDeleted: nuevo_isDeleted },
+            { new: true } // Esta opción devuelve el documento actualizado
+        );
 
         res.status(200).send({ data: cliente });
-
     } else {
         res.status(403).send({ data: undefined, message: 'NoToken' });
     }
