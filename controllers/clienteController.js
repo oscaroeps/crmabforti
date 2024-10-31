@@ -137,9 +137,12 @@ const listar_clientes_admin = async function (req, res) {
         let filtro = req.params['filtro'];
 
         let clientes;
+        const filtroNoEliminados = { $or: [{ isDeleted: false }, { isDeleted: { $exists: false } }] };
+
         if (filtro && filtro !== 'null') {
             // Si hay filtro, busca por nombres, apellidos, etc.
             clientes = await Cliente.find({
+                ...filtroNoEliminados,
                 $or: [
                     { nombres: new RegExp(filtro, 'i') },
                     { apellidos: new RegExp(filtro, 'i') },
@@ -152,7 +155,7 @@ const listar_clientes_admin = async function (req, res) {
             }).populate('asesor');
         } else {
             // Si no hay filtro, devuelve todos los clientes
-            clientes = await Cliente.find().populate('asesor');
+            clientes = await Cliente.find(filtroNoEliminados).populate('asesor');
         }
 
         res.status(200).send({ data: clientes });
@@ -270,6 +273,11 @@ const cambiar_isDeleted_cliente_admin = async function (req, res) {
             { isDeleted: nuevo_isDeleted },
             { new: true } // Esta opción devuelve el documento actualizado
         );
+
+         // Verifica si el cliente fue encontrado
+         if (!cliente) {
+            return res.status(404).send({ data: undefined, message: 'Cliente no encontrado' });
+        }
 
         res.status(200).send({ data: cliente, nombre: cliente.nombres });
     } else {
