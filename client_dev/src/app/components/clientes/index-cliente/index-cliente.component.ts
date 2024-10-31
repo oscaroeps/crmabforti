@@ -148,4 +148,33 @@ export class IndexClienteComponent implements OnInit {
       }
     );
   }
+
+  eliminar(id: any, isDeleted: any) {
+    this.load_estado = true;
+    this._clienteService.cambiar_isDeleted_cliente_admin(id, { isDeleted: isDeleted }, this.token).subscribe(
+      response => {
+        this.load_estado = false;
+        $('#borrar-' + id).modal('hide');
+        this.filtrar();
+        $.notify(`Cliente ${response.nombre} eliminado con éxito`, {
+          type: 'success',
+          spacing: 10,
+          timer: 2000,
+          placement: {
+            from: 'top',
+            align: 'right'
+          },
+          delay: 1000,
+          animate: {
+            enter: 'animated bounce',
+            exit: 'animated bounce'
+          }
+        });
+      },
+      error => {
+        this.load_estado = false;
+        console.error('Error cambiando isDeleted', error);
+      }
+    );
+  }
 }

@@ -312,6 +312,44 @@
                                     </div>
                                   </div>
                                 </div>
+
+                                <div class="modal fade" id="borrar-{{ item._id }}" tabindex="-1" role="dialog"
+                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">
+                                          Confirmación de eliminación total
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <i aria-hidden="true" class="ki ki-close"></i>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <p class="text-left">
+                                          ¿Está seguro que quiere eliminar a
+                                          este cliente de la base de datos y todas sus referencias?
+                                        </p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-warning font-weight-bold"
+                                          data-dismiss="modal">
+                                          Cerrar
+                                        </button>
+                                        <button type="button" class="btn btn-danger font-weight-bold"
+                                          (click)="eliminar(item._id, item.isDeleted)">
+                                          Eliminar
+                                        </button>
+
+                                        <button *ngIf="load_estado" class="btn btn-danger" type="button" disabled>
+                                          <span class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
+                                          Eliminando...
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </td>
                               <td>
                                 <span class="badge badge-success" *ngIf="item.verify">Verificado</span>
