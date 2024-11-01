@@ -20,6 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["fabric", "export-to-csv"],
             "outputPath": "dist/panel",
             "index": "src/index.html",
             "main": "src/main.ts",
