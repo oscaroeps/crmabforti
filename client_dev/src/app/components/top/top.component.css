@@ -1,0 +1,12 @@
+@media (max-width: 991.98px) {
+    #kt_aside_mobile_toggle {
+      display: block; /* Mostrar el botón */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    #kt_aside_mobile_toggle {
+      display: none; /* Ocultar el botón */
+    }
+  }
+  
