@@ -33,20 +33,30 @@
             <div class="topbar-item">
                 <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2"
                     id="kt_quick_user_toggle" style="background-color: #282f48;" (click)="toggleLogout()">
-                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Panel de
-                        {{user.rol}}</span>
+                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
+                        <ng-container *ngIf="!isSmallScreen; else smallScreenPanel">
+                            Panel de {{user.rol}}
+                        </ng-container>
+                        <ng-template #smallScreenPanel>
+                            {{user.rol}}
+                        </ng-template>
+                    </span>
                 </div>
             </div>
 
             <div class="topbar-item pl-3 pr-3">
                 <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2"
                     id="kt_quick_user_toggle" style="background-color: #282f48;" (click)="toggleLogout()">
-                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hola,</span>
-                    <span
-                        class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{user.nombres}}</span>
+                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
+                        <ng-container *ngIf="!isSmallScreen">Hola,</ng-container>
+                    </span>
+                    <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">
+                        {{user.nombres}}
+                    </span>
                     <span class="symbol symbol-35 symbol-light-success">
-                        <span
-                            class="symbol-label font-size-h5 font-weight-bold">{{user.nombres.substr(0,1)}}{{user.apellidos.substr(0,1)}}</span>
+                        <span class="symbol-label font-size-h5 font-weight-bold">
+                            {{user.nombres.substr(0,1)}}{{user.apellidos.substr(0,1)}}
+                        </span>
                     </span>
                 </div>
             </div>
