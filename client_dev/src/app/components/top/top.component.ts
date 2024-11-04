@@ -16,6 +16,7 @@ export class TopComponent implements OnInit {
   public background = '';
   public showLogout = false; // Propiedad para controlar la visibilidad del botón de cerrar sesión
   public isSmallScreen: boolean = false; // Nueva propiedad para el tamaño de la pantalla
+  public isVerySmallScreen: boolean = false; // Nueva propiedad para pantallas muy pequeñas
 
   constructor(
     private _testService: TestService
@@ -41,6 +42,7 @@ export class TopComponent implements OnInit {
 
   private checkScreenSize() {
     this.isSmallScreen = window.innerWidth <= 991.98;
+    this.isVerySmallScreen = window.innerWidth <= 576; // Ajuste para pantallas de celulares
   }
 
   logout() {

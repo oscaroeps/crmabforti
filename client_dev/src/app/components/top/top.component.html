@@ -17,7 +17,7 @@
                 <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2  mr-3"
                     id="kt_quick_user_toggle" style="background-color: #282f48;" data-toggle="modal"
                     data-target="#logoutModal">
-                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
+                    <span class="text-muted font-weight-bold font-size-base d-md-inline mr-1">
                         <a class="menu-link menu-toggle" style="background-color: #282f48;">
                             <span class="menu-text" style="color: white !important">Cerrar sesión</span>
 
@@ -33,7 +33,7 @@
             <div class="topbar-item">
                 <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2"
                     id="kt_quick_user_toggle" style="background-color: #282f48;" (click)="toggleLogout()">
-                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
+                    <span class="text-muted font-weight-bold font-size-base d-md-inline mr-1">
                         <ng-container *ngIf="!isSmallScreen; else smallScreenPanel">
                             Panel de {{user.rol}}
                         </ng-container>
@@ -50,8 +50,14 @@
                     <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
                         <ng-container *ngIf="!isSmallScreen">Hola,</ng-container>
                     </span>
-                    <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">
-                        {{user.nombres}}
+                    <span class="text-dark-50 font-weight-bolder font-size-base d-md-inline mr-3">
+                        <!-- Mostrar un nombre solo en pantallas de celulares -->
+                        <ng-container *ngIf="isVerySmallScreen; else fullName">
+                            {{user.nombres.split(' ')[0]}}
+                        </ng-container>
+                        <ng-template #fullName>
+                            {{user.nombres}}
+                        </ng-template>
                     </span>
                     <span class="symbol symbol-35 symbol-light-success">
                         <span class="symbol-label font-size-h5 font-weight-bold">
@@ -63,7 +69,7 @@
 
             <div class="topbar-item pt-1" id="kt_aside_mobile_toggle">
                 <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2"
-                    style="background-color: #282f48;" id="kt_aside_mobile_toggle">
+                    id="kt_aside_mobile_toggle" style="background-color: #282f48;">
                     <button class="btn p-0 burger-icon burger-icon-left">
                         <span></span>
                     </button>
