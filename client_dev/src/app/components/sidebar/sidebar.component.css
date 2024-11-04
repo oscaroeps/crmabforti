@@ -1,8 +1,8 @@
 /* Ajusta el tamaño del sidebar */
 .aside-fixed {
-    /* height: 100vh; */
+     /* height: 100vh;  */
     /* Ocupa todo el alto visible de la pantalla */
-    overflow-y: auto;
+    overflow-y: auto; 
     /* Habilita scroll solo en el eje vertical */
 }
 
