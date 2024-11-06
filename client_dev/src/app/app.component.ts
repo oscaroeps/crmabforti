@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TestService } from './services/test.service';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'panel';
 
   constructor(
@@ -20,6 +20,9 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+    // Ajuste de zoom al 80%
+    document.body.style.zoom = '90%';
+
     //Called after the constructor, initializing input properties, and the first call ngOnChanges.
     //Add 'implements OnInit' to the class.
     const token = localStorage.getItem('token');
@@ -31,7 +34,7 @@ export class AppComponent {
 
     this._testService.verificar_token(token).subscribe(
       response => {
-
+        // Aquí puedes manejar una respuesta exitosa
       },
       error => {
         /* localStorage.clear();
