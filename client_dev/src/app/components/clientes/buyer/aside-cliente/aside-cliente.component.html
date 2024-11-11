@@ -13,8 +13,8 @@
                         <i class="symbol-badge bg-success"></i>
                     </div>
                     <div>
-                        <div *ngIf="cliente.nombres" class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary">{{cliente.nombres}}</div>
-                        <div *ngIf="!cliente.nombres" class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary">No especificado</div>
+                        <div *ngIf="cliente.nombres" class="font-weight-bolder font-size-h5 text-dark-75">{{cliente.nombres}}</div>
+                        <div *ngIf="!cliente.nombres" class="font-weight-bolder font-size-h5 text-dark-75">No especificado</div>
                         <div class="text-muted">{{cliente.tipo}}</div>
 
                     </div>
@@ -25,12 +25,12 @@
                 <div class="py-9">
                     <div class="d-flex align-items-center justify-content-between mb-2">
                         <span class="font-weight-bold mr-2">Cliente:</span>
-                        <a *ngIf="cliente.fullnames" class="text-muted text-hover-primary text-right">{{cliente.nombres}} {{cliente.apellidos}}</a>
-                        <a *ngIf="!cliente.nombres && !cliente.apellidos" class="text-muted text-hover-primary text-right">No especificado</a>
+                        <a *ngIf="cliente.fullnames" class="text-muted text-right">{{cliente.nombres}} {{cliente.apellidos}}</a>
+                        <a *ngIf="!cliente.nombres && !cliente.apellidos" class="text-muted text-right">No especificado</a>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-2">
                         <span class="font-weight-bold mr-2">Correo:</span>
-                        <a class="text-muted text-hover-primary text-right">{{cliente.email}}</a>
+                        <a class="text-muted text-right" style="word-break: break-all;">{{cliente.email}}</a>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-2">
                         <span class="font-weight-bold mr-2">Teléfono:</span>
