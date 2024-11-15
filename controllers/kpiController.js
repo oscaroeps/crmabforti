@@ -290,7 +290,7 @@ const kpi_prospectos_genero = async function (req, res) {
         let first = year + '-01-01';
         let last = year + '-12-31';
 
-        var generos = [0, 0];
+        var generos = [0, 0, 0];
 
         var clientes = await Cliente.find({
             createAt: {
@@ -304,6 +304,8 @@ const kpi_prospectos_genero = async function (req, res) {
                 generos[0] = generos[0] + 1;
             } else if (item.genero == 'Femenino') {
                 generos[1] = generos[1] + 1;
+            } else if (item.genero == 'No aplica') {
+                generos[2] = generos[2] + 1;
             }
         }
         res.status(200).send({ data: generos });

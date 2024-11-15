@@ -123,7 +123,7 @@ export class DashboardComponent implements OnInit {
             width: 380,
             type: 'pie',
           },
-          labels: ['Masculino', 'Femenino'],
+          labels: ['Masculino', 'Femenino', 'No aplica'],
           responsive: [{
             breakpoint: 480,
             options: {
@@ -135,7 +135,7 @@ export class DashboardComponent implements OnInit {
               }
             }
           }],
-          colors: [primary, success]
+          colors: [primary, success, info]
         };
 
         var chart = new ApexCharts(document.querySelector(apexChart), options);
