@@ -117,39 +117,18 @@
                                         item._id +
                                         '/dashboard'
                                     ]" [ngClass]="{
-                                      'symbol-dark':
-                                        !item.nombres ||
-                                        item.nombres.trim() === '',
-                                      'symbol-success':
-                                        item.nombres.charAt(0).toUpperCase() >=
-                                          'A' &&
-                                        item.nombres.charAt(0).toUpperCase() <=
-                                          'H',
-                                      'symbol-info':
-                                        item.nombres.charAt(0).toUpperCase() >=
-                                          'I' &&
-                                        item.nombres.charAt(0).toUpperCase() <=
-                                          'O',
-                                      'symbol-warning':
-                                        item.nombres.charAt(0).toUpperCase() >=
-                                          'P' &&
-                                        item.nombres.charAt(0).toUpperCase() <=
-                                          'U',
-                                      'symbol-primary':
-                                        item.nombres.charAt(0).toUpperCase() >=
-                                          'V' &&
-                                        item.nombres.charAt(0).toUpperCase() <=
-                                          'Z'
+                                      'symbol-dark': !item.nombres || item.nombres.trim() === '',
+                                      'symbol-success': item.nombres.charAt(0).toUpperCase() >= 'A' && item.nombres.charAt(0).toUpperCase() <= 'H',
+                                      'symbol-info': item.nombres.charAt(0).toUpperCase() >= 'I' && item.nombres.charAt(0).toUpperCase() <= 'O',
+                                      'symbol-warning': item.nombres.charAt(0).toUpperCase() >= 'P' && item.nombres.charAt(0).toUpperCase() <= 'U',
+                                      'symbol-primary': item.nombres.charAt(0).toUpperCase() >= 'V' && item.nombres.charAt(0).toUpperCase() <= 'Z',
+                                      'symbol-danger': item.nombres.charAt(0) >= '0' && item.nombres.charAt(0) <= '9'
                                     }">
                                     <div class="symbol-label" *ngIf="item.nombres || item.nombres != ''">
-                                      {{ item.nombres.charAt(0).toUpperCase()
-                                      }}{{
-                                      item.apellidos.charAt(0).toUpperCase()
-                                      }}
+                                      {{item.nombres.charAt(0).toUpperCase()}}{{item.apellidos.charAt(0).toUpperCase()}}
                                     </div>
                                     <div class="symbol-label" *ngIf="
-                                        !item.nombres || item.nombres === ''
-                                      ">
+                                        !item.nombres || item.nombres === ''">
                                       SN
                                     </div>
                                   </a>
