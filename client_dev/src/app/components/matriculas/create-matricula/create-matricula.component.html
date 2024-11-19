@@ -83,19 +83,16 @@
                                                                 style="padding-right: 0px !important">
                                                                 <div class="row" style="width: 100%;">
                                                                     <div class="col-12">
-                                                                        <div class="input-group">
-                                                                            <input type="text" class="form-control"
-                                                                                placeholder="Buscar operador"
-                                                                                name="filtro_cliente"
-                                                                                [(ngModel)]="filtro_cliente">
-                                                                            <div class="input-group-append">
-                                                                                <button class="btn btn-primary"
-                                                                                    type="button"
-                                                                                    (click)="init_clientes()">
-                                                                                    <i class="flaticon-search"></i>
-                                                                                </button>
+                                                                        <form (ngSubmit)="init_clientes()">
+                                                                            <div class="input-group">
+                                                                                <input type="text" class="form-control" placeholder="Buscar cliente" name="filtro_cliente" [(ngModel)]="filtro_cliente">
+                                                                                <div class="input-group-append">
+                                                                                    <button class="btn btn-primary" type="submit">
+                                                                                        <i class="flaticon-search"></i>
+                                                                                    </button>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
+                                                                        </form>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -155,7 +152,7 @@
 
                                                                                     <span
                                                                                         class="badge badge-primary ml-3"
-                                                                                        *ngIf="item.tipo == 'Socio'">S</span>
+                                                                                        *ngIf="item.tipo == 'Socio'">C</span>
                                                                                     <span
                                                                                         class="badge badge-warning ml-3"
                                                                                         *ngIf="item.tipo == 'Prospecto'">P</span>
