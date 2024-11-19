@@ -81,18 +81,21 @@
                                                         <div class="modal-header" style="padding-right: 0px !important">
                                                             <div class="row" style="width: 100%;">
                                                                 <div class="col-12">
-                                                                    <div class="input-group">
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Buscar operador"
-                                                                            name="filtro_cliente"
-                                                                            [(ngModel)]="filtro_cliente">
-                                                                        <div class="input-group-append">
-                                                                            <button class="btn btn-primary"
-                                                                                type="button" (click)="init_clientes()">
-                                                                                <i class="flaticon-search"></i>
-                                                                            </button>
+                                                                    <form (ngSubmit)="init_clientes()">
+                                                                        <div class="input-group">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Buscar cliente"
+                                                                                name="filtro_cliente"
+                                                                                [(ngModel)]="filtro_cliente">
+                                                                            <div class="input-group-append">
+                                                                                <button class="btn btn-primary"
+                                                                                    type="submit">
+                                                                                    <i class="flaticon-search"></i>
+                                                                                </button>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
+                                                                    </form>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -127,12 +130,20 @@
 
                                                                         <div class="symbol symbol-40 flex-shrink-0 mr-3"
                                                                             [ngClass]="{
-                                                                                        'symbol-success': item.nombres.charAt(0) >= 'A' && item.nombres.charAt(0) <= 'H',
-                                                                                        'symbol-info': item.nombres.charAt(0) >= 'I' && item.nombres.charAt(0) <= 'O',
-                                                                                        'symbol-warning': item.nombres.charAt(0) >= 'P' && item.nombres.charAt(0) <= 'U',
-                                                                                        'symbol-primary': item.nombres.charAt(0) >= 'V' && item.nombres.charAt(0) <= 'Z'}">
-                                                                            <div class="symbol-label">
-                                                                                {{item.nombres.charAt(0)}}
+                                                                                'symbol-dark': !item.nombres || item.nombres.trim() === '',
+                                                                                'symbol-success': item.nombres.charAt(0).toUpperCase() >= 'A' && item.nombres.charAt(0).toUpperCase() <= 'H',
+                                                                                'symbol-info': item.nombres.charAt(0).toUpperCase() >= 'I' && item.nombres.charAt(0).toUpperCase() <= 'O',
+                                                                                'symbol-warning': item.nombres.charAt(0).toUpperCase() >= 'P' && item.nombres.charAt(0).toUpperCase() <= 'U',
+                                                                                'symbol-primary': item.nombres.charAt(0).toUpperCase() >= 'V' && item.nombres.charAt(0).toUpperCase() <= 'Z',
+                                                                                'symbol-danger': item.nombres.charAt(0) >= '0' && item.nombres.charAt(0) <= '9'}">
+                                                                            <div class="symbol-label"
+                                                                                *ngIf="item.nombres || item.nombres != ''">
+                                                                                {{item.nombres.charAt(0).toUpperCase()}}{{item.apellidos.charAt(0).toUpperCase()}}
+                                                                            </div>
+                                                                            <div class="symbol-label"
+                                                                                *ngIf="
+                                                                                      !item.nombres || item.nombres === ''">
+                                                                                SN
                                                                             </div>
                                                                         </div>
 
@@ -143,7 +154,7 @@
                                                                                 {{item.fullnames}}
 
                                                                                 <span class="badge badge-primary ml-3"
-                                                                                    *ngIf="item.tipo == 'Socio'">S</span>
+                                                                                    *ngIf="item.tipo == 'Socio'">C</span>
                                                                                 <span class="badge badge-warning ml-3"
                                                                                     *ngIf="item.tipo == 'Prospecto'">P</span>
                                                                             </a>
