@@ -96,6 +96,11 @@ export class ClienteService {
     return this._http.put(this.url + 'cambiar_estado_cliente_admin/' + id, data, { headers: headers });
   }
 
+  cambiar_verify_cliente_admin(id: any, data: any, token: any): Observable<any> {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': token });
+    return this._http.put(this.url + 'cambiar_verify_cliente_admin/' + id, data, { headers: headers });
+  }
+
   cambiar_isDeleted_cliente_admin(id: any, data: any, token: any): Observable<any> {
     let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': token });
     return this._http.put(this.url + 'cambiar_isDeleted_cliente_admin/' + id, data, { headers: headers });

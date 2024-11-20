@@ -259,6 +259,27 @@ const cambiar_estado_cliente_admin = async function (req, res) {
     }
 }
 
+const cambiar_verify_cliente_admin = async function (req, res) {
+    if (req.user) {
+        let id = req.params['id'];
+        let data = req.body;
+
+        let nuevo_verify;
+
+        nuevo_verify = true;
+        
+        let cliente = await Cliente.findByIdAndUpdate({ _id: id }, {
+            verify: nuevo_verify
+
+        });
+
+        res.status(200).send({ data: cliente });
+
+    } else {
+        res.status(403).send({ data: undefined, message: 'NoToken' });
+    }
+}
+
 const cambiar_isDeleted_cliente_admin = async function (req, res) {
     if (req.user) {
         let id = req.params['id'];
@@ -451,6 +472,7 @@ module.exports = {
     editar_cliente_admin,
     listar_clientes_modal_admin,
     cambiar_estado_cliente_admin,
+    cambiar_verify_cliente_admin,
     cambiar_isDeleted_cliente_admin,
     cambiar_tipo_cliente_admin,
     generar_token_encuesta_admin,

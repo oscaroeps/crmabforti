@@ -133,6 +133,21 @@ export class IndexClienteComponent implements OnInit {
     );
   }
 
+  set_verifymanual(id: any, verify: any) {
+    this.load_estado = true;
+    this._clienteService.cambiar_verify_cliente_admin(id, { verify: verify }, this.token).subscribe(
+      response => {
+        this.load_estado = false;
+        $('#verifymanual-' + id).modal('hide');
+        this.filtrar();
+      },
+      error => {
+        this.load_estado = false;
+        console.error('Error cambiando verify', error);
+      }
+    );
+  }
+
   // Cambiar el tipo de un cliente
   set_tipo(id: any, tipo: any) {
     this.load_estado = true;

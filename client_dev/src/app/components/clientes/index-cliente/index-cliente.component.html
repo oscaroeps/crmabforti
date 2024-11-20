@@ -168,31 +168,65 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="ki ki-bold-more-ver"></i>
                                   </button>
+
                                   <div class="dropdown-menu">
-                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="item.estado"
-                                      data-toggle="modal" [attr.data-target]="'#delete-' + item._id">
+                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="item.estado && item.verify === false" data-toggle="modal" [attr.data-target]="'#verifymanual-' + item._id">
+                                      <i class="icon-1x text-dark-50 flaticon-interface-5"></i>
+                                      &nbsp; Verificar manualmente
+                                    </a>
+
+                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="item.estado" data-toggle="modal" [attr.data-target]="'#delete-' + item._id">
                                       <i class="icon-1x text-dark-50 flaticon2-cross"></i>
                                       &nbsp; Desactivar
                                     </a>
-                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="!item.estado"
-                                      data-toggle="modal" [attr.data-target]="'#delete-' + item._id">
+                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="!item.estado" data-toggle="modal" [attr.data-target]="'#delete-' + item._id">
                                       <i class="icon-1x text-dark-50 flaticon2-check-mark"></i>
                                       &nbsp; Activar
                                     </a>
-                                    <a class="dropdown-item" [routerLink]="['/cliente', item._id]">
+                                    <a class="dropdown-item" *ngIf="item.estado" [routerLink]="['/cliente', item._id]">
                                       <i class="icon-1x text-dark-50 flaticon-edit"></i>
                                       &nbsp; Editar
                                     </a>
-                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="item.tipo === 'Socio'"
-                                      data-toggle="modal" [attr.data-target]="'#tipo-' + item._id">
+                                    <a style="cursor: pointer" class="dropdown-item" *ngIf="item.estado" data-toggle="modal" [attr.data-target]="'#tipo-' + item._id">
                                       <i class="icon-1x text-dark-50 flaticon-circle"></i>
                                       &nbsp; Desasociar
                                     </a>
-                                    <a style="cursor: pointer" class="btn btn-danger dropdown-item" data-toggle="modal"
-                                      [attr.data-target]="'#borrar-' + item._id">
+                                    <a style="cursor: pointer" class="btn btn-danger dropdown-item" data-toggle="modal" [attr.data-target]="'#borrar-' + item._id">
                                       <i class="icon-1x text-white flaticon-delete"></i>
                                       &nbsp; Eliminar
                                     </a>
+                                  </div>
+                                </div>
+
+                                <div class="modal fade" id="verifymanual-{{ item._id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">
+                                          ¡Precaución!
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <i aria-hidden="true" class="ki ki-close"></i>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <p class="text-left">
+                                          Al realizar esta acción se está saltando la verificación vía correo electrónico. La verificación por correo es importante para que el cliente tenga una invitación como cliente y acepte los términos de privacidad. ¿Realmente quiere verificar este prospecto de manera manual? 
+                                        </p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-warning font-weight-bold" data-dismiss="modal">
+                                          Cerrar
+                                        </button>
+                                        <button *ngIf="!load_estado" type="button" class="btn btn-danger font-weight-bold" (click)="set_verifymanual(item._id, item.verify)">
+                                          Verificar
+                                        </button>
+                                        <button *ngIf="load_estado" class="btn btn-danger" type="button" disabled>
+                                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                          Verificando...
+                                        </button>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
 
