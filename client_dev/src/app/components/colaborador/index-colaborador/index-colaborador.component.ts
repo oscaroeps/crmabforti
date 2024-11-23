@@ -9,6 +9,7 @@ declare var $: any;
 })
 export class IndexColaboradorComponent implements OnInit {
 
+  public user: any = {};
   public token = localStorage.getItem('token');
   public colaboradores: Array<any> = [];
   public colaboradores_const: Array<any> = [];
@@ -22,7 +23,10 @@ export class IndexColaboradorComponent implements OnInit {
 
   constructor(
     private _colaboradorService: ColaboradorService
-  ) { }
+  ) {
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
+  }
 
   ngOnInit(): void {
     this.load_data = true;
