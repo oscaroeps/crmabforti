@@ -81,26 +81,21 @@
                                                             <form (ngSubmit)="filtrar()">
                                                                 <div class="d-flex align-items-center">
                                                                     <label
-                                                                        class="mr-3 mb-0 d-none d-md-block">Nivel:</label>
-                                                                    <select class="form-control" name="filtro"
-                                                                        [(ngModel)]="filtro">
+                                                                        class="mr-3 mb-0 d-none d-md-block">Ciclo:</label>
+                                                                    <select class="form-control" name="filtro" [(ngModel)]="filtro">
                                                                         <option value="Todos">Todos</option>
-                                                                        <option value="Basico 1">Básico 1</option>
-                                                                        <option value="Basico 2">Básico 2</option>
-                                                                        <option value="Basico 3">Básico 3</option>
-                                                                        <option value="Intermedio 1">Intermedio 1
-                                                                        </option>
-                                                                        <option value="Intermedio 2">Intermedio 2
-                                                                        </option>
-                                                                        <option value="Intermedio 3">Intermedio 3
-                                                                        </option>
-                                                                        <option value="Avanzado 1">Avanzado 1</option>
-                                                                        <option value="Avanzado 2">Avanzado 2</option>
-                                                                        <option value="Avanzado 3">Avanzado 3</option>
+                                                                        <option value="Aprovisionamiento">Aprovisionamiento</option>
+                                                                        <option value="Producción">Producción</option>
+                                                                        <option value="Distribución">Distribución</option>
+                                                                        <option value="Transporte">Transporte</option>
+                                                                        <option value="Almacenamiento">Almacenamiento</option>
+                                                                        <option value="Gestión de pedidos">Gestión de pedidos</option>
+                                                                        <option value="Logística inversa">Logística inversa</option>
+                                                                        <option value="Mantenimiento y soporte">Mantenimiento y soporte</option>
+                                                                        <option value="Atención al cliente">Atención al cliente</option>
+                                                                        <option value="Planificación y optimización">Planificación y optimización</option>
                                                                     </select>
-                                                                    <button
-                                                                        class="btn btn-primary px-6 font-weight-bold ml-2"
-                                                                        type="submit">
+                                                                    <button class="btn btn-primary px-6 font-weight-bold ml-2" type="submit">
                                                                         <i class="flaticon-search"></i>
                                                                     </button>
                                                                 </div>

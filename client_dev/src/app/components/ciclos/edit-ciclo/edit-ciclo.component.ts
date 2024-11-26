@@ -262,7 +262,7 @@ export class EditCicloComponent implements OnInit {
 
   actualizar() {
     if (!this.ciclo.nivel) {
-      $.notify('Seleccione el nivel del ciclo de servicio.', {
+      $.notify('Seleccione el ciclo del ciclo de servicio.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
