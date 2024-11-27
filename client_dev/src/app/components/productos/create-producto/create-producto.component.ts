@@ -95,8 +95,6 @@ export class CreateProductoComponent implements OnInit {
         setTimeout(() => {
           $('.selectpicker').selectpicker('refresh');
         }, 50);
-        console.log(this.categorias);
-        
       }
     );
   }
@@ -196,7 +194,9 @@ export class CreateProductoComponent implements OnInit {
       this.load_btn = true;
       this._productoService.crear_producto_admin(this.producto, this.token).subscribe(
         response => {
+          
           if (response.data != undefined) {
+            this.load_btn = false;
             $.notify('Se registró correctamente el producto.', {
               type: 'success',
               spacing: 10,
@@ -211,8 +211,9 @@ export class CreateProductoComponent implements OnInit {
                 exit: 'animated bounce'
               }
             });
-            this._router.navigate(['/productos']);
+            /* this._router.navigate(['/productos']); No funciona el redireccionamiento, se corrige temporalmente comentándolo */
           } else {
+            this.load_btn = false;
             $.notify(response.message, {
               type: 'danger',
               spacing: 10,
@@ -228,9 +229,26 @@ export class CreateProductoComponent implements OnInit {
               }
             });
           }
+        },
+        error => {
           this.load_btn = false;
+          $.notify('Error en el servidor. Intente más tarde.', {
+            type: 'danger',
+            spacing: 10,
+            timer: 2000,
+            placement: {
+              from: 'top',
+              align: 'right'
+            },
+            delay: 1000,
+            animate: {
+              enter: 'animated bounce',
+              exit: 'animated bounce'
+            }
+          });
         }
       );
+
     }
   }
 }

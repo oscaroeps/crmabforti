@@ -54,8 +54,7 @@
                                 <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
                                     <div class="col-xl-12 col-xxl-10">
                                         <!--begin::Wizard Form-->
-                                        <form class="form" id="kt_form" #registroForm="ngForm"
-                                            (ngSubmit)="registrar(registroForm)">
+                                        <form class="form" id="kt_form" #registroForm="ngForm" (ngSubmit)="registrar(registroForm)">
                                             <div class="row justify-content-center">
                                                 <div class="col-xl-9">
                                                     <!--begin::Wizard Step 1-->
@@ -263,24 +262,15 @@
 
                                                             </div>
                                                         </div>
-                                                        <!--end::Group-->
                                                     </div>
-                                                    <!--end::Wizard Step 1-->
-
-                                                    <!--begin::Wizard Actions-->
                                                     <div class="d-flex justify-content-between border-top pt-10 mt-15">
                                                         <div class="mr-2">
-                                                            <a [routerLink]="['/prospecto']"
-                                                                class="btn btn-light-primary font-weight-bolder px-9 py-4">Regresar</a>
+                                                            <a [routerLink]="['/prospecto']" class="btn btn-light-primary font-weight-bolder px-9 py-4">Regresar</a>
                                                         </div>
                                                         <div>
-                                                            <button *ngIf="!btn_registrar" type="submit"
-                                                                class="btn btn-success font-weight-bolder px-9 py-4">Registrar</button>
-                                                            <button *ngIf="btn_registrar"
-                                                                class="btn btn-success font-weight-bolder px-9 py-4"
-                                                                type="button" disabled>
-                                                                <span class="spinner-border spinner-border-sm"
-                                                                    role="status" aria-hidden="true"></span>
+                                                            <button *ngIf="!btn_registrar" type="submit" class="btn btn-success font-weight-bolder px-9 py-4">Registrar</button>
+                                                            <button *ngIf="btn_registrar" class="btn btn-success font-weight-bolder px-9 py-4" type="button" disabled>
+                                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                 Registrando...
                                                             </button>
                                                         </div>

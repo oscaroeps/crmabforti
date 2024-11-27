@@ -152,23 +152,19 @@
                                                             class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.titulo}}</span>
                                                     </td>
                                                     <td>
-                                                        <span
-                                                            class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.categoria}}</span>
+                                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.categoria}}</span>
 
                                                     </td>
                                                     <td>
-                                                        <span
-                                                            class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.tipo}}</span>
+                                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.tipo}}</span>
 
                                                     </td>
                                                     <td>
-                                                        <span
-                                                            class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.stock}}</span>
+                                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.stock}}</span>
                                                         <span class="text-muted font-weight-bold">unidades</span>
                                                     </td>
                                                     <td>
-                                                        <span
-                                                            class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.precio
+                                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.precio
                                                             | currency: 'USD'}}</span>
                                                     </td>
                                                     <td>
@@ -239,29 +235,15 @@
                                                                         <button type="button"
                                                                             class="btn btn-warning font-weight-bold"
                                                                             data-dismiss="modal">Cerrar</button>
-                                                                        <button *ngIf="!load_estado && !item.estado"
-                                                                            type="button"
-                                                                            class="btn btn-danger font-weight-bold"
-                                                                            (click)="set_state(item._id,item.estado)">Activar</button>
-                                                                        <button *ngIf="!load_estado && item.estado"
-                                                                            type="button"
-                                                                            class="btn btn-danger font-weight-bold"
-                                                                            (click)="set_state(item._id,item.estado)">Desactivar</button>
+                                                                        <button *ngIf="!load_estado && !item.estado" type="button" class="btn btn-danger font-weight-bold" (click)="set_state(item._id,item.estado)">Activar</button>
+                                                                        <button *ngIf="!load_estado && item.estado" type="button" class="btn btn-danger font-weight-bold" (click)="set_state(item._id,item.estado)">Desactivar</button>
 
-                                                                        <button *ngIf="load_estado && !item.estado"
-                                                                            class="btn btn-danger" type="button"
-                                                                            disabled>
-                                                                            <span
-                                                                                class="spinner-border spinner-border-sm"
-                                                                                role="status" aria-hidden="true"></span>
+                                                                        <button *ngIf="load_estado && !item.estado" class="btn btn-danger" type="button" disabled>
+                                                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                             Activando...
                                                                         </button>
-                                                                        <button *ngIf="load_estado && item.estado"
-                                                                            class="btn btn-danger" type="button"
-                                                                            disabled>
-                                                                            <span
-                                                                                class="spinner-border spinner-border-sm"
-                                                                                role="status" aria-hidden="true"></span>
+                                                                        <button *ngIf="load_estado && item.estado" class="btn btn-danger" type="button" disabled>
+                                                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                             Desactivando...
                                                                         </button>
                                                                     </div>
@@ -277,17 +259,12 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <ngb-pagination [collectionSize]="productos.length" [pageSize]="pageSize"
-                                    [(page)]="page" [maxSize]="10" [rotate]="true"
-                                    [boundaryLinks]="true"></ngb-pagination>
+                                <ngb-pagination [collectionSize]="productos.length" [pageSize]="pageSize" [(page)]="page" [maxSize]="10" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
                             </div>
                         </div>
                     </div>
-                    <!--end::Container-->
                 </div>
-                <!--end::Entry-->
             </div>
-            <!--end::Content-->
         </div>
     </div>
 </div>
