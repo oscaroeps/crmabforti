@@ -1,20 +1,16 @@
 {
     "categorias": [
         {
-            "titulo": "Licencias",
+            "titulo": "Almacenaje",
             "id": "1"
         },
         {
-            "titulo": "Perifericos",
+            "titulo": "Logística",
             "id": "2"
         },
         {
-            "titulo": "Laptops",
+            "titulo": "Transporte terrestre",
             "id": "3"
-        },
-        {
-            "titulo": "Oficina",
-            "id": "4"
         }
     ],
     "ganancia_producto": 30

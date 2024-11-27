@@ -95,6 +95,8 @@ export class CreateProductoComponent implements OnInit {
         setTimeout(() => {
           $('.selectpicker').selectpicker('refresh');
         }, 50);
+        console.log(this.categorias);
+        
       }
     );
   }

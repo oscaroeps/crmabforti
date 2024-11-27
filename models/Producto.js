@@ -6,7 +6,6 @@ var ProductoSchema = Schema({
     descripcion: { type: String, required: true },
     slug: { type: String, required: true },
     categoria: { type: String, required: true },
-
     stock: { type: Number, required: true },
     tipo_variedad: { type: String, required: true },
     precio: { type: Number, required: false },
