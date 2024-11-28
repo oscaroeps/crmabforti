@@ -194,7 +194,7 @@ export class CreateProductoComponent implements OnInit {
       this.load_btn = true;
       this._productoService.crear_producto_admin(this.producto, this.token).subscribe(
         response => {
-          
+
           if (response.data != undefined) {
             this.load_btn = false;
             $.notify('Se registró correctamente el producto.', {
@@ -211,7 +211,10 @@ export class CreateProductoComponent implements OnInit {
                 exit: 'animated bounce'
               }
             });
-            /* this._router.navigate(['/productos']); No funciona el redireccionamiento, se corrige temporalmente comentándolo */
+            // Agregar retraso antes de redirigir
+            setTimeout(() => {
+              this._router.navigate(['/productos']);
+            }, 2000); // 2000 milisegundos = 1 segundo
           } else {
             this.load_btn = false;
             $.notify(response.message, {
