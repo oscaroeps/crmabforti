@@ -46,7 +46,7 @@ const crear_correo_prospeccion_admin = async function (req, res) {
         let data = req.body;
 
         let cliente = await Cliente.findById({ _id: data.cliente })
-        enviar_correo_prospeccion(cliente.fullnames, data.asunto, cliente.email, data.contenido);
+        //enviar_correo_prospeccion(cliente.fullnames, data.asunto, cliente.email, data.contenido); Se comenta para no enviar el correo pero después hay que cambiar al correo del asesor
 
         let correo = await Cliente_correo.create(data);
         crear_actividad_prospeccion_admin(

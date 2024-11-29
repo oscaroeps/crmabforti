@@ -153,11 +153,11 @@ const crear_campaing = async function (req, res) {
 
         emailCampaigns = {
             tag: 'Practica',
-            sender: { name: 'Oscar', email: 'oscaroeps30@gmail.com' },
+            sender: { name: 'Soporte AB-Forti', email: 'soporte@ab-forti.com' },
             name: data.name,
             subject: data.subject,
             htmlContent: data.html_content,
-            replyTo: 'oscaroeps30@gmail.com',
+            replyTo: 'soporte@ab-forti.com',
             recipients: { listIds: arr_list },
             inlineImageActivation: false,
             mirrorActive: false,

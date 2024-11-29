@@ -39,7 +39,7 @@ const generar_matricula_admin = async function (req, res) {
 
         generar_actividad_matricula(matricula._id, 'Se hizo el contrato de servicio del cliente.');
 
-        enviar_orden_matricula(matricula._id);
+        //enviar_orden_matricula(matricula._id); Se comenta para no enviar el correo pero después hay que cambiar al correo del asesor
         res.status(200).send({ data: matricula });
     } else {
         res.status(403).send({ data: undefined, message: 'NoToken' });
@@ -207,7 +207,7 @@ const cancelar_aforo_admin = async function (id) {
 const send_invoice = async function (req, res) {
     if (req.user) {
         let id = req.params['id'];
-        enviar_orden_matricula(id);
+        //enviar_orden_matricula(id); Se comenta para no enviar el correo pero después hay que cambiar al correo del asesor
         generar_actividad_matricula(id, 'Se reenvió la orden al cliente.');
         res.status(200).send({ data: true });
     } else {
