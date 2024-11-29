@@ -228,7 +228,7 @@
                                             <th>Producto</th>
                                             <th>Variedad</th>
                                             <th>Categoría</th>
-                                            <th>Stock</th>
+                                            <th>Disponibilidad</th>
                                             <th>Precio</th>
                                             <th>Pago total</th>
                                         </tr>
@@ -255,9 +255,9 @@
                                                 <td>{{item.categoria}}</td>
                                                 <td>
                                                     <span class="text-success"
-                                                        *ngIf="item.stock > 5"><b>{{item.stock}}</b></span>
+                                                        *ngIf="item.stock > 5"><b>{{item.stock}} </b>m2</span>
                                                     <span class="text-danger"
-                                                        *ngIf="item.stock <= 5"><b>{{item.stock}}</b></span>
+                                                        *ngIf="item.stock <= 5"><b>{{item.stock}} </b>m2</span>
                                                 </td>
                                                 <td>
                                                     <span *ngIf="item.precio >= 1"><b>{{item.precio |
@@ -285,7 +285,7 @@
                                             <th>Producto</th>
                                             <th>Variedad</th>
                                             <th>Categoría</th>
-                                            <th>Stock</th>
+                                            <th>Disponibilidad</th>
                                             <th>Precio</th>
                                             <th>Pago total</th>
                                         </tr>

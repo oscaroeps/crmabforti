@@ -159,7 +159,7 @@ export class InventarioGeneralComponent implements OnInit {
       { header: 'TIPO', key: 'col3', width: 35 },
       { header: 'VARIEDAD', key: 'col4', width: 20 },
       { header: 'CATEGORIA', key: 'col5', width: 25 },
-      { header: 'STOCK', key: 'col6', width: 15 },
+      { header: 'DISPONIBILIDAD', key: 'col6', width: 15 },
       { header: 'PRECIO', key: 'col7', width: 15 }
     ] as any;
 

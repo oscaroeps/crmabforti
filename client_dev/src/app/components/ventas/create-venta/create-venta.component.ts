@@ -115,7 +115,7 @@ export class CreateVentaComponent implements OnInit {
         $('#variedad-' + idx).addClass('bg-gris');
         this.variedad_selected = item;
       } else {
-        $.notify('La cantidad exede el stock actual.', {
+        $.notify('La cantidad exede la disponibilidad actual.', {
           type: 'danger',
           spacing: 10,
           timer: 2000,
