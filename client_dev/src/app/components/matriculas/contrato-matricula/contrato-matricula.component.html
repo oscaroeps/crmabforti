@@ -1,26 +1,17 @@
 <div class="d-flex flex-column flex-root">
     <div class="d-flex flex-row flex-column-fluid page">
         <app-sidebar></app-sidebar>
-
         <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
             <app-top></app-top>
-            <!--begin::Content-->
             <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                <!--begin::Subheader-->
                 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
-                    <div
-                        class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-                        <!--begin::Info-->
+                    <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
                         <div class="d-flex align-items-center flex-wrap mr-2">
-                            <!--begin::Page Title-->
                             <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
                                 Contrato de servicio
                             </h5>
-                            <!--end::Page Title-->
-                            <!--begin::Actions-->
                             <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-                            <ul
-                                class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                            <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                 <li class="breadcrumb-item text-muted">
                                     <a [routerLink]="['/matriculas']" class="text-muted">Lista de contratos de servicio</a>
                                 </li>
@@ -28,19 +19,11 @@
                                     <a class="text-muted">Contrato</a>
                                 </li>
                             </ul>
-                            <!--end::Actions-->
                         </div>
-                        <!--end::Info-->
-
                     </div>
                 </div>
-                <!--end::Subheader-->
-                <!--begin::Entry-->
                 <div class="d-flex flex-column-fluid">
-                    <!--begin::Container-->
                     <div class="container">
-                        <!-- begin::Card-->
-
                         <div *ngIf="load_data" class="card card-custom card-shadowless rounded-top-0 mb-7">
                             <div class="card-body p-0">
                                 <div class="row">
@@ -52,152 +35,133 @@
                                 </div>
                             </div>
                         </div>
-
                         <ng-container *ngIf="!load_data">
                             <div class="card card-custom position-relative overflow-hidden" *ngIf="data">
-                                <!--begin::Shape-->
                                 <div class="position-absolute opacity-30">
                                     <span class="svg-icon svg-icon-10x svg-logo-white">
-                                        <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/shapes/abstract-8.svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="176" height="165"
-                                            viewBox="0 0 176 165" fill="none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="176" height="165" viewBox="0 0 176 165" fill="none">
                                             <g clip-path="url(#clip0)">
-                                                <path
-                                                    d="M-10.001 135.168C-10.001 151.643 3.87924 165.001 20.9985 165.001C38.1196 165.001 51.998 151.643 51.998 135.168C51.998 118.691 38.1196 105.335 20.9985 105.335C3.87924 105.335 -10.001 118.691 -10.001 135.168Z"
-                                                    fill="#AD84FF"></path>
-                                                <path
-                                                    d="M28.749 64.3117C28.749 78.7296 40.8927 90.4163 55.8745 90.4163C70.8563 90.4163 83 78.7296 83 64.3117C83 49.8954 70.8563 38.207 55.8745 38.207C40.8927 38.207 28.749 49.8954 28.749 64.3117Z"
-                                                    fill="#AD84FF"></path>
-                                                <path
-                                                    d="M82.9996 120.249C82.9996 144.964 103.819 165 129.501 165C155.181 165 176 144.964 176 120.249C176 95.5342 155.181 75.5 129.501 75.5C103.819 75.5 82.9996 95.5342 82.9996 120.249Z"
-                                                    fill="#AD84FF"></path>
-                                                <path
-                                                    d="M98.4976 23.2928C98.4976 43.8887 115.848 60.5856 137.249 60.5856C158.65 60.5856 176 43.8887 176 23.2928C176 2.69692 158.65 -14 137.249 -14C115.848 -14 98.4976 2.69692 98.4976 23.2928Z"
-                                                    fill="#AD84FF"></path>
-                                                <path
-                                                    d="M-10.0011 8.37466C-10.0011 20.7322 0.409554 30.7493 13.2503 30.7493C26.0911 30.7493 36.5 20.7322 36.5 8.37466C36.5 -3.98287 26.0911 -14 13.2503 -14C0.409554 -14 -10.0011 -3.98287 -10.0011 8.37466Z"
-                                                    fill="#AD84FF"></path>
-                                                <path
-                                                    d="M-2.24881 82.9565C-2.24881 87.0757 1.22081 90.4147 5.50108 90.4147C9.78135 90.4147 13.251 87.0757 13.251 82.9565C13.251 78.839 9.78135 75.5 5.50108 75.5C1.22081 75.5 -2.24881 78.839 -2.24881 82.9565Z"
-                                                    fill="#AD84FF"></path>
-                                                <path
-                                                    d="M55.8744 12.1044C55.8744 18.2841 61.0788 23.2926 67.5001 23.2926C73.9196 23.2926 79.124 18.2841 79.124 12.1044C79.124 5.92653 73.9196 0.917969 67.5001 0.917969C61.0788 0.917969 55.8744 5.92653 55.8744 12.1044Z"
-                                                    fill="#AD84FF"></path>
+                                                <path d="M-10.001 135.168C-10.001 151.643 3.87924 165.001 20.9985 165.001C38.1196 165.001 51.998 151.643 51.998 135.168C51.998 118.691 38.1196 105.335 20.9985 105.335C3.87924 105.335 -10.001 118.691 -10.001 135.168Z" fill="#AD84FF"></path>
+                                                <path d="M28.749 64.3117C28.749 78.7296 40.8927 90.4163 55.8745 90.4163C70.8563 90.4163 83 78.7296 83 64.3117C83 49.8954 70.8563 38.207 55.8745 38.207C40.8927 38.207 28.749 49.8954 28.749 64.3117Z" fill="#AD84FF"></path>
+                                                <path d="M82.9996 120.249C82.9996 144.964 103.819 165 129.501 165C155.181 165 176 144.964 176 120.249C176 95.5342 155.181 75.5 129.501 75.5C103.819 75.5 82.9996 95.5342 82.9996 120.249Z" fill="#AD84FF"></path>
+                                                <path d="M98.4976 23.2928C98.4976 43.8887 115.848 60.5856 137.249 60.5856C158.65 60.5856 176 43.8887 176 23.2928C176 2.69692 158.65 -14 137.249 -14C115.848 -14 98.4976 2.69692 98.4976 23.2928Z" fill="#AD84FF"></path>
+                                                <path d="M-10.0011 8.37466C-10.0011 20.7322 0.409554 30.7493 13.2503 30.7493C26.0911 30.7493 36.5 20.7322 36.5 8.37466C36.5 -3.98287 26.0911 -14 13.2503 -14C0.409554 -14 -10.0011 -3.98287 -10.0011 8.37466Z" fill="#AD84FF"></path>
+                                                <path d="M-2.24881 82.9565C-2.24881 87.0757 1.22081 90.4147 5.50108 90.4147C9.78135 90.4147 13.251 87.0757 13.251 82.9565C13.251 78.839 9.78135 75.5 5.50108 75.5C1.22081 75.5 -2.24881 78.839 -2.24881 82.9565Z" fill="#AD84FF"></path>
+                                                <path d="M55.8744 12.1044C55.8744 18.2841 61.0788 23.2926 67.5001 23.2926C73.9196 23.2926 79.124 18.2841 79.124 12.1044C79.124 5.92653 73.9196 0.917969 67.5001 0.917969C61.0788 0.917969 55.8744 5.92653 55.8744 12.1044Z" fill="#AD84FF"></path>
                                             </g>
                                         </svg>
-                                        <!--end::Svg Icon-->
                                     </span>
                                 </div>
-                                <!--end::Shape-->
-                                <!--begin::Invoice header-->
                                 <div class="row justify-content-center py-8 px-8 py-md-36 px-md-0 bg-primary">
                                     <div class="col-md-9">
-                                        <div
-                                            class="d-flex justify-content-between align-items-md-center flex-column flex-md-row">
+                                        <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row">
                                             <div class="d-flex flex-column px-0 order-2 order-md-1">
-                                                <!--begin::Logo-->
-
-                                                <!--end::Logo-->
-                                                <span
-                                                    class="d-flex flex-column font-size-h5 font-weight-bold text-white">
-                                                    <span>Plaza Omega Center, PA-228, </span>
-                                                    <span>Parque Industrial Bernardo Quintana, 76246 Qro.</span>
+                                                <span class="d-flex flex-column font-size-h5 font-weight-bold text-white">
+                                                    <span>PARQUE INDUSTRIAL AEROPUERTO PIA </span>
+                                                    <span>Carretera Estatal 100, Querétaro 100 El Colorado-Higuerillas 4200-interior 41, 76295 Santiago de Querétaro, Qro.</span>                                                    
                                                 </span>
                                             </div>
-                                            <h1 class="display-3 font-weight-boldest text-white order-1 order-md-2">
+                                            <h1 class="display-3 font-weight-boldest text-white order-1 order-md-2 text-right">
                                                 CONTRATO UPPER
                                             </h1>
                                         </div>
                                     </div>
                                 </div>
-                                <!--end::Invoice header-->
                                 <div class="row justify-content-center py-8 px-8 py-md-30 px-md-0">
                                     <div class="col-md-9">
-                                        <!--begin::Invoice body-->
                                         <div class="row pb-26">
                                             <div class="col-md-3 border-right-md pr-md-10 py-md-10">
-                                                <!--begin::Invoice To-->
-                                                <div class="text-dark-50 font-size-lg font-weight-bold mb-3">CLIENTE.
-                                                </div>
+                                                <div class="text-dark-50 font-size-lg font-weight-bold mb-3">Cliente</div>
                                                 <div class="font-size-lg font-weight-bold mb-10">
                                                     {{matricula.cliente.nombres}} {{matricula.cliente.apellidos}}
                                                     <br>{{matricula.cliente.email}}
                                                 </div>
-                                                <!--end::Invoice To-->
-                                                <!--begin::Invoice No-->
-                                                <div class="text-dark-50 font-size-lg font-weight-bold mb-3">ASESOR.
-                                                </div>
+                                                <div class="text-dark-50 font-size-lg font-weight-bold mb-3">Asesor</div>                                                
                                                 <div class="font-size-lg font-weight-bold mb-10">
-                                                    {{matricula.asesor.nombres}} {{matricula.asesor.apellidos}} </div>
-                                                <!--end::Invoice No-->
-                                                <!--begin::Invoice Date-->
-                                                <div class="text-dark-50 font-size-lg font-weight-bold mb-3">FECHA</div>
-                                                <div class="font-size-lg font-weight-bold mb-7">{{matricula.createdAt |
-                                                    date}}</div>
-                                                <!--end::Invoice Date-->
-
+                                                    {{matricula.asesor.nombres}} {{matricula.asesor.apellidos}}</div>
+                                                <div class="text-dark-50 font-size-lg font-weight-bold mb-3">Fecha</div>
+                                                <div class="font-size-lg font-weight-bold mb-7">{{matricula.createdAt | date}}</div>
                                                 <div class="font-size-lg font-weight-bold">
-                                                    <img class="font-size-lg font-weight-bold mb-7"
-                                                        [src]="url + 'get_image_config/' + logotipo"
-                                                        style="width: 60%;">
+                                                    <img class="font-size-lg font-weight-bold mb-7" [src]="url + 'get_image_config/' + logotipo" style="width: 60%;">
                                                 </div>
-
                                             </div>
                                             <div class="col-md-9 py-10 pl-md-10">
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <h4 class="font-weight-bold text-dark mb-4">Licencia básica</h4>
+                                                        <h4 class="font-weight-bold text-dark mb-4">CONTRATO DE PRESTACIÓN DE SERVICIOS LOGÍSTICOS</h4>
                                                         <div class="text-dark-50 line-height-lg mb-8">
-                                                            <p>Primera.- Conviene hacer constar el título de la obra, de
-                                                                la lengua o lenguas en el ámbito territorial de la
-                                                                cesión. En relación a la lengua de edición, y en el caso
-                                                                de que el editor proponga más de una, hay que tener en
-                                                                cuenta que "cuando el contrato establece la edición de
-                                                                una obra en diversas lenguas españolas oficiales, la
-                                                                publicación de una de ellas no exime al editor de la
-                                                                obligación de publicar en el resto. Si pasados cinco
-                                                                años desde que el autor entrega su obra, el editor no
-                                                                hubiera publicado en todas las lenguas previstas en el
-                                                                contrato, el autor podría resolver respecto a las
-                                                                lenguas en que no haya publicado"
+                                                            <p>QUE CELEBRAN, POR UNA PARTE,
+                                                                UPPER LOGISTICS, REPRESENTADA EN ESTE ACTO POR {{matricula.asesor.nombres}} {{matricula.asesor.apellidos}}, A QUIEN EN LO SUCESIVO SE LE DENOMINARÁ "EL PROVEEDOR", Y POR OTRA PARTE, {{matricula.cliente.nombres}} {{matricula.cliente.apellidos}}, REPRESENTADA POR {{matricula.cliente.nombres}} {{matricula.cliente.apellidos}}, A QUIEN EN LO SUCESIVO SE LE DENOMINARÁ "EL CLIENTE", AL TENOR DE LAS SIGUIENTES DECLARACIONES Y CLÁUSULAS:
                                                             </p>
-
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <h4 class="font-weight-bold text-dark mb-4">Licencia básica</h4>
+                                                        <h4 class="font-weight-bold text-dark mb-4">DECLARACIONES</h4>
                                                         <div class="text-dark-50 line-height-lg mb-8">
-                                                            <p>Segunda.- La cesión se entiende hecha con carácter (no)
-                                                                exclusivo, en cualquiera de los posibles sistemas de
-                                                                comercialización, para las siguientes modalidades de
-                                                                edición.
+                                                            <p>I. Declara "EL PROVEEDOR":<br>
+                                                                Que es una sociedad legalmente constituida conforme a las leyes de México, con domicilio en PARQUE INDUSTRIAL AEROPUERTO PIA
+                                                                Carretera Estatal 100, Querétaro 100 El Colorado-Higuerillas 4200-interior 41, 76295 Santiago de Querétaro, Qro.
+                                                                Que cuenta con la infraestructura, personal y experiencia necesarios para prestar los servicios logísticos que se describen en este contrato. <br><br>
+                                                                II. Declara "EL CLIENTE":<br>                                                                
+                                                                Que es una persona física/moral legalmente constituida conforme a las leyes de México, con domicilio en [DOMICILIO COMPLETO].
+                                                                Que requiere la prestación de servicios logísticos por parte de "EL PROVEEDOR" y acepta las condiciones establecidas en este contrato. <br><br>
+                                                                III. Declaran ambas partes:<br>
+                                                                Que tienen la capacidad jurídica para celebrar este contrato y que el mismo no contiene cláusulas que contravengan la ley.
                                                             </p>
-
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <h4 class="font-weight-bold text-dark mb-4">Licencia extendida
-                                                        </h4>
+                                                        <h4 class="font-weight-bold text-dark mb-4">CLÁUSULAS</h4>                                                        
                                                         <div class="text-dark-50 line-height-lg">
-                                                            <p>Segunda.- Es fundamental determinar el carácter exclusivo
-                                                                o no de la cesión. Igualmente, concretar las diversas
-                                                                modalidades de edición, sin aceptar mas redactados
-                                                                genéricos del tipo «en todas las colecciones actuales o
-                                                                futuras» o bien «en todas las modalidades presentes o
-                                                                que pueda crear el Editor». Conviene tener muy presente
-                                                                que la cesión exclusiva, como se ha dicho, permite al
-                                                                editor transmitir a terceras partes del contrato
-                                                                (siempre con el consentimiento del autor).
-
+                                                            <p>PRIMERA. OBJETO DEL CONTRATO<br>
+                                                                "EL PROVEEDOR" se obliga a prestar a "EL CLIENTE" los servicios logísticos que incluyen, pero no se limitan a:
+                                                                a) Transporte de mercancías.
+                                                                b) Almacenamiento temporal.
+                                                                c) Distribución de productos.<br><br>
+                                                                SEGUNDA. VIGENCIA<br>
+                                                                El presente contrato tendrá una vigencia de [DURACIÓN DEL CONTRATO], iniciando el [FECHA DE INICIO] y concluyendo el [FECHA DE TÉRMINO].<br><br>
+                                                                TERCERA. OBLIGACIONES DE "EL PROVEEDOR"<br>
+                                                                Garantizar el traslado seguro y eficiente de las mercancías de "EL CLIENTE".
+                                                                Informar a "EL CLIENTE" sobre cualquier incidente que pueda afectar el cumplimiento de los servicios.
+                                                                Cumplir con todas las normativas aplicables en materia de transporte y logística.<br><br>
+                                                                CUARTA. OBLIGACIONES DE "EL CLIENTE"<br>
+                                                                Proveer información completa y precisa sobre las mercancías.
+                                                                Pagar puntualmente la contraprestación acordada conforme a la cláusula sexta.
+                                                                Garantizar que las mercancías cumplan con las regulaciones aplicables.<br><br>
+                                                                QUINTA. CONTRAPRESTACIÓN Y FORMA DE PAGO<br>
+                                                                "EL CLIENTE" pagará a "EL PROVEEDOR" la cantidad de $[MONTO EN NÚMEROS] ([MONTO EN LETRA]), más el IVA correspondiente, según la factura emitida. El pago se realizará mediante [FORMA DE PAGO] dentro de [PLAZO] días hábiles posteriores a la emisión de la factura.<br><br>                                                                
+                                                                SEXTA. RESPONSABILIDAD Y SEGUROS<br>
+                                                                "EL PROVEEDOR" será responsable por daños o pérdidas de las mercancías durante el traslado, salvo que estos se deriven de caso fortuito, fuerza mayor o negligencia de "EL CLIENTE".
+                                                                Las partes acuerdan que "EL CLIENTE" contratará un seguro sobre las mercancías, salvo que "EL PROVEEDOR" ofrezca este servicio adicional.<br><br>
+                                                                SÉPTIMA. CONFIDENCIALIDAD<br>
+                                                                Ambas partes se comprometen a mantener la confidencialidad de toda la información compartida con motivo del presente contrato.<br><br>                                                                
+                                                                OCTAVA. TERMINACIÓN ANTICIPADA<br>
+                                                                El contrato podrá terminarse de manera anticipada por cualquiera de las siguientes causas:
+                                                                a) Incumplimiento grave de alguna de las partes.
+                                                                b) Mutuo acuerdo por escrito.
+                                                                c) Fuerza mayor que imposibilite la prestación de los servicios.<br><br>                                                                
+                                                                NOVENA. JURISDICCIÓN Y LEGISLACIÓN APLICABLE<br>
+                                                                Para todo lo relacionado con la interpretación y cumplimiento del presente contrato, las partes se someten a la jurisdicción de los tribunales de [CIUDAD, ESTADO], renunciando a cualquier otro fuero que pudiera corresponderles.<br><br>                                                                
+                                                                Leído que fue el presente contrato y enteradas las partes de su contenido y alcance legal, lo firman en dos ejemplares de igual validez en [CIUDAD], a los [DÍA] días del mes de [MES] de [AÑO].<br><br>                                                                
+                                                                "EL PROVEEDOR"                                                                
                                                             </p>
-
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <h4 class="font-weight-bold text-dark mb-4">[NOMBRE Y FIRMA]</h4>
+                                                        <div class="text-dark-50 line-height-lg mb-8">
+                                                            <p>Representante Legal<br>"EL CLIENTE"</p>                                                                                                    
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <h4 class="font-weight-bold text-dark mb-4">[NOMBRE Y FIRMA]</h4>
+                                                        <div class="text-dark-50 line-height-lg mb-8">
+                                                            <p>Representante Legal</p>                                                        
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--end::Invoice body-->
-                                        <!--begin::Invoice footer-->
                                         <div class="row">
                                             <div class="col-md-5 border-top pt-14 pb-10 pb-md-18">
                                                 <div class="d-flex flex-column flex-md-row">
@@ -219,54 +183,30 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-7 pt-md-25 border-top">
-                                                <div
-                                                    class="bg-primary rounded d-flex align-items-center justify-content-between text-white max-w-350px position-relative ml-auto p-7">
-                                                    <!--begin::Shape-->
+                                                <div class="bg-primary rounded d-flex align-items-center justify-content-between text-white max-w-350px position-relative ml-auto p-7">
                                                     <div class="position-absolute opacity-30 top-0 right-0">
                                                         <span class="svg-icon svg-icon-2x svg-logo-white svg-icon-flip">
-                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/shapes/abstract-8.svg-->
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="176"
-                                                                height="165" viewBox="0 0 176 165" fill="none">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="176" height="165" viewBox="0 0 176 165" fill="none">
                                                                 <g clip-path="url(#clip0)">
-                                                                    <path
-                                                                        d="M-10.001 135.168C-10.001 151.643 3.87924 165.001 20.9985 165.001C38.1196 165.001 51.998 151.643 51.998 135.168C51.998 118.691 38.1196 105.335 20.9985 105.335C3.87924 105.335 -10.001 118.691 -10.001 135.168Z"
-                                                                        fill="#AD84FF"></path>
-                                                                    <path
-                                                                        d="M28.749 64.3117C28.749 78.7296 40.8927 90.4163 55.8745 90.4163C70.8563 90.4163 83 78.7296 83 64.3117C83 49.8954 70.8563 38.207 55.8745 38.207C40.8927 38.207 28.749 49.8954 28.749 64.3117Z"
-                                                                        fill="#AD84FF"></path>
-                                                                    <path
-                                                                        d="M82.9996 120.249C82.9996 144.964 103.819 165 129.501 165C155.181 165 176 144.964 176 120.249C176 95.5342 155.181 75.5 129.501 75.5C103.819 75.5 82.9996 95.5342 82.9996 120.249Z"
-                                                                        fill="#AD84FF"></path>
-                                                                    <path
-                                                                        d="M98.4976 23.2928C98.4976 43.8887 115.848 60.5856 137.249 60.5856C158.65 60.5856 176 43.8887 176 23.2928C176 2.69692 158.65 -14 137.249 -14C115.848 -14 98.4976 2.69692 98.4976 23.2928Z"
-                                                                        fill="#AD84FF"></path>
-                                                                    <path
-                                                                        d="M-10.0011 8.37466C-10.0011 20.7322 0.409554 30.7493 13.2503 30.7493C26.0911 30.7493 36.5 20.7322 36.5 8.37466C36.5 -3.98287 26.0911 -14 13.2503 -14C0.409554 -14 -10.0011 -3.98287 -10.0011 8.37466Z"
-                                                                        fill="#AD84FF"></path>
-                                                                    <path
-                                                                        d="M-2.24881 82.9565C-2.24881 87.0757 1.22081 90.4147 5.50108 90.4147C9.78135 90.4147 13.251 87.0757 13.251 82.9565C13.251 78.839 9.78135 75.5 5.50108 75.5C1.22081 75.5 -2.24881 78.839 -2.24881 82.9565Z"
-                                                                        fill="#AD84FF"></path>
-                                                                    <path
-                                                                        d="M55.8744 12.1044C55.8744 18.2841 61.0788 23.2926 67.5001 23.2926C73.9196 23.2926 79.124 18.2841 79.124 12.1044C79.124 5.92653 73.9196 0.917969 67.5001 0.917969C61.0788 0.917969 55.8744 5.92653 55.8744 12.1044Z"
-                                                                        fill="#AD84FF"></path>
+                                                                    <path d="M-10.001 135.168C-10.001 151.643 3.87924 165.001 20.9985 165.001C38.1196 165.001 51.998 151.643 51.998 135.168C51.998 118.691 38.1196 105.335 20.9985 105.335C3.87924 105.335 -10.001 118.691 -10.001 135.168Z" fill="#AD84FF"></path>
+                                                                    <path d="M28.749 64.3117C28.749 78.7296 40.8927 90.4163 55.8745 90.4163C70.8563 90.4163 83 78.7296 83 64.3117C83 49.8954 70.8563 38.207 55.8745 38.207C40.8927 38.207 28.749 49.8954 28.749 64.3117Z" fill="#AD84FF"></path>
+                                                                    <path d="M82.9996 120.249C82.9996 144.964 103.819 165 129.501 165C155.181 165 176 144.964 176 120.249C176 95.5342 155.181 75.5 129.501 75.5C103.819 75.5 82.9996 95.5342 82.9996 120.249Z" fill="#AD84FF"></path>
+                                                                    <path d="M98.4976 23.2928C98.4976 43.8887 115.848 60.5856 137.249 60.5856C158.65 60.5856 176 43.8887 176 23.2928C176 2.69692 158.65 -14 137.249 -14C115.848 -14 98.4976 2.69692 98.4976 23.2928Z" fill="#AD84FF"></path>
+                                                                    <path d="M-10.0011 8.37466C-10.0011 20.7322 0.409554 30.7493 13.2503 30.7493C26.0911 30.7493 36.5 20.7322 36.5 8.37466C36.5 -3.98287 26.0911 -14 13.2503 -14C0.409554 -14 -10.0011 -3.98287 -10.0011 8.37466Z" fill="#AD84FF"></path>
+                                                                    <path d="M-2.24881 82.9565C-2.24881 87.0757 1.22081 90.4147 5.50108 90.4147C9.78135 90.4147 13.251 87.0757 13.251 82.9565C13.251 78.839 9.78135 75.5 5.50108 75.5C1.22081 75.5 -2.24881 78.839 -2.24881 82.9565Z" fill="#AD84FF"></path>
+                                                                    <path d="M55.8744 12.1044C55.8744 18.2841 61.0788 23.2926 67.5001 23.2926C73.9196 23.2926 79.124 18.2841 79.124 12.1044C79.124 5.92653 73.9196 0.917969 67.5001 0.917969C61.0788 0.917969 55.8744 5.92653 55.8744 12.1044Z" fill="#AD84FF"></path>
                                                                 </g>
                                                             </svg>
-                                                            <!--end::Svg Icon-->
                                                         </span>
                                                     </div>
-                                                    <!--end::Shape-->
                                                     <div class="font-weight-boldest font-size-h5">TOTAL</div>
                                                     <div class="text-right d-flex flex-column">
-                                                        <span
-                                                            class="font-weight-boldest font-size-h3 line-height-sm">{{matricula.monto
-                                                            + matricula.matricula | currency: 'USD'}}</span>
+                                                        <span class="font-weight-boldest font-size-h3 line-height-sm">{{matricula.monto + matricula.matricula | currency: 'USD'}}</span>
                                                         <span class="font-size-sm">Incluido derecho contrato de servicio</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <!--end::Invoice footer-->
                                         <div class="row" *ngIf="matricula.firma">
                                             <div class="col-5 mx-auto">
                                                 <div class="card">
@@ -274,66 +214,42 @@
                                                         <img [src]="matricula.firma" style="width: 100%;">
                                                     </div>
                                                     <div class="card-footer text-center">
-                                                        <h4 style="margin-bottom: 0px;">{{matricula.cliente.nombres}}
-                                                            {{matricula.cliente.apellidos}}
-                                                        </h4>
+                                                        <h4 style="margin-bottom: 0px;">{{matricula.cliente.nombres}} {{matricula.cliente.apellidos}}</h4>                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- begin: Invoice action-->
                                 <div class="row justify-content-center border-top py-8 px-8 py-md-28 px-md-0">
                                     <div class="col-md-9">
                                         <div class="d-flex font-size-sm flex-wrap">
-                                            <button type="button"
-                                                class="btn btn-primary font-weight-bolder py-4 mr-3 mr-sm-14 my-1"
-                                                onclick="window.print();">Imprimir contrato</button>
-
-                                            <button *ngIf="!matricula.firma" type="button"
-                                                class="btn btn-light-primary font-weight-bolder mr-3 my-1"
-                                                data-toggle="modal" [attr.data-target]="'#firmaModal'">Firmar</button>
-
-                                            <button *ngIf="matricula.firma" type="button"
-                                                class="btn btn-danger font-weight-bolder mr-3 my-1" disabled>Contrato
-                                                firmado</button>
-
-                                            <div class="modal fade" id="firmaModal" tabindex="-1" role="dialog"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <button type="button" class="btn btn-primary font-weight-bolder py-4 mr-3 mr-sm-14 my-1" onclick="window.print();">Imprimir contrato</button>
+                                            <button *ngIf="!matricula.firma" type="button" class="btn btn-light-primary font-weight-bolder mr-3 my-1" data-toggle="modal" [attr.data-target]="'#firmaModal'">Firmar</button>
+                                            <button *ngIf="matricula.firma" type="button" class="btn btn-danger font-weight-bolder mr-3 my-1" disabled>Contrato firmado</button>
+                                            <div class="modal fade" id="firmaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">
                                                                 Firmar contrato
                                                             </h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <i aria-hidden="true" class="ki ki-close"></i>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <image-drawing [src]="'assets/firm.jpg'"
-                                                                [borderCss]="'1px solid black'"
-                                                                [showCancelButton]="false" outputMimeType="'image/jpeg'"
-                                                                (save)="save($event)" [i18n]="i18n"
-                                                                [drawingSizes]="{small: 3, medium: 3, large: 3, extra: 3}"
-                                                                (cancel)="cancel()">
+                                                            <image-drawing [src]="'assets/firm.jpg'" [borderCss]="'1px solid black'" [showCancelButton]="false" outputMimeType="'image/jpeg'" (save)="save($event)" [i18n]="i18n" [drawingSizes]="{small: 3, medium: 3, large: 3, extra: 3}" (cancel)="cancel()">
                                                             </image-drawing>
                                                             <input type="hidden" id="firma_img">
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <button type="button" [routerLink]="['/matriculas']"
-                                                class="btn btn-warning font-weight-bolder ml-sm-auto my-1">Ir a
-                                                contrato de servicio</button>
+                                            <button type="button" [routerLink]="['/matriculas']" class="btn btn-warning font-weight-bolder ml-sm-auto my-1">Ir a contrato de servicio</button>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- end: Invoice action-->
                             </div>
                             <ng-container *ngIf="!data">
                                 <div class="row">
@@ -343,15 +259,9 @@
                                 </div>
                             </ng-container>
                         </ng-container>
-
-                        <!-- end::Card-->
                     </div>
-                    <!--end::Container-->
                 </div>
-                <!--end::Entry-->
             </div>
-            <!--end::Content-->
-
         </div>
     </div>
 </div>
