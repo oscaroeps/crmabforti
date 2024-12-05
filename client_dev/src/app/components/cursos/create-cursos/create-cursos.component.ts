@@ -9,16 +9,18 @@ declare var $: any;
   styleUrls: ['./create-cursos.component.css']
 })
 export class CreateCursosComponent implements OnInit {
-
   public curso: any = {};
   public banner: File | any = undefined;
   public token = localStorage.getItem('token');
   public btn_load = false;
-
+  public user: any = {};
   constructor(
     private _cursoService: CursoService,
     private _router: Router
-  ) { }
+  ) {
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
+  }
 
   ngOnInit(): void {
   }
@@ -88,20 +90,19 @@ export class CreateCursosComponent implements OnInit {
               exit: 'animated bounce'
             }
           });
-          this._router.navigate(['/cursos']);
+          // Agregar retraso antes de redirigir al quitarlo resolver los errores que salen en la consola
+          setTimeout(() => {
+            this._router.navigate(['/cursos']);
+          }, 1500); // 1500 milisegundos = 1.5 segundos
         }
       );
     }
   }
 
   fileEventChange(event: any): void {
-
     var file: any;
-
     if (event.target.files && event.target.files[0]) {
       file = <File>event.target.files[0];
-
-
       if (file.size <= 2000000) {
         if (file.type == 'image/jpeg' || file.type == 'image/png' || file.type == 'image/webp' || file.type == 'image/jpg') {
           this.banner = file;

@@ -9,19 +9,15 @@ declare var $: any;
   styleUrls: ['./index-cliente.component.css']
 })
 export class IndexClienteComponent implements OnInit {
-
   public user: any = {};
   public token = localStorage.getItem('token');
   public clientes: Array<any> = [];
   public clientes_const: Array<any> = [];
-
   public filtro = '';  // Variable para almacenar el criterio de filtro
   public page = 1;
   public pageSize = 25;
-
   public load_estado = false;
   public load_data = false;
-
   constructor(
     private _clienteService: ClienteService,
     private _router: Router,
@@ -46,7 +42,6 @@ export class IndexClienteComponent implements OnInit {
   formatPhoneNumber(phone: string): string {
     return phone.split(';').join('<br>');
   }
-
 
   // Método que decide si filtrar o cargar todos los clientes
   init_data() {

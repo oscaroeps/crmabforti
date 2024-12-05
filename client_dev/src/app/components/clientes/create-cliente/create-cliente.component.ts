@@ -9,7 +9,6 @@ declare var $: any;
   styleUrls: ['./create-cliente.component.css']
 })
 export class CreateClienteComponent implements OnInit {
-
   public cliente: any = {
     nombres: '',
     apellidos: '',
@@ -67,9 +66,7 @@ export class CreateClienteComponent implements OnInit {
     }
   }
 
-
   registrar(registroForm: any) {
-
     /* if (!registroForm.value.nombres) {
       $.notify('Complete los nombres del cliente.', {
         type: 'danger',
@@ -147,11 +144,9 @@ export class CreateClienteComponent implements OnInit {
       });
     } else {
       this.btn_registrar = true;
-
       // Asegurar que los campos de nombres y apellidos siempre tengan valores, aunque sean vacíos
       this.cliente.nombres = this.cliente.nombres || '';
       this.cliente.apellidos = this.cliente.apellidos || '';
-
       this.cliente.asesor = localStorage.getItem('_id');
       this._clienteService.registro_cliente_admin(this.cliente, this.token).subscribe(
         response => {
@@ -189,10 +184,8 @@ export class CreateClienteComponent implements OnInit {
             });
             this._router.navigate(['/cliente']);
           }
-
         }
       );
     }
   }
-
 }

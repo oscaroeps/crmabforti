@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GLOBAL } from 'src/app/services/GLOBAL';
 import { ProductoService } from 'src/app/services/producto.service';
-
 declare var $: any;
 
 @Component({
@@ -10,25 +9,25 @@ declare var $: any;
   styleUrls: ['./index-producto.component.css']
 })
 export class IndexProductoComponent implements OnInit {
-
+  public token = localStorage.getItem('token');
   public productos: Array<any> = [];
   public productos_const: Array<any> = [];
   public categorias: Array<any> = [];
   public url = GLOBAL.url;
-
   public filtro_categoria = 'Todos';
   public filtro_estado = 'Todos';
   public filtro_producto = '';
   public load_data = true;
-
   public page = 1;
   public pageSize = 25;
-
   public load_estado = false;
-
+  public user: any = {};
   constructor(
     private _productoService: ProductoService
-  ) { }
+  ) {
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
+  }
 
   ngOnInit(): void {
     this.init_productos();
@@ -37,7 +36,7 @@ export class IndexProductoComponent implements OnInit {
 
   init_productos() {
     this.load_data = true;
-    this._productoService.listar_productos_admin(localStorage.getItem('token')).subscribe(
+    this._productoService.listar_productos_admin(this.token).subscribe(
       response => {
         this.productos = response.data;
         this.productos_const = this.productos;
@@ -89,13 +88,12 @@ export class IndexProductoComponent implements OnInit {
 
   set_state(id: any, estado: any) {
     this.load_estado = true;
-    this._productoService.cambiar_estado_producto_admin(id, { estado: estado }, localStorage.getItem('token')).subscribe(
+    this._productoService.cambiar_estado_producto_admin(id, { estado: estado }, this.token).subscribe(
       response => {
         this.load_estado = false;
         $('#estado-' + id).modal('hide');
         this.init_productos();
       }
     );
-
   }
 }

@@ -8,16 +8,19 @@ declare var $: any;
   templateUrl: './index-cursos.component.html',
   styleUrls: ['./index-cursos.component.css']
 })
-export class IndexCursosComponent implements OnInit {
 
+export class IndexCursosComponent implements OnInit {
   public token = localStorage.getItem('token');
   public cursos: Array<any> = [];
   public url = GLOBAL.url;
   public load_estado = false;
-
+  public user: any = {};
   constructor(
     private _cursoService: CursoService
-  ) { }
+  ) {
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
+  }
 
   ngOnInit(): void {
     this.init_data();
@@ -40,7 +43,5 @@ export class IndexCursosComponent implements OnInit {
         this.init_data();
       }
     );
-
   }
-
 }

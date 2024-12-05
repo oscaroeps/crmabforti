@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductoService } from 'src/app/services/producto.service';
-
 declare var $: any;
 
 @Component({
@@ -10,7 +9,6 @@ declare var $: any;
   styleUrls: ['./create-producto.component.css']
 })
 export class CreateProductoComponent implements OnInit {
-
   public producto: any = {
     tipo: '',
     categoria: ''
@@ -19,13 +17,15 @@ export class CreateProductoComponent implements OnInit {
   public str_portada: any = 'assets/white.jpg';
   public categorias: Array<any> = [];
   public token = localStorage.getItem('token');
-
   public load_btn = false;
-
+  public user: any = {};
   constructor(
     private _productoService: ProductoService,
     private _router: Router
-  ) { }
+  ) {
+    let str_user = localStorage.getItem('user');
+    this.user = str_user ? JSON.parse(str_user) : null;
+  }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -194,7 +194,6 @@ export class CreateProductoComponent implements OnInit {
       this.load_btn = true;
       this._productoService.crear_producto_admin(this.producto, this.token).subscribe(
         response => {
-
           if (response.data != undefined) {
             this.load_btn = false;
             $.notify('Se registró correctamente el producto.', {
@@ -211,10 +210,10 @@ export class CreateProductoComponent implements OnInit {
                 exit: 'animated bounce'
               }
             });
-            // Agregar retraso antes de redirigir
+            // Agregar retraso antes de redirigir al quitarlo resolver los errores que salen en la consola
             setTimeout(() => {
               this._router.navigate(['/productos']);
-            }, 2000); // 2000 milisegundos = 1 segundo
+            }, 1500); // 1500 milisegundos = 1.5 segundos
           } else {
             this.load_btn = false;
             $.notify(response.message, {
@@ -251,7 +250,6 @@ export class CreateProductoComponent implements OnInit {
           });
         }
       );
-
     }
   }
 }
