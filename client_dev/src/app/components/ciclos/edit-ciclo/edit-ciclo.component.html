@@ -1,47 +1,30 @@
 <div class="d-flex flex-column flex-root">
     <div class="d-flex flex-row flex-column-fluid page">
         <app-sidebar></app-sidebar>
-
         <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
             <app-top></app-top>
-            <!--begin::Content-->
             <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                <!--begin::Subheader-->
                 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
-                    <div
-                        class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-                        <!--begin::Info-->
+                    <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
                         <div class="d-flex align-items-center flex-wrap mr-2">
-                            <!--begin::Page Title-->
                             <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Servicios logísticos</h5>
-                            <!--end::Page Title-->
-                            <!--begin::Actions-->
                             <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-                            <ul
-                                class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                            <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                 <li class="breadcrumb-item text-muted">
                                     <a [routerLink]="['/cursos']" class="text-muted">Lista de servicios logísticos</a>
                                 </li>
                                 <li class="breadcrumb-item text-muted">
-                                    <a [routerLink]="['/cursos/' + id + '/ciclo']" class="text-muted">Ciclos de servicio
-                                        vigentes</a>
+                                    <a [routerLink]="['/cursos/' + id + '/ciclo']" class="text-muted">Ciclos de servicio vigentes</a>
                                 </li>
                                 <li class="breadcrumb-item active">
                                     <a class="text-muted">Editar ciclo de servicio</a>
                                 </li>
                             </ul>
-                            <!--end::Actions-->
                         </div>
-                        <!--end::Info-->
-
                     </div>
                 </div>
-                <!--end::Subheader-->
-                <!--begin::Entry-->
                 <div class="d-flex flex-column-fluid">
-                    <!--begin::Container-->
                     <div class="container">
-
                         <div class="row mt-5" *ngIf="load_data">
                             <div class="col-12 text-center">
                                 <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
@@ -49,7 +32,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <ng-container *ngIf="!load_data">
                             <ng-container *ngIf="data">
                                 <div class="card card-custom gutter-b example example-compact form-group">
@@ -57,16 +39,13 @@
                                         <h3 class="card-title">
                                             <span class="font-weight-bolder text-dark">Editar ciclo</span>
                                         </h3>
-
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-5 col-sm-12">
                                                 <div class="row mb-3">
-
                                                     <div class="col-12">
-                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo de
-                                                            servicio:
+                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo de servicio:
                                                         </h6>
                                                     </div>
                                                     <div class="col-12 col-md-6">
@@ -94,14 +73,10 @@
                                                             <label for="exampleSelect1">
                                                                 <b>Sede</b>
                                                             </label>
-                                                            <select class="form-control" name="sede"
-                                                                [(ngModel)]="ciclo.sede">
-                                                                <option selected="" disabled value="">Seleccionar
-                                                                </option>
-                                                                <option value="Ciudad de México">Ciudad de México
-                                                                </option>
-                                                                <option value="Estado de México">Estado de México
-                                                                </option>
+                                                            <select class="form-control" name="sede" [(ngModel)]="ciclo.sede">
+                                                                <option selected="" disabled value="">Seleccionar</option>
+                                                                <option value="Ciudad de México">Ciudad de México</option>
+                                                                <option value="Estado de México">Estado de México</option>
                                                                 <option value="Querétaro">Querétaro</option>
                                                             </select>
                                                         </div>
@@ -111,18 +86,13 @@
                                                             <label for="exampleSelect1">
                                                                 <b>Precio</b>
                                                             </label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Precio mensual" name="precio"
-                                                                [(ngModel)]="ciclo.precio">
+                                                            <input type="text" class="form-control" placeholder="Precio mensual" name="precio" [(ngModel)]="ciclo.precio">
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <h6 class="text-dark font-weight-bolder mb-7">Fecha de
-                                                            servicios:
-                                                        </h6>
+                                                        <h6 class="text-dark font-weight-bolder mb-7">Fecha de servicios:</h6>
                                                     </div>
                                                     <div class="col-12 col-md-6">
                                                         <div class="form-group">
@@ -130,10 +100,7 @@
                                                                 <b>Inicio</b>
                                                             </label>
                                                             <div class="input-group date mb-2">
-                                                                <input min="{{str_today}}" type="date"
-                                                                    class="form-control"
-                                                                    placeholder="Inicio de servicios" name="f_inicio"
-                                                                    [(ngModel)]="ciclo.f_inicio" />
+                                                                <input min="{{str_today}}" type="date" class="form-control" placeholder="Inicio de servicios" name="f_inicio" [(ngModel)]="ciclo.f_inicio" />
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-bullhorn"></i>
@@ -148,9 +115,7 @@
                                                                 <b>Fin</b>
                                                             </label>
                                                             <div class="input-group date mb-2">
-                                                                <input min="{{str_today}}" type="date"
-                                                                    class="form-control" placeholder="Fin de servicios"
-                                                                    name="f_fin" [(ngModel)]="ciclo.f_fin" />
+                                                                <input min="{{str_today}}" type="date" class="form-control" placeholder="Fin de servicios" name="f_fin" [(ngModel)]="ciclo.f_fin" />
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-bullhorn"></i>
@@ -159,19 +124,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <button *ngIf="!btn_load" (click)="actualizar()" type="button"
-                                                            style="margin-bottom: 0px !important;"
-                                                            class="btn btn-primary">Actualizar
-                                                            ciclo de servicio</button>
-
-                                                        <button *ngIf="btn_load" class="btn btn-primary" type="button"
-                                                            disabled>
-                                                            <span class="spinner-border spinner-border-sm" role="status"
-                                                                aria-hidden="true"></span>
+                                                        <button *ngIf="!btn_load" (click)="actualizar()" type="button" style="margin-bottom: 0px !important;" class="btn btn-primary">Actualizar ciclo de servicio</button>
+                                                        <button *ngIf="btn_load" class="btn btn-primary" type="button" disabled>
+                                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                             Actualizando...
                                                         </button>
                                                     </div>
@@ -181,11 +139,8 @@
                                                 <tinymce name="descripcion" [(ngModel)]="ciclo.descripcion"></tinymce>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
-
                                 <div class="card card-custom gutter-b example example-compact form-group">
                                     <div class="card-header">
                                         <h3 class="card-title">
@@ -193,18 +148,14 @@
                                         </h3>
                                     </div>
                                     <div class="card-body">
-
                                         <div class="row">
                                             <div class="col-lg-5 col-sm-12">
                                                 <div class="row">
-
                                                     <div class="col-12 col-md-6">
                                                         <div class="form-group">
                                                             <label for="exampleSelect1"><b>Almacén</b></label>
-                                                            <select class="form-control" name="salon"
-                                                                [(ngModel)]="salon.salon">
-                                                                <option value="" selected="" disabled>Seleccionar
-                                                                </option>
+                                                            <select class="form-control" name="salon" [(ngModel)]="salon.salon">
+                                                                <option value="" selected="" disabled>Seleccionar</option>
                                                                 <option value="Almacén 1">Almacén 1</option>
                                                                 <option value="Almacén 2">Almacén 2</option>
                                                                 <option value="Almacén 3">Almacén 3</option>
@@ -216,9 +167,7 @@
                                                     <div class="col-12 col-md-6">
                                                         <div class="form-group">
                                                             <label for="exampleSelect1"><b>Cantidad de empleados</b></label>
-                                                            <input type='number' class="form-control"
-                                                                placeholder="Cantidad de empleados" name="aforo_total"
-                                                                [(ngModel)]="salon.aforo_total" />
+                                                            <input type='number' class="form-control" placeholder="Cantidad de empleados" name="aforo_total" [(ngModel)]="salon.aforo_total" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-md-6">
@@ -234,63 +183,40 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-md-12  form-group">
-                                                        <label for="exampleSelect1"><b>Horario de servicio
-                                                                semanal</b></label>
+                                                        <label for="exampleSelect1"><b>Horario de servicio semanal</b></label>
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <div class="checkbox-list">
                                                                     <label class="checkbox" for="customCheck1">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input" value="Lunes"
-                                                                            id="customCheck1"
-                                                                            (change)="select_day($event)">Lunes
+                                                                        <input type="checkbox" class="custom-control-input" value="Lunes" id="customCheck1" (change)="select_day($event)">Lunes
                                                                         <span></span>
                                                                     </label>
                                                                     <label class="checkbox" for="customCheck2">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input" value="Martes"
-                                                                            id="customCheck2"
-                                                                            (change)="select_day($event)">Martes
+                                                                        <input type="checkbox" class="custom-control-input" value="Martes" id="customCheck2" (change)="select_day($event)">Martes
                                                                         <span></span>
                                                                     </label>
                                                                     <label class="checkbox" for="customCheck3">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input"
-                                                                            value="Miercoles" id="customCheck3"
-                                                                            (change)="select_day($event)">Miercoles
+                                                                        <input type="checkbox" class="custom-control-input" value="Miercoles" id="customCheck3" (change)="select_day($event)">Miercoles
                                                                         <span></span>
                                                                     </label>
                                                                     <label class="checkbox" for="customCheck4">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input" value="Jueves"
-                                                                            id="customCheck4"
-                                                                            (change)="select_day($event)">Jueves
+                                                                        <input type="checkbox" class="custom-control-input" value="Jueves" id="customCheck4" (change)="select_day($event)">Jueves
                                                                         <span></span>
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="checkbox-list">
-
                                                                     <label class="checkbox" for="customCheck5">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input" value="Viernes"
-                                                                            id="customCheck5"
-                                                                            (change)="select_day($event)">Viernes
+                                                                        <input type="checkbox" class="custom-control-input" value="Viernes" id="customCheck5" (change)="select_day($event)">Viernes
                                                                         <span></span>
                                                                     </label>
                                                                     <label class="checkbox" for="customCheck6">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input" value="Sabado"
-                                                                            id="customCheck6"
-                                                                            (change)="select_day($event)">Sabado
+                                                                        <input type="checkbox" class="custom-control-input" value="Sabado" id="customCheck6" (change)="select_day($event)">Sabado
                                                                         <span></span>
                                                                     </label>
                                                                     <label class="checkbox" for="customCheck7">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input" value="Domingo"
-                                                                            id="customCheck7"
-                                                                            (change)="select_day($event)">Domingo
+                                                                        <input type="checkbox" class="custom-control-input" value="Domingo" id="customCheck7" (change)="select_day($event)">Domingo
                                                                         <span></span>
                                                                     </label>
                                                                 </div>
@@ -298,10 +224,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-md-12">
-                                                        <button type="button" (click)="agregar_ciclo()"
-                                                            style="margin-bottom: 0px !important;"
-                                                            class="btn btn-primary">Agregar</button>
-
+                                                        <button type="button" (click)="agregar_ciclo()" style="margin-bottom: 0px !important;" class="btn btn-primary">Agregar</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -322,55 +245,31 @@
                                                             <th>{{item.aforo_total}}</th>
                                                             <th>{{item.h_inicio}} - {{item.h_fin}}</th>
                                                             <th>
-                                                                <ng-container
-                                                                    *ngFor="let subitem of item.f_dias; let ultimo = last">
+                                                                <ng-container *ngFor="let subitem of item.f_dias; let ultimo = last">
                                                                     <span *ngIf="!ultimo">{{subitem.substr(0,3)}},
                                                                     </span>
                                                                     <span *ngIf="ultimo">{{subitem.substr(0,3)}}</span>
                                                                 </ng-container>
                                                             </th>
                                                             <th scope="row">
-                                                                <a style="cursor: pointer;" class="text-danger"
-                                                                    data-toggle="modal"
-                                                                    [attr.data-target]="'#delete-' + item._id">[Quitar]</a>
-                                                                <div class="modal fade" id="delete-{{item._id}}"
-                                                                    tabindex="-1" role="dialog"
-                                                                    aria-labelledby="exampleModalLabel"
-                                                                    aria-hidden="true">
+                                                                <a style="cursor: pointer;" class="text-danger" data-toggle="modal" [attr.data-target]="'#delete-' + item._id">[Quitar]</a>
+                                                                <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog" role="document">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <h5 class="modal-title"
-                                                                                    id="exampleModalLabel">Confirmación
-                                                                                    de eliminación</h5>
-                                                                                <button type="button" class="close"
-                                                                                    data-dismiss="modal"
-                                                                                    aria-label="Close">
-                                                                                    <i aria-hidden="true"
-                                                                                        class="ki ki-close"></i>
+                                                                                <h5 class="modal-title" id="exampleModalLabel">Confirmación de eliminación</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <i aria-hidden="true" class="ki ki-close"></i>
                                                                                 </button>
                                                                             </div>
                                                                             <div class="modal-body">
-                                                                                <p>¿Desea eliminar permanentemente el
-                                                                                    almacén?
-                                                                                </p>
+                                                                                <p>¿Desea eliminar permanentemente el almacén?</p>                                                                                
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                                <button type="button"
-                                                                                    class="btn btn-warning font-weight-bold"
-                                                                                    data-dismiss="modal">Cerrar</button>
-                                                                                <button *ngIf="!load_delete"
-                                                                                    type="button"
-                                                                                    class="btn btn-danger font-weight-bold"
-                                                                                    (click)="eliminar_salon(item._id)">Eliminar</button>
-
-                                                                                <button *ngIf="load_delete"
-                                                                                    class="btn btn-danger" type="button"
-                                                                                    disabled>
-                                                                                    <span
-                                                                                        class="spinner-border spinner-border-sm"
-                                                                                        role="status"
-                                                                                        aria-hidden="true"></span>
+                                                                                <button type="button" class="btn btn-warning font-weight-bold" data-dismiss="modal">Cerrar</button>
+                                                                                <button *ngIf="!load_delete" type="button" class="btn btn-danger font-weight-bold" (click)="eliminar_salon(item._id)">Eliminar</button>
+                                                                                <button *ngIf="load_delete" class="btn btn-danger" type="button" disabled>
+                                                                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                                     Eliminando...
                                                                                 </button>
                                                                             </div>
@@ -378,10 +277,8 @@
                                                                     </div>
                                                                 </div>
                                                                 <br>
-
                                                             </th>
                                                         </tr>
-
                                                     </tbody>
                                                     <!-- <tbody>
                                                         <tr>
@@ -390,14 +287,11 @@
                                                             </td>
                                                         </tr>
                                                     </tbody> -->
-
-
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="card card-custom gutter-b example example-compact form-group">
                                     <div class="card-header">
                                         <h3 class="card-title">
@@ -405,86 +299,57 @@
                                         </h3>
                                     </div>
                                     <div class="card-body">
-
                                         <div class="row">
                                             <div class="col-lg-5 col-sm-12">
                                                 <div class="row">
-
                                                     <div class="col-12 col-md-6">
                                                         <div class="form-group">
                                                             <label for="exampleSelect1"><b>Almacén</b></label>
-                                                            <select class="form-control" name="ciclo_salon"
-                                                                [(ngModel)]="docente_salon.ciclo_salon">
-                                                                <option value="" selected="" disabled>Seleccionar
+                                                            <select class="form-control" name="ciclo_salon" [(ngModel)]="docente_salon.ciclo_salon">
+                                                                <option value="" selected="" disabled>Seleccionar</option>
+                                                                <option value="{{item._id}}" *ngFor="let item of salones">
+                                                                    {{item.salon}}, {{item.h_inicio}} - {{item.h_fin}}
                                                                 </option>
-                                                                <option value="{{item._id}}"
-                                                                    *ngFor="let item of salones">{{item.salon}},
-                                                                    {{item.h_inicio}} - {{item.h_fin}}</option>
                                                             </select>
                                                         </div>
                                                     </div>
-
                                                     <div class="col-12 col-md-12">
                                                         <div class="form-group">
                                                             <label><b>Operador</b></label>
                                                             <div class="input-group">
-                                                                <input type="text" readonly class="form-control"
-                                                                    placeholder="Seleccionar operador..."
-                                                                    id="inp_docente">
+                                                                <input type="text" readonly class="form-control" placeholder="Seleccionar operador..." id="inp_docente">
                                                                 <div class="input-group-append">
-                                                                    <button class="btn btn-primary" type="button"
-                                                                        data-toggle="modal"
-                                                                        [attr.data-target]="'#modalDocente'"><i
-                                                                            class="flaticon-search"></i></button>
+                                                                    <button class="btn btn-primary" type="button" data-toggle="modal" [attr.data-target]="'#modalDocente'">
+                                                                        <i class="flaticon-search"></i>
+                                                                    </button>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="modal fade" id="modalDocente" tabindex="-1"
-                                                                aria-labelledby="exampleModalLabel"
-                                                                style="display: none;" aria-hidden="true">
-                                                                <div class="modal-dialog modal-dialog-centered"
-                                                                    role="document">
+                                                            <div class="modal fade" id="modalDocente" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered" role="document">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h5 class="modal-title"
-                                                                                id="exampleModalLabel">Seleccionar
-                                                                                operador</h5>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal" aria-label="Close">
-                                                                                <i aria-hidden="true"
-                                                                                    class="ki ki-close"></i>
+                                                                            <h5 class="modal-title" id="exampleModalLabel">Seleccionar operador</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <i aria-hidden="true" class="ki ki-close"></i>
                                                                             </button>
                                                                         </div>
-                                                                        <div class="modal-header"
-                                                                            style="padding-right: 0px !important">
+                                                                        <div class="modal-header" style="padding-right: 0px !important">
                                                                             <div class="row" style="width: 100%;">
                                                                                 <div class="col-12">
                                                                                     <div class="input-group">
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            placeholder="Buscar operador"
-                                                                                            name="filtro_docente"
-                                                                                            [(ngModel)]="filtro_docente">
+                                                                                        <input type="text" class="form-control" placeholder="Buscar operador" name="filtro_docente" [(ngModel)]="filtro_docente">
                                                                                         <div class="input-group-append">
-                                                                                            <button
-                                                                                                class="btn btn-primary"
-                                                                                                type="button"
-                                                                                                (click)="filtrar_docente()">
-                                                                                                <i
-                                                                                                    class="flaticon-search"></i>
+                                                                                            <button class="btn btn-primary" type="button" (click)="filtrar_docente()">
+                                                                                                <i class="flaticon-search"></i>
                                                                                             </button>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="modal-body"
-                                                                            style="max-height: 550px; overflow: auto; min-height: 550px;">
-                                                                            <div class="d-flex align-items-center mb-10"
-                                                                                *ngFor="let item of docentes">
-                                                                                <!--begin::Symbol-->
-                                                                                <div class="symbol symbol-40 flex-shrink-0 mr-3"
-                                                                                    [ngClass]="{
+                                                                        <div class="modal-body" style="max-height: 550px; overflow: auto; min-height: 550px;">
+                                                                            <div class="d-flex align-items-center mb-10" *ngFor="let item of docentes">
+                                                                                <div class="symbol symbol-40 flex-shrink-0 mr-3" [ngClass]="{
                                                                                         'symbol-success': item.nombres.charAt(0) >= 'A' && item.nombres.charAt(0) <= 'H',
                                                                                         'symbol-info': item.nombres.charAt(0) >= 'I' && item.nombres.charAt(0) <= 'O',
                                                                                         'symbol-warning': item.nombres.charAt(0) >= 'P' && item.nombres.charAt(0) <= 'U',
@@ -493,22 +358,11 @@
                                                                                         {{item.nombres.charAt(0)}}
                                                                                     </div>
                                                                                 </div>
-                                                                                <!--end::Symbol-->
-
-                                                                                <!--begin::Text-->
-                                                                                <div
-                                                                                    class="d-flex flex-column flex-grow-1 font-weight-bold">
-                                                                                    <a
-                                                                                        class="text-dark text-hover-primary mb-1 font-size-lg">{{item.fullnames}}</a>
-                                                                                    <span
-                                                                                        class="text-muted">{{item.email}}</span>
+                                                                                <div class="d-flex flex-column flex-grow-1 font-weight-bold">
+                                                                                    <a class="text-dark text-hover-primary mb-1 font-size-lg">{{item.fullnames}}</a>
+                                                                                    <span class="text-muted">{{item.email}}</span>
                                                                                 </div>
-                                                                                <!--end::Text-->
-
-                                                                                <!--begin::Dropdown-->
-                                                                                <button class="btn btn-success btn-sm"
-                                                                                    (click)="seleccionar_docente(item)">Seleccionar</button>
-                                                                                <!--end::Dropdown-->
+                                                                                <button class="btn btn-success btn-sm" (click)="seleccionar_docente(item)">Seleccionar</button>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -516,12 +370,8 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="col-12 col-md-12">
-                                                        <button type="button" (click)="vincular_docente_salon()"
-                                                            style="margin-bottom: 0px !important;"
-                                                            class="btn btn-primary">Agregar</button>
-
+                                                        <button type="button" (click)="vincular_docente_salon()" style="margin-bottom: 0px !important;" class="btn btn-primary">Agregar</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -538,49 +388,25 @@
                                                         <tr *ngFor="let item of docentes_salones; let idx = index">
                                                             <th scope="row">{{item.colaborador.fullnames}}</th>
                                                             <th>{{item.ciclo_salon.salon}}</th>
-
                                                             <th scope="row">
-                                                                <a style="cursor: pointer;" class="text-danger"
-                                                                    data-toggle="modal"
-                                                                    [attr.data-target]="'#delete-' + item._id">[Quitar]</a>
-                                                                <div class="modal fade" id="delete-{{item._id}}"
-                                                                    tabindex="-1" role="dialog"
-                                                                    aria-labelledby="exampleModalLabel"
-                                                                    aria-hidden="true">
+                                                                <a style="cursor: pointer;" class="text-danger" data-toggle="modal" [attr.data-target]="'#delete-' + item._id">[Quitar]</a>
+                                                                <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog" role="document">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <h5 class="modal-title"
-                                                                                    id="exampleModalLabel">Confirmación
-                                                                                    de eliminación</h5>
-                                                                                <button type="button" class="close"
-                                                                                    data-dismiss="modal"
-                                                                                    aria-label="Close">
-                                                                                    <i aria-hidden="true"
-                                                                                        class="ki ki-close"></i>
+                                                                                <h5 class="modal-title" id="exampleModalLabel">Confirmación de eliminación</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <i aria-hidden="true" class="ki ki-close"></i>
                                                                                 </button>
                                                                             </div>
                                                                             <div class="modal-body">
-                                                                                <p>¿Desea eliminar permanentemente el
-                                                                                    almacén?
-                                                                                </p>
+                                                                                <p>¿Desea eliminar permanentemente el almacén?</p>
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                                <button type="button"
-                                                                                    class="btn btn-warning font-weight-bold"
-                                                                                    data-dismiss="modal">Cerrar</button>
-                                                                                <button *ngIf="!load_delete_ds"
-                                                                                    type="button"
-                                                                                    class="btn btn-danger font-weight-bold"
-                                                                                    (click)="eliminar_docente_salon(item._id)">Eliminar</button>
-
-                                                                                <button *ngIf="load_delete_ds"
-                                                                                    class="btn btn-danger" type="button"
-                                                                                    disabled>
-                                                                                    <span
-                                                                                        class="spinner-border spinner-border-sm"
-                                                                                        role="status"
-                                                                                        aria-hidden="true"></span>
+                                                                                <button type="button" class="btn btn-warning font-weight-bold" data-dismiss="modal">Cerrar</button>
+                                                                                <button *ngIf="!load_delete_ds" type="button" class="btn btn-danger font-weight-bold" (click)="eliminar_docente_salon(item._id)">Eliminar</button>
+                                                                                <button *ngIf="load_delete_ds" class="btn btn-danger" type="button" disabled>
+                                                                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                                     Eliminando...
                                                                                 </button>
                                                                             </div>
@@ -588,10 +414,8 @@
                                                                     </div>
                                                                 </div>
                                                                 <br>
-
                                                             </th>
                                                         </tr>
-
                                                     </tbody>
                                                     <!-- <tbody>
                                                         <tr>
@@ -600,28 +424,19 @@
                                                             </td>
                                                         </tr>
                                                     </tbody> -->
-
-
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </ng-container>
                             <ng-container *ngIf="!data">
                                 <app-notfound></app-notfound>
                             </ng-container>
                         </ng-container>
-
                     </div>
-                    <!--end::Container-->
                 </div>
-                <!--end::Entry-->
             </div>
-            <!--end::Content-->
-
         </div>
     </div>
 </div>
