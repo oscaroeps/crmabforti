@@ -215,7 +215,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (!this.salon.aforo_total) {
-      $.notify('Ingrese el aforo del almacén.', {
+      $.notify('Ingrese la cantidad de empleados del almacén.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
@@ -230,7 +230,7 @@ export class CreateCicloComponent implements OnInit {
         }
       });
     } else if (this.salon.aforo_total <= 0) {
-      $.notify('Ingrese un aforo válido.', {
+      $.notify('Ingrese una cantidad de empleados válida.', {
         type: 'danger',
         spacing: 10,
         timer: 2000,
