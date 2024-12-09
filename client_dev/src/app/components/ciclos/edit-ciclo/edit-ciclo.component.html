@@ -45,8 +45,7 @@
                                             <div class="col-lg-5 col-sm-12">
                                                 <div class="row mb-3">
                                                     <div class="col-12">
-                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo de servicio:
-                                                        </h6>
+                                                        <h6 class="text-dark font-weight-bolder mb-7">Datos del ciclo de servicio:</h6>
                                                     </div>
                                                     <div class="col-12 col-md-6">
                                                         <div class="form-group">
@@ -250,8 +249,7 @@
                                                             <th>{{item.h_inicio}} - {{item.h_fin}}</th>
                                                             <th>
                                                                 <ng-container *ngFor="let subitem of item.f_dias; let ultimo = last">
-                                                                    <span *ngIf="!ultimo">{{subitem.substr(0,3)}},
-                                                                    </span>
+                                                                    <span *ngIf="!ultimo">{{subitem.substr(0,3)}}, </span>
                                                                     <span *ngIf="ultimo">{{subitem.substr(0,3)}}</span>
                                                                 </ng-container>
                                                             </th>
