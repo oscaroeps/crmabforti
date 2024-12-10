@@ -1,46 +1,34 @@
 <div class="d-flex flex-column flex-root">
     <div class="d-flex flex-row flex-column-fluid page">
-
         <app-sidebar></app-sidebar>
-
         <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
-
             <app-top></app-top>
-
             <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
                 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
                     <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">   
                         <div class="d-flex align-items-center flex-wrap mr-2">
-                            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
-                                Colaborador
-                            </h5>
+                            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Colaborador</h5>
                             <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
                             <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                 <li class="breadcrumb-item active">
-                                    <a class="text-muted">
-                                        Lista de colaboradores
-                                    </a>
+                                    <a class="text-muted">Lista de colaboradores</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="d-flex flex-column-fluid">
                     <div class="container">
                         <div class="card card-custom mb-7">
                             <div class="card-header flex-wrap border-0 pt-6 pb-0">
                                 <div class="card-title">
                                     <h3 class="card-label">Colaboradores
-                                        <span class="text-muted pt-2 font-size-sm d-block">
-                                            Lista completa de todos los colaboradores
-                                        </span>
+                                        <span class="text-muted pt-2 font-size-sm d-block">Lista completa de todos los colaboradores</span>
                                     </h3>
                                 </div>
                                 <div class="card-toolbar">                                   
-                                    <a [routerLink]="['/colaborador/create']" class="btn btn-info">
-                                        Nuevo colaborador
-                                    </a>
+                                    <a *ngIf="user.rol === 'Administrador'" [routerLink]="['/colaborador/create']" class="btn btn-info">Nuevo colaborador</a>
+                                    <a *ngIf="user.rol !== 'Administrador'" style="cursor: not-allowed;" class="btn btn-info" data-toggle="modal" [attr.data-target]="'#llamarAdmin'">Nuevo colaborador</a>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -73,24 +61,12 @@
                                                         <th style="min-width: 250px" class="pl-7">
                                                             <span class="text-dark-75">Nombres</span>
                                                         </th>
-                                                        <th style="min-width: 100px">
-                                                            Correo
-                                                        </th>
-                                                        <th style="min-width: 100px">
-                                                            Teléfono
-                                                        </th>
-                                                        <th style="min-width: 100px">
-                                                            Centro de trabajo
-                                                        </th>
-                                                        <th style="min-width: 100px">
-                                                            Estado
-                                                        </th>
-                                                        <th style="min-width: 100px">
-                                                            Rol
-                                                        </th>
-                                                        <th style="min-width: 80px">
-                                                            Acción
-                                                        </th>
+                                                        <th style="min-width: 100px">Correo</th>
+                                                        <th style="min-width: 100px">Teléfono</th>
+                                                        <th style="min-width: 100px">Centro de trabajo</th>
+                                                        <th style="min-width: 100px">Estado</th>
+                                                        <th style="min-width: 100px">Rol</th>
+                                                        <th style="min-width: 80px">Acción</th>
                                                     </tr>
                                                 </thead>
                                                 <ng-container *ngIf="load_data">
@@ -156,64 +132,43 @@
                                                                 </span>
                                                             </td>
                                                             <td>
-                                                                <span class="badge badge-success" *ngIf="item.estado">
-                                                                    Activo
-                                                                </span>
-                                                                <span class="badge badge-danger " *ngIf="!item.estado">
-                                                                    Desactivado
-                                                                </span>
+                                                                <span class="badge badge-success" *ngIf="item.estado">Activo</span>
+                                                                <span class="badge badge-danger " *ngIf="!item.estado">Desactivado</span>
                                                                 <br>
-                                                                <span class="text-muted font-weight-bold">
-                                                                    Estado
-                                                                </span>
+                                                                <span class="text-muted font-weight-bold">Estado</span>
                                                             </td>
                                                             <td>
-                                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                                                    {{item.rol}}
-                                                                </span>
-                                                                <span class="text-muted font-weight-bold">
-                                                                    Rol
-                                                                </span>
+                                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{item.rol}}</span>
+                                                                <span class="text-muted font-weight-bold">Rol</span>
                                                             </td>
-
-
                                                             <td class="pr-0 text-right">
                                                                 <div class="dropdown dropleft">
                                                                     <button type="button" class="btn btn-light-primary btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                         <i class="ki ki-bold-more-ver"></i>
                                                                     </button>
                                                                     <div class="dropdown-menu">
-
                                                                         <!-- Opciones cuando la cuenta tiene rol Administrador -->
                                                                         <a style="cursor: pointer;" class="dropdown-item" *ngIf="item.estado && user.rol === 'Administrador'" data-toggle="modal" [attr.data-target]="'#delete-'+item._id">
-                                                                            <i class="icon-1x text-dark-50 flaticon2-cross"></i>
-                                                                            &nbsp; Desactivar
+                                                                            <i class="icon-1x text-dark-50 flaticon2-cross"></i>&nbsp; Desactivar
                                                                         </a>
                                                                         <a style="cursor: pointer;" class="dropdown-item" *ngIf="!item.estado && user.rol === 'Administrador'" data-toggle="modal" [attr.data-target]="'#delete-'+item._id">
-                                                                            <i class="icon-1x text-dark-50 flaticon2-check-mark"></i>
-                                                                            &nbsp; Activar
+                                                                            <i class="icon-1x text-dark-50 flaticon2-check-mark"></i>&nbsp; Activar
                                                                         </a>
                                                                         <a class="dropdown-item" [routerLink]="['/colaborador',item._id]" *ngIf="user.rol === 'Administrador'">
-                                                                            <i class="icon-1x text-dark-50 flaticon-edit"></i>
-                                                                            &nbsp; Editar
+                                                                            <i class="icon-1x text-dark-50 flaticon-edit"></i>&nbsp; Editar
                                                                         </a>
-
                                                                         <!-- Opciones cuando la cuenta NO tiene rol Administrador -->
-                                                                        <a style="cursor: not-allowed;" class="dropdown-item" *ngIf="item.estado && user.rol !== 'Administrador'">
-                                                                            <i class="icon-1x text-dark-50 flaticon2-cross"></i>
-                                                                            &nbsp; Desactivar
+                                                                        <a style="cursor: not-allowed;" class="dropdown-item" *ngIf="item.estado && user.rol !== 'Administrador'" data-toggle="modal" [attr.data-target]="'#llamarAdmin'">
+                                                                            <i class="icon-1x text-dark-50 flaticon2-cross"></i>&nbsp; Desactivar
                                                                         </a>
-                                                                        <a style="cursor: not-allowed;" class="dropdown-item" *ngIf="!item.estado && user.rol !== 'Administrador'">
-                                                                            <i class="icon-1x text-dark-50 flaticon2-check-mark"></i>
-                                                                            &nbsp; Activar
+                                                                        <a style="cursor: not-allowed;" class="dropdown-item" *ngIf="!item.estado && user.rol !== 'Administrador'" data-toggle="modal" [attr.data-target]="'#llamarAdmin'">
+                                                                            <i class="icon-1x text-dark-50 flaticon2-check-mark"></i>&nbsp; Activar
                                                                         </a>
-                                                                        <a style="cursor: not-allowed;" class="dropdown-item" *ngIf="user.rol !== 'Administrador'">
-                                                                            <i class="icon-1x text-dark-50 flaticon-edit"></i>
-                                                                            &nbsp; Editar
+                                                                        <a style="cursor: not-allowed;" class="dropdown-item" *ngIf="user.rol !== 'Administrador'" data-toggle="modal" [attr.data-target]="'#llamarAdmin'">
+                                                                            <i class="icon-1x text-dark-50 flaticon-edit"></i>&nbsp; Editar
                                                                         </a>
                                                                     </div>
                                                                 </div>
-
                                                                 <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog" role="document">
                                                                         <div class="modal-content">
@@ -237,15 +192,9 @@
                                                                                 </p>                                                                                                                                                
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-warning font-weight-bold" data-dismiss="modal">
-                                                                                    Cerrar
-                                                                                </button>
-                                                                                <button *ngIf="!load_estado && item.estado" type="button" class="btn btn-danger font-weight-bold" (click)="set_state(item._id,item.estado)">
-                                                                                    Desactivar
-                                                                                </button>
-                                                                                <button *ngIf="!load_estado && !item.estado" type="button" class="btn btn-danger font-weight-bold" (click)="set_state(item._id,item.estado)">
-                                                                                    Activar
-                                                                                </button>
+                                                                                <button type="button" class="btn btn-warning font-weight-bold" data-dismiss="modal">Cerrar</button>
+                                                                                <button *ngIf="!load_estado && item.estado" type="button" class="btn btn-danger font-weight-bold" (click)="set_state(item._id,item.estado)">Desactivar</button>
+                                                                                <button *ngIf="!load_estado && !item.estado" type="button" class="btn btn-danger font-weight-bold" (click)="set_state(item._id,item.estado)">Activar</button>
                                                                                 <button *ngIf="load_estado && !item.estado" class="btn btn-danger" type="button" disabled>
                                                                                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                                     Desactivando...
@@ -254,6 +203,28 @@
                                                                                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                                                                     Activando...
                                                                                 </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal fade" id="llamarAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                                    Advertencia
+                                                                                </h5>                                                                                
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p class="text-left">
+                                                                                    Sólo un administrador puede realizar las acciones de crear, editar y activar o desactivar a un colaborador, póngase en contacto con la administración y con gusto se revisará su solicitud :).
+                                                                                </p>                                                                        
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-warning font-weight-bold" data-dismiss="modal">Cerrar</button>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -275,9 +246,7 @@
                                                     <tbody *ngIf="colaboradores.length == 0">
                                                         <tr>
                                                             <td class="text-center" colspan="7">
-                                                                <p class="font-size-h3 text-muted font-weight-normal mt-5">
-                                                                    No hay ningún registro que mostrar.
-                                                                </p>
+                                                                <p class="font-size-h3 text-muted font-weight-normal mt-5">No hay ningún registro que mostrar.</p>
                                                             </td>
                                                         </tr>
                                                     </tbody>
